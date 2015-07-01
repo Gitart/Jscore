@@ -1,0 +1,128 @@
+{ 
+  "fathers" : [ 
+    { 
+      "id" : 0,
+      "married" : true,
+      "name" : "Gary White",
+      "sons" : null,
+      "daughters" : [ 
+        { 
+          "age" : 12,
+          "name" : "Brenda"
+          },
+        { 
+          "age" : 19,
+          "name" : "Lisa"
+          }
+        ]
+      },
+    { 
+      "id" : 1,
+      "married" : false,
+      "name" : "Jason Smith",
+      "sons" : null,
+      "daughters" : [ 
+        { 
+          "age" : 6,
+          "name" : "Sandra"
+          }
+        ]
+      },
+    { 
+      "id" : 2,
+      "married" : false,
+      "name" : "George Thompson",
+      "sons" : null,
+      "daughters" : [ 
+        { 
+          "age" : 20,
+          "name" : "Susan"
+          },
+        { 
+          "age" : 17,
+          "name" : "Mary"
+          },
+        { 
+          "age" : 2,
+          "name" : "Michelle"
+          }
+        ]
+      },
+    { 
+      "id" : 3,
+      "married" : true,
+      "name" : "Joseph White",
+      "sons" : null,
+      "daughters" : [ 
+        { 
+          "age" : 24,
+          "name" : "Deborah"
+          }
+        ]
+      },
+    { 
+      "id" : 4,
+      "married" : true,
+      "name" : "Jason Moore",
+      "sons" : null,
+      "daughters" : [ 
+        { 
+          "age" : 8,
+          "name" : "Maria"
+          }
+        ]
+      },
+    { 
+      "id" : 5,
+      "married" : false,
+      "name" : "Larry Martin",
+      "sons" : null,
+      "daughters" : [ 
+        { 
+          "age" : 8,
+          "name" : "Ruth"
+          },
+        { 
+          "age" : 30,
+          "name" : "Sarah"
+          }
+        ]
+      },
+    { 
+      "id" : 6,
+      "married" : false,
+      "name" : "Steven Thomas",
+      "sons" : null,
+      "daughters" : [ 
+        { 
+          "age" : 13,
+          "name" : "Mary"
+          },
+        { 
+          "age" : 6,
+          "name" : "Maria"
+          }
+        ]
+      },
+    { 
+      "id" : 7,
+      "married" : true,
+      "name" : "Richard Wilson",
+      "sons" : null,
+      "daughters" : [ 
+        { 
+          "age" : 29,
+          "name" : "Mary"
+          }
+        ]
+      },
+    { 
+      "id" : 8,
+      "married" : false,
+      "name" : "Donald Walker",
+      "sons" : null,
+      "daughters" : [
+        ]
+      }
+    ]
+  }
