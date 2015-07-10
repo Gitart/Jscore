@@ -6,3 +6,26 @@
  
   $(document).ready(function(){$('#aplanner').DataTable();});
   
+
+  
+  
+// Настройка таблицы
+ $(document).ready(function() {
+      
+      // Setting tables
+      $('#example').dataTable( {
+      	   "scrollX": true,
+      	   "order": [[ 3, "desc" ]],
+           "scrollY":        "80%",
+           "scrollCollapse": true,
+           "paging":         true
+       });
+
+        // get record number    
+        $('#example tbody').on('click', 'tr', function () {
+           var name = $('td', this).eq(0).text();
+           alert('Выбор '+name+'\'s запись' );
+        });
+
+  });
+
