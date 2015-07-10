@@ -1,4 +1,8 @@
 # Jscore
-Works Samples 
+
+###Works Samples 
 Function and Samples Javascript Code
+
+
+
 
