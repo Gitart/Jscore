@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- BEGIN: Custom advanced (www.pluginaria.com) -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://www.codemerx.com/code/jqGrid-4.5.2/js/i18n/grid.locale-en.js"></script>
+    <script type="text/javascript" src="http://www.codemerx.com/code/jqGrid-4.5.2/js/jquery.jqGrid.src.js"></script>
+	
+    <link rel="stylesheet" href="http://www.codemerx.com/code/jqGrid-4.5.2/css/ui.jqgrid.css" type="text/css">
+    <link rel="stylesheet" href="http://www.trirand.com/blog/jqgrid/themes/ui.jqgrid.css" type="text/css">
+    <link rel="stylesheet" href="http://www.trirand.com/blog/jqgrid/themes/redmond/jquery-ui-custom.css" type="text/css">
+	
+    <link   rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link   rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	
+    <!--http://100.100.100.100:5555/static/data/-->
+	
+  <style type="text/css" >
+          body        {margin:10px;}
+          html        {color: #3B3B3B; font-size:17px; font-family:Calibri;}
+          td1         {border: 1px gray solid; padding:5px;}
+         .ddblock     {padding:10px;}
+         .hhd1        {border:1px gray solid; padding:5px; background-color: #E7E7E7; font-weight: bold;}
+         .hdsf1       {color: #3366FF;	font-weight: bold;	font-size:17px;}
+         
+         .mb          {width:1000px; left:50%; margin-left:-500px; position: absolute; top: 1%; padding:10px;   box-shadow: -1px 5px 10px rgba(0,0,0,0.5); /* Параметры тени */    }
+	 .drop-shadow { -webkit-box-shadow: -1px 5px 10px rgba(0,0,0,0.5);box-shadow: -1px 5px 10px rgba(0,0,0,0.5);}
+         .container.drop-shadow {padding-left:0; padding-right:0;}
+	 .btn         {width:100px;} 
+ </style>
+ 
+</head>
+
+
+<body>
+
+<div class="mb" >
+    <div class="container">
+	
+	   <a href="/operation/deleteall/C002">Удаление документов</a>
+	   <h4>Перечень документов перемещения</h4>
+	   <hr>
+	   <table id="list3" class="table"></table>
+	   <div id="pager3"></div>
+	   <div id="pager1"></div>
+	</div>
+</div>	
+</body>
+
+
+<script type="text/javascript">
+
+jQuery("#list3").jqGrid({
+   	url:      '/api/system/docview/C002*ConsignmentNote*100', 
+	datatype: "json",
+   	colNames: ['Номер документа', 'Дата документа','Дата обработки','Откуда', 'Куда', 'Тип' ],
+   	colModel: [
+	          {name:'ID',             index:'ID',             width:120, sorttype:"string"},
+			  {name:'DATE_TIME_STR',  index:'DATE_TIME_STR',  width:150, sorttype:"date", align: 'center', sorttype: 'date', formatter: 'date', formatoptions: {newformat: 'd-M-Y'}, datefmt: 'd-M-Y'},
+   		      {name:'HDF_TIME_STR',   index:'HDF_TIME_STR',   width:150, sorttype:"date", align: 'center', sorttype: 'date', formatter: 'date', formatoptions: {newformat: 'd-M-Y'}, datefmt: 'd-M-Y'},
+			  {name:'ID_STRUCT_TO',   index:'ID_STRUCT_TO',   width:90,  sorttype:"integer"},
+			  {name:'ID_STRUCT_FROM', index:'ID_STRUCT_FROM', width:110, sorttype:"string"},
+   		      {name:'ID_TYPE',        index:'ID_TYPE',        width:100}
+   	          ],
+    width:950,			 
+    height: '100%',	
+    rowNum: 20,
+    gridview: true,
+    rownumWidth: 70,
+    rownumbers: true,
+    rowList:[5,10,20,30,50],
+    rowTotal: 2000,
+    pager: '#pager3',
+    sortname: 'NAME',
+    viewrecords: true,
+    sortorder: "desc",
+    loadonce: true,
+    caption: "Документы пермещения"}).navGrid('#pager1',{edit:true,add:true,del:true});
+	
+  jQuery("#list3").jqGrid('filterToolbar',{searchOperators : true});
+
+
+</script>
+
+</html>
