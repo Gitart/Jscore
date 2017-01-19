@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Page Language="VB" %>
+
+<style type="text/css">
+
+.div_style2 {
+
+                         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+                         border: 3px solid #DFDFCE;
+                         background-color: #FDFEE2;
+                         -moz-opacity:         0.5;          /* Mozilla 1.6 и ниже */;
+                         -khtml-opacity:       0.5;          /* Konqueror 3.1, Safari 1.1 */;
+                         opacity:              0.5;          /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */;
+                         zoom:                 1;            /* для элемента  */
+                         border-radius:        5px;
+                         -moz-border-radius:   15px;
+                        -webkit-border-radius: 15px;
+                        -khtml-border-radius:  15px;
+
+}
+
+.div_st {
+                    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+                    border:                2px solid #333333;
+                    background-color:      #FDFEE2;
+                    -moz-opacity:          0.7; /* Mozilla 1.6 и ниже */;
+                    -khtml-opacity:        0.7; /* Konqueror 3.1, Safari 1.1 */;
+                    opacity:               0.7; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */;
+                    zoom:                  1;   /* для элемента  */;
+                    border-radius:         5px;
+                    -moz-border-radius:    5px;
+                    -webkit-border-radius: 5px;
+                    -khtml-border-radius:  5px;
+                    font-family:           Calibri;
+                    font-size:             12px;
+}
+
+.newst1{
+
+                         border: 1px none #FFFF00;
+                         font-family: Arial;
+                         font-size: 14px;
+                         font-style: normal;}
+
+fieldset{
+
+                filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+                    border:                2px solid #333333;
+                    background-color:      #FDFEE2;
+                    -moz-opacity:          0.7; /* Mozilla 1.6 и ниже */;
+                    -khtml-opacity:        0.7; /* Konqueror 3.1, Safari 1.1 */;
+                    opacity:               0.7; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */;
+                    zoom:                  1;   /* для элемента  */;
+                    border-radius:         5px;
+                    -moz-border-radius:    5px;
+                    -webkit-border-radius: 5px;
+                    -khtml-border-radius:  5px;
+                    font-family:           Calibri;
+                    font-size:             12px;
+}
+
+div_style2 {
+
+                         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+                         border: 3px solid #DFDFCE;
+                         background-color: #FDFEE2;
+                         -moz-opacity:         0.5;          /* Mozilla 1.6 и ниже */;
+                         -khtml-opacity:       0.5;          /* Konqueror 3.1, Safari 1.1 */;
+                         opacity:              0.5;          /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */;
+                         zoom:                 1;            /* для элемента  */
+                         border-radius:        5px;
+                         -moz-border-radius:   15px;
+                        -webkit-border-radius: 15px;
+                        -khtml-border-radius:  15px;
+
+}
+                         font-weight: bold;
+                         color: #CC0000;
+                         font-variant: small-caps;
+}
+
+.newst2{
+                         border: 1px none #FFFF00;
+                         font-family: Arial;
+                         font-size: 14px;
+                         font-style: normal;
+                         font-weight: bold;
+                         color: #0066FF;
+                         font-variant: small-caps;
+}
+
+#tableshow td
+
+{
+font-family: Calibri ;
+font-size  : 12px;
+}
+
+#tableshow strong
+
+{
+font-family: Calibri ;
+font-size  : 12px;
+color: gray;
+}
+
+#d01 hr { color: inherit  ;
+}
+.style6 {
+                    background-color: #F8F8F8;
+}
+
+.newStyle1 {
+                    background-color: #F8F8F8;
+                    border: 2px solid #808080;
+                    font-family: sans-serif;
+                    font-size: 14px;
+                    color: #666666;
+                    border-radius: 5px;
+}
+
+.style7 {
+                    border-color: #d0dfd6;
+                    border-width: 0;
+}
+
+.style8 {
+                    background-color: #336699;
+}
+.style9 {
+                    color: #FFFFFF;
+}
+
+.style10 {
+                    color: #800080;
+}
+.style11 {
+                    font-size: medium;
+}
+
+</style>
+
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<script type="text/javascript" >
+
+/*****************************************************************************
+* Show Div TOOLTIP
+* Savchenko Arthur
+* Finance Department
+* Show Tooltip Binding to Gridview
+* Date : 07-09-2011 9:00
+*****************************************************************************/
+function inputsform (fam, ima, otch, dr, nnumber, el)
+{
+var tabss = '<strong class="newst2">Ad New Users # ' + nnumber + ' </strong> <br> <hr> ' +
+             '<table id="tableshow" border="0" width="300px">'  +
+             '<tr><td style="width: 20px"> <strong>Фамилия   </strong> :</td> <td style="text-align: left"><input type="text" value="' + fam  + '"/> </td> </tr>'     +
+             '<tr><td> <strong>Имя         </strong> :</td> <td><input type="text" /> "</td> </tr>'     +
+             '</table> <br> <hr> <a href="w_card.aspx?id=1222">Hystory</a>  ' ;
+
+document.getElementById ('d01').style.display='';
+document.getElementById ('d01').innerHTML = tabss;
+document.getElementById ('d01').style.top  = event.clientY + 5 + 'px' ;
+document.getElementById ('d01').style.left = event.clientX + 15 + 'px' ;
+document.getElementById ('d01').style='newStyle1';
+
+//var ttt = fam + '/n' + ima + '/n'  + otch + 'dd'
+//el.title=ttt;
+//$( "#d01" ).show("slide");
+//$( "#d01" ).show("fold",500);
+}
+
+/*****************************************************************************
+* Show Div TOOLTIP
+* Savchenko Arthur
+* Finance Department
+* Show Tooltip Binding to Gridview
+* Date : 07-09-2011 9:00
+*****************************************************************************/
+function nmns (fam, ima, otch, dr, nnumber, el)
+{
+var tabss = '&nbsp; <img alt="Information for documents" src="Information.png" width="20" height="20"  align="middle" /> &nbsp;&nbsp;' +
+             '<strong class="newst2">Information for Documents # ' + nnumber + ' </strong> <br> <hr> ' +
+             '<table id="tableshow" border="0" width="300px">'  +
+             '<tr><td style="width: 20px"> <strong>Фамилия   </strong> :</td> <td style="text-align: left">' + fam             + ' </td> </tr>'     +
+             '<tr><td> <strong>Имя         </strong> :</td> <td>' + ima             + ' </td> </tr>'     +
+             '<tr><td> <strong>Отчество    </strong> :</td> <td>' + otch            + ' </td> </tr>'     +
+             '<tr><td> <strong>Дата        </strong> :</td> <td>' + dr              + ' </td> </tr>'     +
+             '<tr><td> <strong>Element     </strong> :</td> <td>' + el.innerHTML    + ' </td> </tr>'     +
+             '<tr><td> <strong>Документ    </strong> :</td> <td>' + event.clientX   + ' </td> </tr>'     +
+             '<tr><td> <strong>Описание    </strong> :</td> <td>' + el.offsetLeft   + ' </td> </tr>'     +
+             '<tr><td> <strong>Додаток     </strong> :</td> <td>' + el.offsetLeft   + ' </td> </tr>'     +
+             '</table> <br> <hr> <a href="w_card.aspx?id=1222">Hystory</a>  ' ;
+
+document.getElementById ('d01').style.display='';
+document.getElementById ('d01').innerHTML = tabss;
+document.getElementById ('d01').style.top  = event.clientY + 5 + 'px' ;
+document.getElementById ('d01').style.left = event.clientX + 15 + 'px' ;
+
+//var ttt = fam + '/n' + ima + '/n'  + otch + 'dd'
+//el.title=ttt;
+//$( "#d01" ).show("slide");
+//$( "#d01" ).show("fold",500);
+}
+
+/*****************************************************************************
+* Show Div TOOLTIP
+* Savchenko Arthur
+* Finance Department
+* Show Tooltip
+* Date : 03-01-2012 11:53
+*****************************************************************************/
+
+function info (t_header,t_body,t_footer,t_remark,t_link)
+{
+
+var More = 'Winner Imports Ukraine';
+var more = '';
+var tabss = '<P style="text-align: center; font-weight: bold; font-size: 17px; color:#CC0000;" >' + t_header + '</P><hr> ' +
+             '<table> '  +
+             '<tr> <td style="text-align: left; font-size: 15px; color:#0066FF;" >&nbsp;'  + t_body    + ' </td> </tr>' +
+             '<tr> <td style="text-align: left; font-size: 12px; color:black;"   >&nbsp;'  + t_footer  + ' </td> </tr>' +
+             '<tr> <td style="text-align: left; font-size: 11px; color:black;"   ></td> </tr>'         +
+             '<tr> <td style="text-align: center; font-size: 11px; color:gray;" >'  + t_remark         + ' </td> </tr>'  +
+             '<tr> <td> <a  href="'  + t_link          + '"> Путь к вашему документу </a> </td> </tr>' +
+             '</table>'  +
+             '<br> <hr style="color:black;">' +
+             '<div style="text-align: left; width=30px;"><a  href="w_card.aspx?id=1222"><% = Date.now.Tostring("dd-MM-yy") %> Hystory  </a></div> ' +
+             '<div style="text-align: right;  width=30px;"><a  href="#"  onClick="nmnf();">Закрыть</a></div> <br> &nbsp; &nbsp;' ;
+
+//tabss=tabss+More + '<br>' + more;
+
+var obj = document.getElementById ('d02')
+    obj.style.display ='';
+    obj.innerHTML     = tabss;
+    obj.style.top     = event.clientY + 5 + 'px' ;
+    obj.style.left    = event.clientX + 5 + 'px' ;
+    obj.style.width   = '300px' ;
+
+//document.getElementById ('d02').style.display ='';
+//document.getElementById ('d02').innerHTML     = tabss;
+//document.getElementById ('d02').style.top     = event.clientY + 5 + 'px' ;
+//document.getElementById ('d02').style.left    = event.clientX + 15 + 'px' ;
+//document.getElementById ('d02').style.width   = '300px' ;
+}
+
+/*****************************************************************************
+* Hide Div TOOLTIP
+* Savchenko Arthur
+* Finance Department
+* Show Tooltip Binding to Gridview
+* Date : 07-09-2011 9:00
+*****************************************************************************/
+function nmnf ()
+{
+  document.getElementById ('d01').style.display='none';
+  document.getElementById ('d02').style.display='none';
+}
+</script>
+
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled 9</title>
+<link rel="stylesheet" type="text/css" href="Request%20Payments/Clear.css" />
+</head>
+
+<body>
+
+<div id="d01" style="display:none; position:absolute; border-style:solid; width:355px; height:300px; padding:3px;z-Index:3; left: 807px; top: 56px; opacity: 0.75;" class="div_style2" ></div>
+<div id="d02" style="display:none; position:absolute; border-style:solid;" class="div_st"></div>
+
+<form id="form1" runat="server">
+
+<input name="Text1" type="text" style="width: 226px; height: 28px" onmouseover="nmns('ssss','sss','sssss','sssss','sssss',this );" onmouseout="nmnf();" class="style6"  />
+<br />
+
+<input name="Text2" type="text" style="width: 226px; height: 28px" onmouseover="info('Ввод даты на портале','Правильній формат обеспечивает правильное отображение пна портала','форматик ХХ-ХХ-ХХ','Новости от 01-02-2012','http://portal.winner.ua',this);" class="style6"  /><br />
+
+<input name="Text3" type="text" style="width: 226px; height: 28px" onmouseover="nmns('ssss','sss','sssss','sssss','sssss',this );" onmouseout="nmnf();" class="style6"  />
+
+<br />
+<br />
+
+<input name="Button1" type="button" value="button" onclick="inputsform('ssss','ffff','fffffeee','dddd',222,'err')" />
+<br />
+<br />
+<input type="button" onclick="document.getElementById('Inp_users').style.display='';" value="Kartka" />
+
+<script>
+
+var Perem = 'none';
+//alert(Perem);
+
+</script>
+
+<p>There are <%response.write(Application("visitors"))%> online now!</p>
+
+<div id="Inp_users" style="width: 702px; height: 100%;display: =Perem" class="newStyle1" >
+
+<table style="width: 100%" class="style7">
+                    <tr>
+                                        <td colspan="3" class="style8" style="height: 40px">
+                                        <span lang="uk" class="style9">
+                                        <strong >Ввод нового      пльзователя в справочник</strong></span></td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="ru">Номер карточки</span></td>
+                                        <td style="width: 176px">
+
+                                        <asp:TextBox runat="server" id="d_num" Width="150px" EnableViewState="true"  Height="25px"></asp:TextBox>
+                                        </td>
+                                        <td style="width: 269px">
+                                        <asp:TextBox runat="server" id="d_card" Width="150px"  Height="25px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">Фамилия</span></td>
+                                        <td style="width: 176px">
+
+                                        <asp:TextBox runat="server" id="fam_ukr" Width="150px"  Height="25px"></asp:TextBox>
+                                        </td>
+                                        <td style="width: 269px">
+                                        <asp:TextBox runat="server" id="fam_eng" Width="150px"  Height="25px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">Имя</span></td>
+                                        <td style="width: 176px">
+
+                                        <asp:TextBox runat="server" id="name_ukr" Width="150px"  Height="25px"></asp:TextBox>
+                                        </td>
+                                        <td style="width: 269px">
+                                        <asp:TextBox runat="server" id="name_eng" Width="150px"  Height="25px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">Отчество</span></td>
+                                        <td style="width: 176px">
+                                        <asp:TextBox runat="server" id="lastname_ukr" Width="150px"  Height="25px"></asp:TextBox>
+                                        &nbsp;</td>
+                                        <td style="width: 269px">
+                                        <asp:TextBox runat="server" id="lastname_eng" Width="150px"  Height="25px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">
+                                        Компания</span></td>
+                                        <td style="colspan=2; width: 176px;">
+                                        <asp:DropDownList runat="server" id="d_company" Width="265px" Height="25px" >
+                                                            <asp:ListItem Value="1">Winner</asp:ListItem>
+                                                            <asp:ListItem Value="2">Winner Automotive</asp:ListItem>
+                                        </asp:DropDownList>
+
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">
+                                        Подразделение</span></td>
+                                        <td style="width: 269px" colspan="2">
+                                        <asp:DropDownList runat="server" id="d_division" Width="265px" Height="25px">
+                                        </asp:DropDownList>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">Отдел</span></td>
+                                        <td style="width: 269px" colspan="2">
+                                        <asp:DropDownList runat="server" id="d_department" Width="265px" Height="25px">
+                                        </asp:DropDownList>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">
+                                        Должность</span></td>
+                                        <td style="width: 269px" colspan="2">
+                                        <asp:DropDownList runat="server" id="d_position" Width="265px" Height="25px">
+                                        </asp:DropDownList>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">График
+                                        работы</span></td>
+                                        <td style="width: 269px" colspan="2">
+                                        <asp:DropDownList runat="server" id="d_shedule" Width="265px" Height="25px">
+                                        </asp:DropDownList>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">
+                                        Утверждает отчет</span></td>
+                                        <td style="width: 269px" colspan="2">
+                                        <asp:DropDownList runat="server" id="d_approval" Width="265px" Height="25px">
+                                        </asp:DropDownList>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">Подчиненность</span></td>
+                                        <td style="width: 269px" colspan="2">
+                                        <asp:DropDownList runat="server" id="d_inherit" Width="265px" Height="25px"></asp:DropDownList>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="ru">Дата приема на работу</span></td>
+                                        <td style="width: 269px" colspan="2">
+                                        <asp:TextBox runat="server" id="d_work" Width="258px" Height="25px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px"><span lang="uk">Мережеве имя</span></td>
+                                        <td style="width: 269px" colspan="2">
+                                        <asp:TextBox runat="server" id="d_net_name" Width="261px" Height="25px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px">&nbsp;</td>
+                                        <td style="width: 269px" colspan="2">
+                                        &nbsp;</td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 675px">
+                                        <asp:Button runat="server" Text="Сберегти" id="Button1" Width="136px" /></td>
+                                        <td style="width: 269px" colspan="2">
+                                        <asp:Button runat="server" Text="Відмовитись" id="Button2" Width="136px" /></td>
+                    </tr>
+</table>
+
+</div>
+
+<input name="Button223" type="button" value="button" onclick="var tt = 'INSERT S_USER (ID) VALUES (' + document.getElementById('TextBox16').value  + ')'; alert( tt);" />
+<br />
+<br />
+<br />
+<fieldset name="Group1" style="width: 689px; height: 100%">
+<legend class="style11"><span lang="uk" class="style10"><strong>Нов</strong></span><span lang="ru" class="style10"><strong>ы</strong></span><span lang="uk" class="style10"><strong>й
+пользователь </strong></span></legend>
+<table style="width: 100%" class="style7">
+                    <tr>
+                                        <td style="width: 119px; height: 18px">
+                                        <span lang="uk">Номер карточки</span></td>
+                                        <td style="height: 18px">
+
+                                        <asp:TextBox runat="server" id="d_num0" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px"><span lang="uk">Фамилия</span></td>
+                                        <td>
+
+                                        <asp:TextBox runat="server" id="d_num1" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px"><span lang="uk">Имя</span></td>
+                                        <td>
+
+                                        <asp:TextBox runat="server" id="d_num2" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px"><span lang="uk">
+                                        Отчество</span></td>
+                                        <td>
+
+                                        <asp:TextBox runat="server" id="d_num3" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px"><span lang="uk">Компания</span></td>
+                                        <td>
+
+                                        <asp:TextBox runat="server" id="d_num4" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px"><span lang="uk">Подразделение</span></td>
+                                        <td>
+
+                                        <asp:TextBox runat="server" id="d_num5" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px"><span lang="uk">Отдел</span></td>
+                                        <td>
+
+                                        <asp:TextBox runat="server" id="d_num6" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px"><span lang="uk">Должность</span></td>
+                                        <td>
+
+                                        <asp:TextBox runat="server" id="d_num7" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px"><span lang="uk">График работ</span><span lang="ru">ы</span></td>
+                                        <td>
+
+                                        <asp:TextBox runat="server" id="d_num8" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px"><span lang="ru">Мережеве имя</span></td>
+                                        <td >
+
+                                        <asp:TextBox runat="server" id="d_num9" Width="150px" EnableViewState="true"  Height="21px"></asp:TextBox>
+                                        </td>
+                    </tr>
+                    <tr>
+                                        <td style="width: 119px">
+                                        <a href="#">Записать</a></td>
+                                        <td >
+
+                                        &nbsp;</td>
+                    </tr>
+</table>
+</fieldset></form>
+<br />
+</body>
+</html>
