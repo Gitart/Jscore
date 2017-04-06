@@ -55,3 +55,35 @@ Save this block of code into test.html file and view it with your browser.
  </script>
  </html>
  ```
+ 
+## Else one sample
+
+Here we go :
+
+```javascript
+ var jsonArray = [{
+   "id": "1",
+   "alphabet": "a"
+ }, {
+   "id": "2",
+   "alphabet": "b"
+ }, {
+   "id": "3",
+   "alphabet": "c"
+ }, {
+   "id": "4",
+   "alphabet": "d"
+ }, {
+   "id": "5",
+   "alphabet": "e"
+ }];
+
+
+ $.each(jsonArray, function(index, object) {
+   alert(object.alphabet);
+ });
+ ```
+ 
+Play at : http://codepen.io/anon/pen/JdeyZr
+
+Sometimes, JQuery will complain(in console log) that the JSON array is not properly formatted. This is usually caused by malformed JSON string. To fix this issue, use the JQuery's parseJSON() function to parse the JSON array.
