@@ -1,8 +1,8 @@
 ## Javascript : Access JSON data example
 
-Problem:
-You have a JSON string such as below and you want to access the data individually via Javascript.   
-How to access the JSON data with Javascript?  
+Problem:   
+You have a JSON string such as below and you want to access the data individually via Javascript.      
+How to access the JSON data with Javascript?      
 
 ```json
  {
@@ -86,4 +86,10 @@ Here we go :
  
 Play at : http://codepen.io/anon/pen/JdeyZr
 
-Sometimes, JQuery will complain(in console log) that the JSON array is not properly formatted. This is usually caused by malformed JSON string. To fix this issue, use the JQuery's parseJSON() function to parse the JSON array.
+Sometimes, JQuery will complain(in console log) that the JSON array is not properly formatted. This is usually caused by malformed JSON string. To fix this issue, use the JQuery's parseJSON() function to parse the JSON array.  
+
+## Links
+http://api.jquery.com/jQuery.parseJSON/    
+http://api.jquery.com/jQuery.each/   
+
+
