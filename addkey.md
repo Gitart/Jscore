@@ -5,30 +5,25 @@
 // Add New Key
 // *****************************************************************************
 function AddDocs(){
-				 var msg = "Ок";
-				 var SendInfo = [{ Project  : $("#inp_project").val(),  
-								   Codekey  : "Bars-S020", 
-								   Names    : $("#datetime").val(),
-								   Percent  : $("#summa").val(),
-								   Title    : $("#inp_task").val(),
-								   Descript : $("#description").val(),
-								   Status   : "Input"}];
+var msg = "Ок";
+var SendInfo = [{ Project  : $("#inp_project").val(),  
+  	          Codekey  : "Bars-S020", 
+		  Names    : $("#datetime").val(),
+		  Percent  : $("#summa").val(),
+		  Title    : $("#inp_task").val(),
+		  Descript : $("#description").val(),
+		  Status   : "Input"}];
 				
-					  
-					  $.ajax({ url:     "/api/adddocs/",
-							 type:      "POST",
-							 headers: { "AccessKey":"KeySecret111", "X_CSRF_TOKEN":"xxxxxxxxxxxx"},
-							 cache:      false,
-							 data:       JSON.stringify(SendInfo),
-							 success:    function(){
-							                         alert("Отлично");
-                       							   },
-							 error:      function(){ alert("Error Insert");},
-							 complete:   function(){ alert("Completed");}
-                            });
-           }					  
-
-
+	 $.ajax({ url:     "/api/adddocs/",
+		  type:      "POST",
+		  headers: { "AccessKey":"KeySecret111", "X_CSRF_TOKEN":"xxxxxxxxxxxx"},
+		  cache:      false,
+		  data:       JSON.stringify(SendInfo),
+		  success:    function(){   alert("Отлично");},
+		  error:      function(){ alert("Error Insert");},
+		  complete:   function(){ alert("Completed");}
+	  });
+}					  
 
 // *****************************************************************************
 // Add New Key
