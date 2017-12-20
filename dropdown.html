@@ -1,0 +1,226 @@
+<!doctype html>
+
+<htmL>
+
+
+
+<head>
+
+
+      <meta charset="utf-8">
+      <title>Head Office</title>
+
+<style type="text/css">
+	
+	html,body
+{
+	margin: 0;
+	padding: 0;
+}
+img, a
+{
+	border: 0;
+	outline: 0;
+}
+*
+{
+  box-sizing:border-box;
+}
+.ContainerWrap
+{
+	max-width: 1180px;
+	min-width: 200px;
+	width: auto;
+	height: auto;
+	margin: 0px auto;
+  font-family: arial;
+}
+.Container
+{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+.clearFix
+{
+	clear: both;
+	height: 0;
+}
+.configuratorWrap
+{
+    width: 300px;
+  height: auto;
+      margin: 50px auto;
+}
+.configDropDown {
+  background: #fff;
+  display: inline-block;
+  padding: 10px 50px 10px 10px;
+  border: 1px solid #999;
+  position: relative;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+  margin-right: 7px;
+  margin-bottom: 10px;
+  min-width: 120px;
+}
+
+.dropArrow
+{
+  background: url(http://s14.postimg.org/5go5t4bhp/arrow_drop.png)no-repeat;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  display: block;
+  width: 16px;
+  height: 8px;
+  background-position: 0px -8px;
+  margin-top: -4px;
+}
+.configDropDown:hover .dropArrow
+{
+  background: url(http://s14.postimg.org/5go5t4bhp/arrow_drop.png)no-repeat;
+  background-position: 0px 0px;
+}
+.configDropDownSelect
+{
+  font-size: 18px;
+  color: #999;
+}
+.configDropDownDisabled
+{
+  border: 1px solid #f0f0f0;
+  cursor: default;
+}
+.configDropDownDisabled:hover .dropArrow
+{
+  background: url(http://s14.postimg.org/5go5t4bhp/arrow_drop.png)no-repeat;
+  background-position: 0px -8px;
+}
+.configDropDownDisabled .configDropDownSelect
+{
+  color: #E0E0E0;
+}
+.configDropDown:hover
+{
+  border: 1px solid #666;
+}
+.configDropDown:hover .configDropDownSelect
+{
+  color: #666;
+}
+.configDropDownDisabled:hover
+{
+  border: 1px solid #E0E0E0;
+}
+.configDropDownDisabled:hover .configDropDownSelect
+{
+  color: #E0E0E0;
+}
+.configDropDown ul
+{
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  top: 42px;
+  width: 100%;
+  background-color: #fff;
+  left: 0px;
+  display: none;
+  z-index: 3;
+}
+.configDropDown ul li
+{
+  padding: 5px 0px 5px 15px;
+  border: 1px solid #ccc;
+  border-top: 0px;
+  color: #999;
+}
+.configDropDown ul li:last-child
+{
+  
+}
+.configDropDown ul li:hover
+{
+  background: #ccc;
+  color: #fff;
+}
+.CtaButton
+{
+  color: #fff;
+  background: #ccc;
+  display: inline-block;
+  padding: 10px 10px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+cursor: default;
+position: relative;
+}
+.CtaButton a
+{
+    color: #fff;
+  cursor: default;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.CtaButtonActive a
+{
+  cursor: pointer;
+}
+.CtaButtonActive
+{
+  background: #00b4e5;
+  cursor: pointer;
+}
+
+
+</style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
+  <script type="text/javascript">
+   $(function() {
+
+    var data = [
+                 {"id": "1", "name": "Полтавская"},
+                 {"id": "2", "name": "Киевская"},
+                 {"id": "3", "name": "Испанская"},
+                 {"id": "4", "name": "Ровненская"},
+                 {"id": "5", "name": "Львовская"}
+               ];        
+
+    $.each(data, function(i, option) {
+        $('#sel').append($('<option/>').attr("value", option.id).text(option.name));
+    });
+})
+
+  </script>
+	
+</head>
+
+
+<body>
+      <h1>Примеры заполнения dropdown</h1>
+      <a href="https://jsfiddle.net/raju_sumit/681ppgq0/5/">Sample </a><br>
+      <a href="http://stackoverflow.com/questions/18484762/populating-drop-down-with-json-object">Sample </a><br>
+      <a href="http://stackoverflow.com/questions/6532791/fill-dropdown-list-with-json">Json populate</a>
+
+      <hr>
+
+    	<select id="sel">
+    
+      </select>
+
+	    <div class="configuratorWrap"> </div>
+
+</body>
+</htmL>
