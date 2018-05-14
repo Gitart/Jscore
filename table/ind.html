@@ -1,0 +1,62 @@
+<html>
+<head>
+
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.css" />
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.min.css" />
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.min.js"></script>
+<script>
+$(function() {
+ 
+    $("#jsGrid").jsGrid({
+        height: "auto",
+        width: "100%",
+ 
+        sorting: true,
+        paging: false,
+        autoload: true,
+ 
+        controller: {
+            loadData: function() {
+                var d = $.Deferred();
+ 
+                $.ajax({
+                    url: "http://services.odata.org/V3/(S(3mnweai3qldmghnzfshavfok))/OData/OData.svc/Products",
+                    dataType: "json"
+                }).done(function(response) {
+                    d.resolve(response.value);
+                });
+ 
+                return d.promise();
+            }
+        },
+ 
+        fields: [
+            { name: "Name", type: "text" },
+            { name: "Description", type: "textarea", width: 150 },
+            { name: "Rating", type: "number", width: 50, align: "center",
+                itemTemplate: function(value) {
+                    return $("<div>").addClass("rating").append(Array(value + 1).join("&#9733;"));
+                }
+            },
+            { name: "Price", type: "number", width: 50,
+                itemTemplate: function(value) {
+                    return value.toFixed(2) + "$"; }
+            }
+        ]
+    });
+ 
+});
+</script>	
+</head>
+<body>
+	<div id="jsGrid"></div>
+</body>
+
+</html>
