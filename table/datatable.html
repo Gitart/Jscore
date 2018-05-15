@@ -1,0 +1,51 @@
+1) Have a well-structured table
+
+2) Get all the necessary codes from CDN
+Here are 4 core files that need to be included:
+
+https://code.jquery.com/jquery-1.12.4.js
+https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css
+https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js
+
+
+3) Put the code in your script
+
+/ Simple initialization
+$(document).ready(function() {
+    $('#exampleTable').DataTable();
+});
+
+// Example of initialization with AJAX for power users
+$(document).ready(function() {
+    $('#exampleTable').DataTable( {
+        "ajax": "server/api/employees",
+        "columns": [
+            { "data": "name" },
+            { "data": "position" },
+            { "data": "office" },
+            { "data": "extn" },
+            { "data": "start_date" },
+            { "data": "salary" }
+        ]
+    } );
+} );
+
+
+
+<table id="exampleTable" class="table table-striped table-bordered" width="100%" cellspacing="0">
+<thead>
+<tr>
+<th>Name</th>
+<th>Last Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ali</td>
+<td>Kutluozen</td>
+</tr>
+</tbody>
+</table>
+
+
+
