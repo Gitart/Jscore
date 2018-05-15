@@ -1,0 +1,161 @@
+
+<!DOCTYPE html><html lang='en' class=''>
+<head>
+
+  <!-- <script src='http://static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script>
+  <script src='http://static.codepen.io/assets/editor/live/css_live_reload_init-890dc39bb89183d4642d58b1ae5376a0193342f9aed88ea04330dc14c8d52f55.js'></script>
+   --><meta charset='UTF-8'><meta name="robots" content="noindex">
+  <link rel="shortcut icon" type="image/x-icon" href="http://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+  <link rel="mask-icon" type="" href="http://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <link rel="canonical" href="https://codepen.io/IamManchanda/pen/JyvwJg" />
+
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css'>
+<style class="cp-pen-styles">body {overflow: scroll;}
+.form-container {background-color: #eaeaea;padding: 1rem;}
+.content-container {padding: 1rem;border-left: 1px solid #d9d9d9;}
+.content-container h1.h3 small {font-size: 60%;}
+.callout p {margin-bottom: 0;}
+.form-error { font-size: 0.8rem; }
+#errorCallout { display: none; }
+
+@media screen and (min-width: 40em) {
+  body {overflow: hidden;}
+  .form-container {min-height: 100vH;}
+}
+
+@media screen and (max-width: 39.9375em) {
+  body { padding-left: .5rem; padding-right: .5rem;}
+}</style></head><body>
+<div class="grid-container-fluid">
+  <div class="grid-y medium-grid-frame">
+    <div class="cell medium-cell-block-container">
+      <div class="grid-x grid-padding-x">
+        <div class="small-12 medium-4 large-3 cell form-container shadow medium-cell-block-y">
+          <form id="myForm">
+            <h4>Add a Member</h4>
+            <p>Add details below and you will see them in these cards <span class="show-for-medium">on the right hand side.</span><span class="show-for-small-only">below the form.</span></p>
+            <div class="alert callout small" id="errorCallout">
+              <p><i class="fi-alert"></i> Please fill the whole form!</p>
+            </div>
+            <div class="form-group">
+              <label for="member_name">Name:</label>
+              <input type="text" id="member_name" placeholder="Enter member's name" />
+            </div>
+            <div class="form-group">
+              <label for="member_email">Email:</label>
+              <input type="text" id="member_email" placeholder="Enter member's email" />
+            </div>
+            <div class="form-group">
+              <label for="member_age">Age:</label>
+              <input type="text" id="member_age" placeholder="Enter member's age" />
+            </div>
+            <input type="submit" class="button primary expanded" value="Add User">
+          </form>
+        </div>
+        <div class="small-12 medium-8 large-9 cell content-container medium-cell-block-y">
+          <h1 class="h3">Member's List <small>Latest Entries Above</small></h1>
+          <div class="grid-x grid-padding-x" id="parent_avatars">
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+<script src='http://static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+<script >var db = [
+  { name: 'Queen Elizabeth II', email: 'uk@mother.earth', age: 91 },
+  { name: 'Donald Trump', email: 'usa@mother.earth', age: 71 },
+  { name: 'Narendra Modi', email: 'ind@mother.earth', age: 66 },
+  { name: 'Xi Jinping', email: 'chn@mother.earth', age: 64 },
+  { name: 'Vladimir Putin', email: 'rus@mother.earth', age: 64 },
+  { name: 'Shinzo Abe', email: 'jp@mother.earth', age: 62 },
+  { name: 'Satya Nadella', email: 'ms@mother.earth', age: 50 },
+  { name: 'Sundar Pichai', email: 'abc@mother.earth', age: 45 },
+  { name: 'Jack Dorsey', email: 'tw@mother.earth', age: 40 },
+  { name: 'Lila Tretikov', email: 'wiki@mother.earth', age: 39 },
+  { name: 'Mark Zuckerberg', email: 'fb@mother.earth', age: 33 },
+  { name: 'Evan Spiegel', email: 'snap@mother.earth', age: 27 }
+];
+
+(function Avatars(db) {
+  this.init = function () {
+    this.generateList();
+    this.enterUser();
+  }
+  
+  this.generateList = function () {
+    var parent = document.querySelector('#parent_avatars');
+    var template = '';
+    for (var i = 0; i < db.length; i++) {if (window.CP.shouldStopExecution(1)){break;}
+      template += '<div class="medium-6 large-4 cell"><div class="callout secondary radius shadow">';
+      template +=   '<h5>' + db[i].name + '</h5>';
+      template +=   '<p><strong>Email:</strong> ' + db[i].email + '</p>'
+      template +=   '<p><strong>Age:</strong> ' + db[i].age + '</p>'
+      template +=   '<button class="close-button" type="button" data-card="' + i + '">&times;</button>'
+      template += '</div></div>';
+    }
+window.CP.exitedLoop(1);
+
+
+    parent.innerHTML = '';
+    parent.insertAdjacentHTML('afterbegin',template);
+    deleteCard();
+  }
+
+  this.enterUser = function () {
+    function grabUser () {
+      var memberName = document.querySelector('#member_name').value;
+      var memberEmail = document.querySelector('#member_email').value;
+      var memberAge = document.querySelector('#member_age').value;
+      var elements = [memberName, memberEmail, memberAge];
+
+      if (validateUser(elements)) {
+        document.querySelector('#myForm').reset();
+        db.unshift({name: memberName, email: memberEmail, age: memberAge});
+        generateList();
+      } else {
+        document.querySelector('#errorCallout').style.display = 'block';
+        setTimeout(function () {
+          document.querySelector('#errorCallout').style.display = 'none';
+        }, 3000);
+      }
+    }
+
+    document.querySelector('#myForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      grabUser();
+    });
+  }
+
+  this.validateUser = function (inputs) {
+    for (var i = 0; i < inputs.length; i++) {if (window.CP.shouldStopExecution(2)){break;}
+      if (inputs[i] == '') return false;
+    }
+window.CP.exitedLoop(2);
+ return true;
+  };
+
+  this.deleteCard = function () {
+    var closeButtons = document.querySelectorAll('.close-button');
+    function deleteThis (element) {
+      var obj = parseInt(element.getAttribute('data-card'));
+      db.splice(obj, 1);
+      generateList();
+    }
+
+    for (var i = 0; i < closeButtons.length; i++) {if (window.CP.shouldStopExecution(3)){break;}
+      closeButtons[i].addEventListener('click', function () {
+        deleteThis(this);
+      });
+    }
+window.CP.exitedLoop(3);
+
+    
+  }
+
+  this.init();
+})(db);
+
+//# sourceURL=pen.js
+</script>
+</body></html>
