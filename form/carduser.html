@@ -1,0 +1,348 @@
+
+<!-- https://www.jqueryscript.net/demo/Tag-Input-With-Autocomplete-jQuery-Tagator/ -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	  <meta charset="utf-8">
+	  <title>Задача</title>
+	
+	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	  
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	  
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	  <link   href="http://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'>
+
+
+	  <link rel="stylesheet" href="css/core.css">
+      <link rel="stylesheet" href="css/main.css">
+
+
+
+
+	   	   
+	  <!-- Include Bootstrap Datepicker 
+		   http://eternicode.github.io/bootstrap-datepicker/?markup=input&format=&weekStart=&startDate=&endDate=&startView=0&minViewMode=0&maxViewMode=1&todayBtn=true&clearBtn=false&language=ru&orientation=auto&multidate=&multidateSeparator=&todayHighlight=on&keyboardNavigation=on&forceParse=on#sandbox
+
+		   http://xdsoft.net/jqplugins/datetimepicker/
+		   http://stefangabos.ro/jquery/zebra-datepicker/
+		   http://ionden.com/a/plugins/ion.calendar/en.html
+	   -->
+
+	  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+	  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+	  <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+	
+	  <script src="js/mask.js"></script>
+
+
+      <!-- Tagator -->
+      <link rel="stylesheet" href="https://www.jqueryscript.net/demo/Tag-Input-With-Autocomplete-jQuery-Tagator/fm.tagator.jquery.css"/>
+      <script src="https://www.jqueryscript.net/demo/Tag-Input-With-Autocomplete-jQuery-Tagator/fm.tagator.jquery.js"></script>
+	
+	  <!--https://github.com/digitalBush/jquery.maskedinput-->
+	  <script>
+
+		   $(function($){
+					  $("#Busscode").mask("99/99/9999",{placeholder:"99/99/9999"});
+					  $("#Code").mask("?999999999999", {placeholder:"XXXXXXXXXXXX"});
+					  $("#Country").mask("(999) 999-9999? x99999",{placeholder:"XXXXXXXXX"});
+					  $("#Email").mask("(999) 999-9999? x99999",{placeholder:"XXXXXXXXX"});
+					  $("#Street").mask("99/99/9999",{completed:function(){alert("You typed the following: "+this.val());}});
+					});  
+
+		   $(function() {
+				$("#datepickerss").datepicker();
+			  });
+
+	  		
+
+			  // Save information
+			  function Saveinformation(){
+
+
+				$Post({url:"inform/save", 
+					   data:"Data",
+					   suuccess(){
+					   			  $("#Ok").html("Данне задачи записаны.")
+								 }
+								});
+			}	
+
+	 </script>
+<script>
+// var cuisines = ["Chinese","Indian"];     
+// var sel = document.getElementById('CuisineList');
+// for(var i = 0; i < cuisines.length; i++) {
+//     var opt = document.createElement('option');
+//     opt.innerHTML = cuisines[i];
+//     opt.value = cuisines[i];
+//     sel.appendChild(opt);
+// }
+function Changeregion(data){
+	 //alert(data.value);
+	 //alert(data.selectedIndex);
+
+	  var select = document.getElementById("Area"); 
+	  var idx=data.selectedIndex;
+	  var options = ["02.Винницкая", "06.Житомирская", "03.Киевская", "04.Кировоградская", "05.Полтавская","06.Сумская","07.Черкасская","08.Черниговская"]; 
+					  
+			// Центр
+			if (idx==1) {
+			   var options = ["02.Винницкая", "06.Житомирская", "10.Киевская", "12.Кировоградская", "17.Полтавская",  "19.Сумская", "24.Черкасская", "25.Черниговская"]; 
+			}
+
+			// Южный					  
+			if (idx==2) {
+			   options = ["01.АР Крым", "08.Запорожская", "15.Николаевская", "16.Одесская", "22.Херсонская", "27.Севастопольская"]; 
+			}
+					  
+			// Bосточный
+			if (idx==3) {
+				options = ["04.Днепропетровськая", "05.Донецкая", "13.Луганськая", "21.Харківськая"]; 
+			}
+					  
+			// Западный      
+			if (idx==4) {
+				options = ["03.Волынскую", "07.Закарпатскую", "09.Ивано-Франковскую", "14.Львовскую", "18.Ровенскую", "20.Тернопольскую", "23.Хмельницкую", "26.Черновицкую"]; 
+	        }
+				
+	  // Optional: Clear all existing options first:
+	  select.innerHTML = "";
+					  
+	  // Populate list with options:
+	  for(var i = 0; i < options.length; i++) {
+		  var opt = options[i].split(".");
+		  var codereg = opt[0];  
+		  var namereg = opt[1];
+		  select.innerHTML += "<option value=\"" + codereg + "\">" + namereg + "</option>";
+		  }
+	  }
+
+
+// ****************************************************************
+// Parse URL
+// ****************************************************************
+function ParseUrl(){
+  var url=window.location;
+  //alert(url.search.split("&")[1].split("=")[1]);
+  alert(getParameterByName("ID",url));
+  alert(getParameterByName("id",url));
+  alert(getParameterByName("er",url));
+  alert(getParameterByName("key",url));
+  alert(getParameterByName("mode",url));
+  alert(getParameterByName("type",url));
+  alert(getParameterByName("region",url));
+  alert(getParameterByName("ern",url));
+  var select = document.getElementById("Region"); 
+  select.selectedIndex=2;
+  select.onchange();
+}
+
+
+// ****************************************************************
+// Get url & parameters
+// ****************************************************************
+function getParameterByName(name, url) {
+	if (!url) url = window.location.href;
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+// ****************************************************************
+// Split parameter
+// ****************************************************************
+function Spl(Parser, Num){
+  return Parser.split("&")[Num].split("=")[1];
+}
+</script>
+
+
+<script>
+		$(function () {
+			var $contrvers    = $('#contrvers');
+			var $activate_tagator1 = $('#activate_tagator1');
+			$activate_tagator1.click(function () {
+				if ($contrvers.data('tagator') === undefined) {
+					$contrvers.tagator({
+						autocomplete: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'],
+						useDimmer: true
+					});
+					$activate_tagator1.val('destroy tagator');
+				} else {
+					$contrvers.tagator('destroy');
+					$activate_tagator1.val('activate tagator');
+				}
+			});
+			$activate_tagator1.trigger('click');
+		});
+	</script>
+</head>
+
+
+<body>
+
+    <a href="#sss" onclick="ParseUrl()" >Parse Url</a>
+  
+    <!--Header notification-->
+    <div id="Headinform"></div>
+
+    <div id="formmain" class="formbody">
+		 <div id ="formhead" class="frm_head">
+			  <h3 onclick="Changeregion()">Задача</h3>
+			  <p>Введите свою задачу</p>
+		 </div>
+		
+		
+	    <div id="formbody" class="frmmain">
+           <div id="formbody" class="frm_body">
+				   	
+
+						 <div>
+							  <label  class="frm_label">Фамилия</label>
+							  <input type="text" id="Fam" name="Fam"/>
+						 </div>
+
+						 <div>
+							  <label  class="frm_label">Имя</label>
+							  <input type="text" id="Nm" name="Nm"/>
+						 </div>
+
+						<div>
+							  <label  class="frm_label">Тип</label>
+							  <select id="frm">
+									  <option val="TL">Тим лид </option>
+									  <option val="DEV">Разработчик</option>
+							  </select>
+						 </div>
+						 <div>
+							  <label class="frm_label">Должность</label>
+							  <select id="Position" name="Position">
+								     	<option val="0">-- Выберите должность --</option>
+										<option val="01">Разработчик веб</option>
+										<option val="02">Разработчик баз данных</option>
+										<option val="03">Архитектор баз данных</option>
+										<option val="04">Архитектор web</option>
+										<option val="05">Администратор баз данных</option>
+							  </select>         
+
+						 </div>
+
+						 <div>
+							  <label class="frm_label">Базы данных</label>
+							  <input type="text" id="Bd" name="Bd"/>
+						 </div>
+					   
+
+						<div>
+							  <label class="frm_label">Язык программирования</label>
+							  <select id="Region" onchange="Changeregion(this)">
+										<option val="0">-- Выберите язык программирования --</option>
+										<option val="1">ASpx dot.net</option>
+										<option val="2">Java</option>
+										<option val="3">Javascript</option>
+										<option val="4">NodeJs</option>
+							  </select>         
+						 </div>
+
+						 <div>
+							  <label class="frm_label">Frame work</label>
+							  <select id="Frmw" name="Frmw">
+										<option val="0">-- Выберите frame work --</option>
+										<option val="01">Angular</option>
+										<option val="02">Bootstrup</option>
+										
+							  </select>         
+						 </div>
+
+						 <div>
+							  <label class="frm_label">Дата приема</label>
+							  <input type="text" id="Twork" name="Twork"/>
+						 </div>
+
+						 
+
+						 <div>
+							  <label class="frm_label">E_mail</label>
+							  <input type="text" id="Email" name="Email"/>
+						 </div>
+
+
+						 <div>
+							  <label class="frm_label">Примечание</label>
+							  <input type="text" name="Remark" id="Remark"/>
+						 </div>
+				   
+						 <div >
+							  <label class="frm_label">Телефон</label>
+							  <input type="text" id="Telephone" name="Telephone"/>
+						 </div>
+					   
+					     <div>
+							  <label class="frm_label">Дата</label>
+							  <input type="text" id="datepickerss" name="datepickerss"/>
+						 </div>
+					   
+						 <div>
+						 	<input type="text" id="contrvers" name="contrvers"/>
+
+							  <label  class="frm_label">Система контроля версий</label>
+							  <input id="activate_tagator2" type="text" class="tagator" value="jQuery,Script,Net" data-tagator-show-all-options-on-focus="true" data-tagator-autocomplete="['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']">
+							  <select id="contrver" name="contrver" >
+									  <option val="C1"> Git</option>
+									  <option val="C2"> Svn</option>
+									  <option val="C3"> Gitlab </option>
+							  </select>
+						 </div>
+								  
+						 <div class="form-group has-error">
+							  <label class="frm_label">Примечание</label>
+							  <input type="text" id="Noted" name="Note"/>
+						 </div>
+		          </div>
+
+			
+			 <div class="panel-footer clearfix">
+				  <div class="pull-right">
+					   <button type="reset"   class="btn btn-info"     id="Reject"  onclick="Saveinformation();">Отказаться</button>
+					   <button type="button"  class="btn btn-default"  id="Inform"  onclick="Information();">Справка</button>
+					   <button type="Submit"  class="btn btn-success"  id="Save"     onclick="Saveinformation();">Сохранить</button>
+					   <button type="submit" class="btn btn-primary">Confirm identity</button>
+				  </div>
+			 </div>
+		</div>
+
+		<div id="forfooter" class="footter">
+			 <small></small>
+		</div>
+	   
+	   <!--
+		 <div class="input-group input-append date" id="datePicker">
+						   <input type="text" class="form-control" name="date" />
+						   <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+		 </div>
+		 -->
+   </div>
+		   
+	<!--Inform div-->
+	<div id="Informdiv"></div>    
+	<!--Notify window-->
+	<div id="notify" style="display: none;">
+		 <div id="notify_head"></div>
+		 <div id="notify_body"></div>
+		 <div id="notify_foot"></div>
+	</div>
+</body>
+	
+</script>
+</html>
