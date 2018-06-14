@@ -4,7 +4,8 @@
     $("#rls").hide().load("/bank/qa/ #rls tbody").fadeIn('500');
 ```
 
-## Full code
+
+## Page code
 
 ```html
 <!DOCTYPE html>
@@ -192,8 +193,5 @@ function RefreshTab(){
 {{template "footer"}}
 </html>
 ```
-
-
-
 
 
