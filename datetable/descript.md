@@ -1,6 +1,6 @@
 ## Обновление таблицы после вставки записи
 
-'''javascript
+'''
 
   $("#rls").hide().load("/bank/qa/ #rls tbody").fadeIn('500');
 
