@@ -1,8 +1,8 @@
 ## Обновление таблицы после вставки записи
 
-'''
+```
 
-  $("#rls").hide().load("/bank/qa/ #rls tbody").fadeIn('500');
+  $("#rls").hide().load("/bk/qa/ #rls tbody").fadeIn('500');
 
 ```
 
@@ -34,7 +34,7 @@ $(document).ready(function() {
 function Refreshtable(){
 	// var table = $('#rls').DataTable();
 	// table.destroy();
-	$("#rls").hide().load("/bank/qa/ #rls tbody").fadeIn('500');
+	$("#rls").hide().load("/bk/qa/ #rls tbody").fadeIn('500');
 }
 
 function Showtab(){
@@ -68,11 +68,11 @@ function Showtab(){
     // *******************************************************
     function Saveform(){
 
-       var Dt=$('#rls').DataTable();	
+       var Dt=$('#rs').DataTable();	
        var str = $("#Cform").serialize();
        // var id  = $("#number").text();
      
-       $.ajax({type:"POST", url: '/bank/qa/add/', data:str, success: function(response) {
+       $.ajax({type:"POST", url: '/bk/qa/add/', data:str, success: function(response) {
                 $('#Descr').focus();
                 $('#Cform')[0].reset();
                 $.notify(response, "success");
@@ -105,7 +105,7 @@ function Dellall(){
 
 // del One record
 function Dellone(Id){
-	  $.ajax({type:"DELETE", url: '/bank/qa/dellone/'+Id, data:Id, success: function(response) {
+	  $.ajax({type:"DELETE", url: '/bk/qa/dellone/'+Id, data:Id, success: function(response) {
 	  	        $("#T_"+Id).hide(100);
                 $.notify(response+Id, "success");
           }});
