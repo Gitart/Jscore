@@ -1,9 +1,8 @@
 ## Обновление таблицы после вставки записи
 
 '''javascript
-    $("#rls").hide().load("/bank/qa/ #rls tbody").fadeIn('500');
+  $("#rls").hide().load("/bank/qa/ #rls tbody").fadeIn('500');
 ```
-
 
 ## Page code
 
@@ -15,13 +14,12 @@
     <title>Довідка</title>
     {{template "libs"}}
     <script src="/static/js/notify.js"></script>
-
   <style>
           .form-group {margin-bottom: -20px;}
            /* Note: Try to remove the following lines to see the effect of CSS positioning */
            .affix { top: 0;   width: 100%;z-index: 9999 !important;}
            .affix + .container-fluid {padding-top: 70px;}
-  </style>
+ </style>
 
  <script type="text/javascript">
 
@@ -193,5 +191,3 @@ function RefreshTab(){
 {{template "footer"}}
 </html>
 ```
-
-
