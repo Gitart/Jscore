@@ -1,4 +1,25 @@
 
+## Work variant
+```js
+ // Save only    
+                function Saverep(Key){
+                	var url="/admin/update/"+Key;
+                	dts=$('#b_'+Key).val();
+ 
+                     $.ajax({type:        'POST', 
+                		     dataType:    'json',
+                             contentType: 'application/json; charset=utf-8',
+                	 	     url:          url,
+                	 	     data:         JSON.stringify({'Otv':dts}),
+                	 	     complete:     function(data){
+                                              $.notify("Заявка № " + Key + " обновлена.", "success"); 
+                	 	     	           },
+                	 	     success:      function(data){alert("Ок");},
+                	 	     done:         function(data){alert(data);}
+                	 	 });
+                } 
+```
+
 
 ## Sample 1 Ajax
 
