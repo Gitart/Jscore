@@ -1,3 +1,28 @@
+## Works
+```js
+
+function Updaterls(){
+
+   var rls = $("#Rlsname").val();                
+   var str = $("#Rlsupdate").serialize();
+
+   $.ajax({type:'POST', 
+           url:'/rls/updates/', 
+           data:str, 
+           success: function(response, datas) {
+                if (datas=="success"){
+                    $.notify(response, "success");
+                }else{
+                    $.notify("Ошибка!Данные не обновлены.", "info"); 
+                }   
+           }, 
+           error: function (errormessage,dater,coder) {
+                 $.notify(coder , "warn");   
+           }
+ });
+};
+```
+
 
 ## Work variant
 ```js
