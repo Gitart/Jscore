@@ -15,6 +15,7 @@ https://www.npmjs.com/package/gulp-mysql-command-file-processor
 ## SQL LITE
 https://www.npmjs.com/package/better-sqlite3   
 https://www.npmjs.com/package/websql  
+https://github.com/JoshuaWise/better-sqlite3/wiki/API  
 
 
 ## Oracle  
