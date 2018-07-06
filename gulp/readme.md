@@ -23,3 +23,7 @@ https://oracle.github.io/node-oracledb/doc/api.html
 https://oracle.github.io/node-oracledb/doc/api.html#intro  
 https://github.com/JoshuaWise/better-sqlite3/wiki/API
 
+
+
+## NPM
+https://www.npmjs.com/package/jl-sql-api  
