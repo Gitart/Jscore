@@ -37,4 +37,6 @@ https://github.com/JoshuaWise/better-sqlite3/wiki/API
 https://www.npmjs.com/package/jl-sql-api  
 https://www.npmjs.com/package/forms-generator   
 
+## RETHINKDB
+https://www.npmjs.com/package/rethinkdb-job-queue  
 
