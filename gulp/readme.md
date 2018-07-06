@@ -6,6 +6,13 @@ https://www.npmjs.com/package/gulp-define-golang-template
 https://www.npmjs.com/package/gulp-go-tools   
 https://www.npmjs.com/package/gulp-gobin   
 
+
+https://www.npmjs.com/package/generator-go-microservice  
+https://www.npmjs.com/package/blank-cli  
+
+https://www.npmjs.com/package/golang-server-reload  
+
+
 ## SQL
 https://www.npmjs.com/package/gulp-pretty-data    
 https://www.npmjs.com/package/gulp-db   
