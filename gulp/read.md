@@ -25,6 +25,11 @@ gulp.task('default', function() {
 });
 ```
 
+## Обязательно
+Должна быть заадача по умолчанию.
+**gulp.task('default'**   
+
+
 ### Запуск 
 
 gulp
