@@ -5,7 +5,8 @@
 3. Создание настроечного файла 
 
 ### gulpfile.js
-'''js
+
+```js
 var gulp = require('gulp');
 
 // Собираем Stylus
