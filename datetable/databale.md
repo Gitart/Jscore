@@ -89,3 +89,62 @@ $(document).ready(function() {
 });
 //
 ```
+
+
+### The table above has many records and is using the jQuery Datatables in Action, there are 5 elements that are given by default:
+
+Dropdown to select the number of records to be displayed.
+You can search information on the table itselft by using this input area.
+You can sort the records
+A Legend that displays the number of records been displayed as well as the total.
+A Paginator where you can jump to any page that you desire.
+Implementing the plugin Datatables is not a complex thing, customizing the plugin make the things interesting. On future post I will be showing how to add or remove the elements of the Datatables or also adding filters/custom input areas on the headers of the table so that you can search by column and not globally, also I will be showing who to load information on the Datatables dynamically using Ajax, this is to avoid a heavy request to the server when there are many records on the database.
+
+FINAL RAW CODE
+
+```html
+
+<!doctype html>
+<html>
+    <head>
+        <title>jQuery Datatables</title>
+        <link rel="stylesheet" href="css/datatables.min.css"/>
+    </head>
+    <body>
+ 
+    	<table id="resultTable" class="table table-striped resultTable">
+	        <thead>
+	            <tr>
+	                <th>Employee ID</th>
+	                <th>Name</th>
+	                <th>Email</th>
+	                <th>Telephone</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	        	<tr>
+	        	    <td><a href="#">1</a></td>
+	        	    <td>Dennis Ritchie</td>
+	        	    <td>dritchie@bell.com</td>
+	        	    <td>555-154-8745</td>
+	        	</tr>
+	        	<tr>
+	        	    <td><a href="#">2</a></td>
+	        	    <td>Ken Thompson</td>
+	        	    <td>kthompson@bell.com</td>
+	        	    <td>555-154-1234</td>
+	        	</tr>
+	        </tbody>
+	    </table>
+		<script src="js/jquery-1.11.3.js"></script>
+        <script src="js/datatables.min.js"></script>
+        <script>
+        	$(document).ready(function() {
+        		$('#resultTable').DataTable();
+        	});
+        </script>
+    </body>
+</html>
+```
+
+
