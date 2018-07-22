@@ -41,6 +41,27 @@ Now that you have setup the code for the table we have to add the resources prev
 ### RUNNING JQUERY DATATABLES.
 Applying the jQuery datatables plugin is very easy, just like any other jQuery plugin you have to initialize it. Remember that in the HTML table we setup the class id resultTable, so we are going to use that as our selector.
 
+### Column settings
+
+```js
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "ajax": {
+            "url": "data/objects_root_array.txt",
+            "dataSrc": ""
+        },
+        "columns": [
+            { "data": "name" },
+            { "data": "position" },
+            { "data": "office" },
+            { "data": "extn" },
+            { "data": "start_date" },
+            { "data": "salary" }
+        ]
+    } );
+} );
+```
+
 
 app.js
 ```js
