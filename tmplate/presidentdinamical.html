@@ -1,0 +1,113 @@
+
+<!DOCTYPE html><html lang='en' class=''>
+<head>
+<script src='http://static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script>
+<script src='http://static.codepen.io/assets/editor/live/css_live_reload_init-e9c0cc5bb634d3d14b840de051920ac153d7d3d36fb050abad285779d7e5e8bd.js'></script>
+<meta charset='UTF-8'>
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" type="image/x-icon" href="http://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+<link rel="mask-icon" type="" href="http://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+<link rel="canonical" href="https://codepen.io/webdevelopers/pen/jBdyVm?editors=1010" />
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdn.rawgit.com/webdevelopers-eu/jquery-template/master/template.css'>
+
+<style class="cp-pen-styles">
+</style>
+</head>
+
+<body>
+<!-- https://github.com/webdevelopers-eu/jquery-template -->
+<div id="example" class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div>
+        <small z-var="order ."></small>.
+        <big class="modal-title" z-var="president .">Name Here</big>
+      </div>
+      <button z-var="like ?" class="btn btn-success">:-)</button>
+      <button z-var="!like ?" class="btn btn-danger">:-(</button>
+    </div>
+    <div class="modal-body">
+      <p>Presidency term <span z-var="presidency .">Year Here</span></p>
+
+      <p z-var="!following ?" class="alert alert-danger">
+        This is the last president!
+      </p>
+      <p z-var="following ?">Following presidents:</p>
+      <ul>
+        <li template="[following]" z-var="president ., presidency .">
+          ${president} (${presidency})
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script src='http://static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script><script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script><script src='https://cdn.rawgit.com/webdevelopers-eu/jquery-template/master/jquery.template.js'></script>
+
+<script >// https://github.com/webdevelopers-eu/jquery-template
+setInterval(function () {
+  // Start from the beginning if at the end
+  if (pos == presidents.length) pos = 0;
+
+  // Choose current president
+  var dataset = presidents[pos++];
+
+  dataset.like = Math.random() > 0.3; // Random smiley
+  dataset.order = pos;
+  dataset.following = presidents.slice(pos);
+
+  // No cleanup needed before applying new template
+  $('#example').template(dataset);
+}, 250);
+
+var pos = 0;
+var presidents = [
+{ "president": "George Washington", "presidency": "1789-1797" },
+{ "president": "John Adams", "presidency": "1797-1801" },
+{ "president": "Thomas Jefferson", "presidency": "1801-1809" },
+{ "president": "James Madison", "presidency": "1809-1817" },
+{ "president": "James Monroe", "presidency": "1817-1825" },
+{ "president": "John Quincy Adams", "presidency": "1825-1829" },
+{ "president": "Andrew Jackson", "presidency": "1829-1837" },
+{ "president": "Martin Van Buren", "presidency": "1837-1841" },
+{ "president": "William Henry Harrison", "presidency": "1841" },
+{ "president": "John Tyler", "presidency": "1841-1845" },
+{ "president": "James K. Polk", "presidency": "1845-1849" },
+{ "president": "Zachary Taylor", "presidency": "1849-1850" },
+{ "president": "Millard Fillmore", "presidency": "1850-1853" },
+{ "president": "Franklin Pierce", "presidency": "1853-1857" },
+{ "president": "James Buchanan", "presidency": "1857-1861" },
+{ "president": "Abraham Lincoln", "presidency": "1861-1865" },
+{ "president": "Andrew Johnson", "presidency": "1865-1869" },
+{ "president": "Ulysses S. Grant", "presidency": "1869-1877" },
+{ "president": "Rutherford B. Hayes", "presidency": "1877-1881" },
+{ "president": "James A. Garfield", "presidency": "1881" },
+{ "president": "Chester Arthur", "presidency": "1881-1885" },
+{ "president": "Grover Cleveland", "presidency": "1885-1889" },
+{ "president": "Benjamin Harrison", "presidency": "1889-1893" },
+{ "president": "Grover Cleveland", "presidency": "1893-1897" },
+{ "president": "William McKinley", "presidency": "1897-1901" },
+{ "president": "Theodore Roosevelt", "presidency": "1901-1909" },
+{ "president": "William Howard Taft", "presidency": "1909-1913" },
+{ "president": "Woodrow Wilson", "presidency": "1913-1921" },
+{ "president": "Warren G. Harding", "presidency": "1921-1923" },
+{ "president": "Calvin Coolidge", "presidency": "1923-1929" },
+{ "president": "Herbert Hoover", "presidency": "1929-1933" },
+{ "president": "Franklin D. Roosevelt", "presidency": "1933-1945" },
+{ "president": "Harry S. Truman", "presidency": "1945-1953" },
+{ "president": "Dwight D. Eisenhower", "presidency": "1953-1961" },
+{ "president": "John F. Kennedy", "presidency": "1961-1963" },
+{ "president": "Lyndon B. Johnson", "presidency": "1963-1969" },
+{ "president": "Richard Nixon", "presidency": "1969-1974" },
+{ "president": "Gerald Ford", "presidency": "1974-1977" },
+{ "president": "Jimmy Carter", "presidency": "1977-1981" },
+{ "president": "Ronald Reagan", "presidency": "1981-1989" },
+{ "president": "George Bush", "presidency": "1989-1993" },
+{ "president": "Bill Clinton", "presidency": "1993-2001" },
+{ "president": "George W. Bush", "presidency": "2001-2009" },
+{ "president": "Barack Obama", "presidency": "2009-2017" },
+{ "president": "Donald Trump", "presidency": "2017-" }];
+//# sourceURL=pen.js
+</script>
+</body></html>
