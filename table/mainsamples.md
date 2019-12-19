@@ -2,9 +2,20 @@
 
 ### Refresh table
 ```js
-$("#corporations tbody").load("corporations.html #corporations tbody");
-```   
+function Refreshtab(){
+    $("#corporations tbody").load("corporations.html #corporations tbody");      
+}
+```
 
+### Refresh table variant 2
+```js						
+function Refreshtab(){
+	var table = $('#corporations').DataTable();
+	table.ajax.reload( null, false );
+}
+```
+
+						
 ### Insert
 ```js
 function Activatecorp(Corp){
