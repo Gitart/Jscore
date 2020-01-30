@@ -12,18 +12,9 @@
 ## Binding
 ```js
 <script>
-
-		   $(function($){
-					  $("#Busscode").mask("99/99/9999",{placeholder:"99/99/9999"});
-					  $("#Code").mask("?999999999999", {placeholder:"XXXXXXXXXXXX"});
-					  $("#Country").mask("(999) 999-9999? x99999",{placeholder:"XXXXXXXXX"});
-					  $("#Email").mask("(999) 999-9999? x99999",{placeholder:"XXXXXXXXX"});
-					  $("#Street").mask("99/99/9999",{completed:function(){alert("You typed the following: "+this.val());}});
-					});  
-
-		   $(function() {
-    				$("#datepickerss").datepicker();
-			  });
+$(function() {
+     $("#datepickerss").datepicker();
+ });
 </script>                        
 ```
 
