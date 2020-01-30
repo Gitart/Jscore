@@ -63,7 +63,20 @@ function ChangeCyti(data){
          ss.innerHTML += "<option value=1>ssss</option>"
          ss.innerHTML += "<option value=3>ssss2</option>"
 }  
+
 ```
+#### Variant 3
+```js
+ var cuisines = ["Chinese","Indian"];     
+ var sel = document.getElementById('CuisineList');
+ for(var i = 0; i < cuisines.length; i++) {
+     var opt       = document.createElement('option');
+     opt.innerHTML = cuisines[i];
+     opt.value     = cuisines[i];
+     sel.appendChild(opt);
+ }
+``` 
+ 
 
 ### Populate select
 ```js
