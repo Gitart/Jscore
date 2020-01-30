@@ -379,7 +379,86 @@ function IsNumeric(input){
 }                         
 ```
 
+### Добавление нового пользователя
+```js
+$("#Dbcreate").click(function(){
 
+	$.post("/api/system/users/add/newuser", 
+                               {Fname:  "Name", 
+                                Lname:  "Lname", 
+                                Mname:  "Mname", 
+                                Passwor:"Pass000", 
+                                Login:  "Nlogin001"},
+                                function() {
+                                           $("#summary").html("<h2>Добавлен новый пользователь.</h2>");
+                                          })
+ });
+```			   
+
+#### Delete Data
+```js
+$('#addclear').click(function(){
+   
+var corpname  = $('#corpname').val();
+var tabname   = $('#tabname').val();
+var this_href = "/api/system/pharmacy/clear/"+corpname+"*"+tabname;
+
+$.ajax({url:     this_href,
+		type:      'post',
+		headers: { 'AccessKey':'KeySecret$',
+                   'X_CSRF_TOKEN':'xxxxxxxxxxxxxxxxxxxx',
+                   'Content-Type':'application/json'
+                  },
+		cache:      false,
+		success:    function(data){  
+		                        $('#notify').html(data);
+								},
+		error:      function()  { 
+		                         $('#summary').html('Ошибка');
+		                        },
+		complete:   function()  { 
+		                        
+								  $('#summary').html('Данные по точке удалены # A_' + tabname  );  
+								  $('#tabname').val("");
+			                      $('#tabname').focus();
+			                      $('#notifyfooter').html("<h4>Данные удалены по таблице"+ tabname +"</h4>").show(2000).delay(2000).hide(2000);
+		                        }
+	  });
+            //return false;
+});
+```
+
+### Count record
+```js
+$('#addscnt').click(function(){
+   checkapteka()
+   var corpname  = $('#corpname').val();
+   var tabname   = $('#tabname').val();
+   var this_href = "/api/system/countdoc/"+corpname+"*A_"+tabname;
+
+  $.ajax({url:     this_href,
+  		  type:      'post',
+		  headers: { 'AccessKey':'KeySecret$',
+                     'X_CSRF_TOKEN':'xxxxxxxxxxxxxxxxxxxx',
+                     'Content-Type':'application/json'
+                  },
+		cache:      false,
+		success:    function(data){  
+		                          $('#notify').html(data);
+								},
+		error:      function()  { 
+		                          $('#summary').html('Ошибка');
+		                        },
+		complete:   function()  { 
+		                        
+								  $('#summary').html('Данные по аптеке  A_' + tabname  );  
+								  $('#tabname').val("");
+		                        }
+	  });
+            //return false;
+		   });
+});        
+```
 
 
 
