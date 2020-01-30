@@ -335,7 +335,49 @@ function deleteCookie(name) {
 }       
 ```
 
+### Проверка параметров
+```js
+function Daycheck(Days,Cnt){
 
+      //console.log(Number.isNaN(Days.value));
+
+        
+     if ($.isNumeric(Days.value)==false){
+        alert("Не верный формат числа.");
+        Onnsubmit();
+        Days.focus();
+        return false;
+    }
+     
+
+
+	if (Days.value>Cnt){
+		alert("Параметер не длжен быть больше " + Cnt);
+		Days.value=Cnt;
+		Days.focus();
+		return false;
+	}
+
+    // Zero
+    if (Days.value<=0) {
+		alert("Параметер не длжен быть меньше или равно нулю!");
+
+		Days.value=2;
+		Days.focus();
+		return false;
+	}
+
+	    return true;
+}
+```
+
+## If Numerik
+```js
+function IsNumeric(input){
+    var RE = /^-{0,1}\d*\.{0,1}\d+$/;
+    return (RE.test(input));
+}                         
+```
 
 
 
