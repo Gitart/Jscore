@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+
+    <title>&quot;BootTree&quot; TreeView for Bootstrap - Bootsnipp.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+    div.panel:first-child {
+    margin-top:20px;
+}
+div.treeview {
+    min-width: 100px;
+    min-height: 100px;
+    
+    max-height: 256px;
+    overflow:auto;
+	
+	padding: 4px;
+	
+	margin-bottom: 20px;
+	
+	color: #369;
+	
+	border: solid 1px;
+	border-radius: 4px;
+}
+div.treeview ul:first-child:before {
+    display: none;
+}
+.treeview, .treeview ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+    
+	color: #369;
+}
+.treeview ul {
+    margin-left:1em;
+    position:relative
+}
+.treeview ul ul {
+    margin-left:.5em
+}
+.treeview ul:before {
+    content:"";
+    display:block;
+    width:0;
+    position:absolute;
+    top:0;
+    left:0;
+    border-left:1px solid;
+    
+    /* creates a more theme-ready standard for the bootstrap themes */
+    bottom:15px;
+}
+.treeview li {
+    margin:0;
+    padding:0 1em;
+    line-height:2em;
+    font-weight:700;
+    position:relative
+}
+.treeview ul li:before {
+    content:"";
+    display:block;
+    width:10px;
+    height:0;
+    border-top:1px solid;
+    margin-top:-1px;
+    position:absolute;
+    top:1em;
+    left:0
+}
+.tree-indicator {
+    margin-right:5px;
+    
+    cursor:pointer;
+}
+.treeview li a {
+    text-decoration: none;
+    color:inherit;
+    
+    cursor:pointer;
+}
+.treeview li button, .treeview li button:active, .treeview li button:focus {
+    text-decoration: none;
+    color:inherit;
+    border:none;
+    background:transparent;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    outline: 0;
+}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
+            else $('head > link').filter(':first').replaceWith(defaultCSS); 
+        }
+        $( document ).ready(function() {
+          var iframe_height = parseInt($('html').height()); 
+          window.parent.postMessage( iframe_height, 'http://bootsnipp.com');
+        });
+    </script>
+</head>
+<body>
+	<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Treeview List</div>
+        <div class="panel-body">
+            <!-- TREEVIEW CODE -->
+            <ul class="treeview">
+                <li><a href="#">Tree</a>
+                	<ul>
+            			<li><a href="#">Branch</a></li>
+            			<li><a href="#">Branch</a>
+            				<ul>
+            					<li><a href="#">Stick</a></li>
+            					<li><a href="#">Stick</a></li>
+            					<li><a href="#">Stick</a>
+            						<ul>
+            							<li><a href="#">Twig</a></li>
+            							<li><a href="#">Twig</a></li>
+            							<li><a href="#">Twig</a></li>
+            							<li><a href="#">Twig</a>
+            								<ul>
+            									<li><a href="#">Leaf</a></li>
+            									<li><a href="#">Leaf</a></li>
+            									<li><a href="#">Leaf</a></li>
+            									<li><a href="#">Leaf</a></li>
+            									<li><a href="#">Leaf</a></li>
+            									<li><a href="#">Leaf</a></li>
+            									<li><a href="#">Leaf</a></li>
+            									<li><a href="#">Leaf</a></li>
+            									<li><a href="#">Leaf</a></li>
+            								</ul>
+            							</li>
+            							<li><a href="#">Twig</a></li>
+            							<li><a href="#">Twig</a></li>
+            						</ul>
+            					</li>
+            					<li><a href="#">Stick</a></li>
+            				</ul>
+            			</li>
+            			<li><a href="#">Branch</a></li>
+            			<li><a href="#">Branch</a></li>
+            		</ul>
+            	</li>
+            </ul>
+            <!-- TREEVIEW CODE -->
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Treeview Div</div>
+        <div class="panel-body">
+            <!-- TREEVIEW CODE -->
+            <div class="treeview">
+                <ul>
+                    <li><a href="#">Tree</a>
+                		<ul>
+                			<li><a href="#">Branch</a></li>
+                			<li><a href="#">Branch</a>
+                				<ul>
+                					<li><a href="#">Stick</a></li>
+                					<li><a href="#">Stick</a></li>
+                					<li><a href="#">Stick</a>
+                						<ul>
+                							<li><a href="#">Twig</a></li>
+                							<li><a href="#">Twig</a></li>
+                							<li><a href="#">Twig</a></li>
+                							<li><a href="#">Twig</a>
+                								<ul>
+                									<li><a href="#">Leaf</a></li>
+                									<li><a href="#">Leaf</a></li>
+                									<li><a href="#">Leaf</a></li>
+                									<li><a href="#">Leaf</a></li>
+                									<li><a href="#">Leaf</a></li>
+                									<li><a href="#">Leaf</a></li>
+                									<li><a href="#">Leaf</a></li>
+                									<li><a href="#">Leaf</a></li>
+                									<li><a href="#">Leaf</a></li>
+                								</ul>
+                							</li>
+                							<li><a href="#">Twig</a></li>
+                							<li><a href="#">Twig</a></li>
+                						</ul>
+                					</li>
+                					<li><a href="#">Stick</a></li>
+                				</ul>
+                			</li>
+                			<li><a href="#">Branch</a></li>
+                			<li><a href="#">Branch</a></li>
+                		</ul>
+                	</li>
+                </ul>
+            </div>
+            <!-- TREEVIEW CODE -->
+        </div>
+    </div>
+    <!-- This section only includes notes for the snippet. Nothing more. You may ignore it if you please. -->
+    <div class="panel panel-default">
+        <div class="panel-heading">Notes</div>
+        <div class="panel-body">
+            <p>
+                This is a revised fork of an existing Bootsnippet. It allows the use of multiple treeview panels, as well as limiting the width/height of treeviews.
+                The plugin also dynamically converts DOM elements with the <span class="label label-success">treeview</span> class assigned.
+                The snippet will be edited by request should viewers want a theme-compatible version of the example. Since it requires LESS to acquire settings from the bootstrap theme, it will only be supplied in a <span class="label label-danger">code</span> block.
+            </p>
+            <hr />
+            <p></p><a href="http://bootsnipp.com/snippets/featured/bootstrap-30-treeview" class="btn btn-primary">BootStrap TreeView <span class="badge">by SeanWessell</span></a></p>
+        </div>
+    </div>
+</div>
+	<script type="text/javascript">
+	/**
+ *  BootTree Treeview plugin for Bootstrap.
+ *
+ *  Based on BootSnipp TreeView Example by Sean Wessell
+ *  URL:	http://bootsnipp.com/snippets/featured/bootstrap-30-treeview
+ *
+ *	Revised code by Leo "LeoV117" Myers
+ *
+ */
+$.fn.extend({
+	treeview:	function() {
+		return this.each(function() {
+			// Initialize the top levels;
+			var tree = $(this);
+			
+			tree.addClass('treeview-tree');
+			tree.find('li').each(function() {
+				var stick = $(this);
+			});
+			tree.find('li').has("ul").each(function () {
+				var branch = $(this); //li with children ul
+				
+				branch.prepend("<i class='tree-indicator glyphicon glyphicon-chevron-right'></i>");
+				branch.addClass('tree-branch');
+				branch.on('click', function (e) {
+					if (this == e.target) {
+						var icon = $(this).children('i:first');
+						
+						icon.toggleClass("glyphicon-chevron-down glyphicon-chevron-right");
+						$(this).children().children().toggle();
+					}
+				})
+				branch.children().children().toggle();
+				
+				/**
+				 *	The following snippet of code enables the treeview to
+				 *	function when a button, indicator or anchor is clicked.
+				 *
+				 *	It also prevents the default function of an anchor and
+				 *	a button from firing.
+				 */
+				branch.children('.tree-indicator, button, a').click(function(e) {
+					branch.click();
+					
+					e.preventDefault();
+				});
+			});
+		});
+	}
+});
+/**
+ *	The following snippet of code automatically converst
+ *	any '.treeview' DOM elements into a treeview component.
+ */
+$(window).on('load', function () {
+	$('.treeview').each(function () {
+		var tree = $(this);
+		tree.treeview();
+	})
+})
+	</script>
+</body>
+</html>
