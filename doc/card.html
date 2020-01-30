@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <title>Untitled 1</title>
+
+<style type="text/css" >
+  .ss               { border: 3px  solid #666699; background-color: #FBFBFB;  width: 500px; height: 200px; padding: 10px; margin: 5px; position: absolute; left: 200px; top: 20%; margin-left: -250px; }
+  .ssd              { width: 400px; background-color: #FBFEF1}
+   pre              { font-size: 14px; font-family: calibri; color: #485C62; font-weight: bold ;  }
+   pre small          { font-weight: normal ;}
+   pre input          { background-color: #F9F9F9; border: 1px solid #D5D2D7; color: gray ; font-weight: bold ; padding: 5px;  }
+   pre input:focus      { background-color: #D9FFD9 ;  }
+   pre img           { vertical-align: middle ;}
+  .dokno             { background-color: #F9F9F9; border: 3px gray solid; width: 420px; margin: 10px; padding: 10px;  position: absolute; left: 50%; top: 2%; margin-left: -250px;}
+  .head-leter          { color: #0099FF ; font-size: 20px;}
+   body             { background-color: #8EA49B;}
+</style>
+
+<script type="text/javascript" src="libs.js" ></script>
+
+<script type="text/javascript" >
+
+// Создание окна
+function crdiv(bodytext)
+  {
+     var cnew = document.createElement("div");
+         cnew.setAttribute("id",    "notifywindow");
+        // cnew.style.border          = "3px #FFCCAA solid";
+        // cnew.style.backgroundColor = "#FFFFCC";
+        // cnew.style.width           = "500px";
+        // cnew.style.height          = "200px";
+        // cnew.style.fontFamily      = "Calibri";
+        // cnew.style.padding         = "10px;";
+
+        // Позиционирование слева посередеине и сверху посередине с небольшим смещением вверх
+         cnew.setAttribute("style","border: 3px solid #666699; background-color: #FBFBFB;  width: 500px; height: 200px; padding: 10px; margin: 5px; position: absolute; left: 50%; top: 20%; margin-left: -250px; margin-top; -100px; ");
+         cnew.innerHTML  = "<h4>Оглавление дива</h4><br>" + bodytext;
+         document.body.appendChild(cnew);
+}
+
+// Удаление  Див из документа
+function dell()
+{
+  document.body.removeChild(document.getElementById("notifywindow"));
+}
+
+function init()
+{
+  var s19 = document.getElementById('sv0').value;
+//document.write (s18);
+
+}
+</script>
+</head>
+
+<body>
+
+<div id="dokno" class="dokno"  >
+<pre >
+                            <span id="sp100" class="head-leter" >Карточка користувача # 156</span>
+  <small>Информационные данные для заполнения личных сведений о сотруднике</small>
+
+  Фамилия
+<input type="text" value="Введите фамилию" class="ssd"  >
+<small>Опишите свой новый должностоной распорядок</small>
+
+  Имя
+<input id="sv0" type="text" class="ssd" style="width: 266px" > <img src=""  >
+<small>Введите имя которое у вас написано в паспорте</small>
+
+  Отчество
+<input type="text" class="ssd"  checked="checked"   >
+<small>Опишите свой новый должностоной распорядок</small>
+
+Опыт работи
+<input type="text" class="ssd"  checked="checked"   >
+  <small>Опишите свой опыт работы на прежней работе из трудовой книги</small>
+
+Контактный телефон
+<input type="text" class="ssd"  checked="checked"   >
+  <small>Номер телефона по которому можно связаться с Вами для уточнения</small>
+
+Электронна адреса
+<input type="text" class="ssd"  checked="checked"   >
+  <small>Адреса для листування пiсля отримання дозволу на вівчання</small>
+
+  <strong >Увага !</strong>
+  <small>Обязательные поля для вода данных обозначаются *</small>
+  <small>Долгое заполнение документов недопустимо</small>
+  <small>После всех заполненных документах можно закрывать</small>
+
+                                                                              <input type="button" onclick="crdiv('Наименование простого дива<br>для точного уточнения')" value="Сохранения">    <input type="button" onclick="dell()" value="Отказ">
+
+<input type="button" onclick="init()" value="INI">
+</pre>
+</div>
+
+</body>
+
+</html>
