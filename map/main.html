@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>attributeEquals demo</title>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+
+  <body>
+    <div class="container">
+      <h1 class="title">    Работа с JS      </h1>
+      <p class="subtitle">  Пример использования <strong>Тестовая форма</strong>!      </p>
+
+
+<nav class="navbar is-transparent is-info">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-start">
+        <a id="itemnum0" class="navbar-item" href="https://bulma.io/"> Home </a>
+        <a id="itemnum1" class="navbar-item" href="https://bulma.io/documentation/overview/start/">Gh</a>
+        <a id="itemnum2" class="navbar-item" href="https://bulma.io/documentation/overview/start/">Do</a>
+
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">Docs</a>
+      
+
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">Overview</a>
+          <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">Modifiers</a>
+          <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">Columns</a>
+          <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">Layout</a>
+          <a class="navbar-item" href="https://bulma.io/documentation/form/general/">Form</a>
+          <hr class="navbar-divider">
+          <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">Elements</a>
+          <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">Components</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+              <span>
+                Tweet
+              </span>
+            </a>
+          </p>
+          <p class="control">
+            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.8.0/bulma-0.8.0.zip">
+              <span class="icon">
+                <i class="fas fa-download"></i>
+              </span>
+              <span>Download</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<br>
+
+
+
+<div class="buttons">
+  <button class="button is-info" onclick="norm()">Пример</button>
+  <button class="button is-success">Success</button>
+  <button class="button is-warning">Warning</button>
+  <button class="button is-danger">Danger</button>
+    <button class="button is-info">Info</button>
+  <button class="button is-success">Success</button>
+  <button class="button is-warning">Warning</button>
+  <button class="button is-danger">Danger</button>
+</div>
+
+
+
+<article class="message">
+  <div class="message-header">
+       <p>Полезные линки</p>
+       <button class="delete" aria-label="delete"></button>
+  </div>
+
+  <div id="elem1" class="message-body">
+       <div id="user" >
+       </div> 
+
+
+       <a href="https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript">Работа с JSON</a>
+       <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, 
+       porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. 
+       Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. 
+       Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, 
+       arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor 
+       mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+  </div>
+</article>
+
+
+
+
+<article class="message is-link">
+  <div class="message-header">
+    <p>Link</p>
+    <button class="delete" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, 
+    tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida 
+    purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis 
+    lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor 
+    mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+  </div>
+</article>
+
+
+
+
+<div class="columns">
+  <div class="column">
+            <article class="message">
+              <div class="message-header">
+                <p>Hello World</p>
+                <button class="delete" aria-label="delete"></button>
+              </div>
+              <div class="message-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, 
+                porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. 
+                Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. 
+                Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, 
+                arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor
+                mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+              </div>
+            </article>
+
+            <article class="message is-success">
+  <div class="message-header">
+    <p>Success</p>
+    <button class="delete" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    <strong>Pellentesque risus mi</strong>, tempus quis 
+    placerat ut, porta nec nulla. Vestibulum rhoncus ac 
+    ex sit amet fringilla. Nullam gravida purus diam, et 
+    dictum <a>felis venenatis</a> efficitur. Aenean ac 
+    <em>eleifend lacus</em>, in mollis lectus. Donec sodales, 
+    arcu et sollicitudin porttitor, tortor urna tempor ligula, 
+    id porttitor mi magna a neque. Donec dui urna, vehicula et 
+    sem eget, facilisis sodales sem.
+  </div>
+</article>
+
+  </div>
+
+
+  <div class="column">
+      <article class="message is-link">
+        <div class="message-header">
+          <p>Link</p>
+          <button class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, 
+          porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. 
+          Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. 
+          Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, 
+          arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor 
+          mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+        </div>
+      </article>
+
+      <article class="message is-success">
+  <div class="message-header">
+    <p>Success</p>
+    <button class="delete" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    <strong>Pellentesque risus mi</strong>, tempus quis 
+    placerat ut, porta nec nulla. Vestibulum rhoncus ac 
+    ex sit amet fringilla. Nullam gravida purus diam, et 
+    dictum <a>felis venenatis</a> efficitur. Aenean ac 
+    <em>eleifend lacus</em>, in mollis lectus. Donec sodales, 
+    arcu et sollicitudin porttitor, tortor urna tempor ligula, 
+    id porttitor mi magna a neque. Donec dui urna, vehicula et 
+    sem eget, facilisis sodales sem.
+  </div>
+</article>
+
+
+  </div>
+
+</div>
+
+
+
+
+<br>
+
+
+
+
+
+    </div>
+ 
+  </body>
+</html>
