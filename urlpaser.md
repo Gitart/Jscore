@@ -1,9 +1,10 @@
 ## Parser URL
 
+### Примеры   
 http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 http://www.sitepoint.com/url-parsing-isomorphic-javascript/
 
-Заполнение дропдаун
+### Заполнение дропдаун     
 http://stackoverflow.com/questions/9895082/javascript-populate-drop-down-list-with-array
 file:///C:/html/structure.html?id=345&er=566&ID=456786996
 
