@@ -1,19 +1,16 @@
 ## Parser URL
 
-
 http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 http://www.sitepoint.com/url-parsing-isomorphic-javascript/
 
 Заполнение дропдаун
 http://stackoverflow.com/questions/9895082/javascript-populate-drop-down-list-with-array
-
 file:///C:/html/structure.html?id=345&er=566&ID=456786996
 
 
 ```javascript
 function ParseUrl(){
   var url=window.location;
-
   //alert(url.search.split("&")[1].split("=")[1]);
   alert(getParameterByName("ID",url));=>456786996
   alert(getParameterByName("id",url));=>345
@@ -78,11 +75,10 @@ function splitCurrentURL(){
   }
   return params;
 }
-
 ```
 
 
-
+## Links
 http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 http://www.sitepoint.com/url-parsing-isomorphic-javascript/
 
@@ -90,12 +86,9 @@ http://www.sitepoint.com/url-parsing-isomorphic-javascript/
 http://stackoverflow.com/questions/9895082/javascript-populate-drop-down-list-with-array
 
 
-
-
-
-
 file:///C:/ORION/html/structure.html?id=345&er=566&ID=456786996
 
+```golang
 function ParseUrl(){
   var url=window.location;
 
@@ -120,9 +113,6 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-
-
-
 var parser = document.createElement('a');
 parser.href = "http://example.com:3000/pathname/?search=test#hash";
 
@@ -135,18 +125,16 @@ parser.hash;     // => "#hash"
 parser.host;     // => "example.com:3000"
 
 
-//using String.split to split and assign Object
-
+// using String.split to split and assign Object
 function splitCurrentURL(){
   //query given index.html?this=true&that=good;
   var url = location.href.split("?")[1]; // this=true&that=good;
   params = {}; //init param obj
   url = url.split("&"); // ['this=true','that=good']
-  for (var i = 0; i<url.length; i++){
 
-    var split_cache = url[i].split("="); // ['this','true'], ...
+for (var i = 0; i<url.length; i++){
+     var split_cache = url[i].split("="); // ['this','true'], ...
      params[split_cache[0]] = split_cache[1]; // {this:true}, ...
-
   }
   return params; // {this:"true", that:"good"}
 }
@@ -167,3 +155,4 @@ function splitCurrentURL(){
   }
   return params;
 }
+```
