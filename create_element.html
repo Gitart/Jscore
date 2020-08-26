@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+
+<HTML>
+      <HEAD>
+
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+            <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+
+
+             <STYLE type="text/css">
+                   *        {color: #45505A; font-size:14px; font-family: "Segoe UI"; } 
+                   
+                   #DIV1    {color: orange; border:1px gray solid; padding:10px; background-color:#D7E3E3;}
+                   .myclass {background-color: #F4F2EA; 
+                             background: -ms-liner-gradient(top,#EDEDED 5%, #DFDFDF 100%) ;
+                             background: -webkit-liner-gradient(top,#EDEDED 5%, #DFDFDF 100%) ;
+                             font-weight:bold; 
+                             color:black; 
+                             position:absolute; 
+                             padding:10px; 
+                             border:0px gray solid;
+                             text-shadow:0px 1px 0px #FFF ;  
+                             box-shadow: 1px 2px 15px #CCC;
+                             border-radius:3px;}		
+                    input   {width:500px;
+}  	 
+			 </STYLE>
+			 
+
+
+
+			 
+<SCRIPT type= "text/javascript">
+
+var soob  = '<h2>Сообщение</h2><br>' +
+            '<small>Наименование операции которая опредляет сообщение пользователю</small><br>' + 
+            '<pre>Сообщение и текст сообщения</pre>';  
+
+var soobs = '<h2>Примечание !!!! Внимание !!!</h2><br>' +
+            '<small>Наименование операции которая опредляет сообщение пользователю</small><br>' + 
+            '<pre>Сообщение и текст сообщения</pre>';  
+
+
+
+/***********************************************************************************************************
+   Создание элемента для сообщения
+   EName    - Имя елемента
+   EWidth   - Ширина
+   EHeight  - Высота
+   EHtml    - Текст  
+   SecWait  - Задержка на экране
+***********************************************************************************************************/
+function CenteredDivs(EName, EWidth, EHeight, EHtml, SecWait)
+{
+             //var elem = document.getElementById('DIV1'); 
+
+             // Sub Layer 
+             var elh                   = document.createElement('divhd');
+             elh.style.top             = '0px';
+             elh.style.height          = '100%';
+             elh.style.width           = '100%';
+             elh.style.zIndex          = '100';
+             elh.style.backgroundColor = '#CCC'; 
+             elh.style.position        = 'absolute';
+             elh.style.border          = '2px gray solid';
+             elh.style.opacity         = '0.5';
+             elh.style.filter          = 'alpha(opacity=0.5)';
+             document.body.appendChild(elh);
+          
+             // Div Window - Notify
+             var elem                   = document.createElement('divnotify');
+             elem.style.dispaly         = 'none';   
+             elem.style.width           = EWidth  + 'px';
+             elem.style.height          = EHeight + 'px';
+             elem.style.top             = '50%';
+             elem.style.left            = '50%';
+             elem.style.borderRadius    = '5px';
+             elem.style.zIndex          = '199';
+             elem.style.backgroundColor = 'white'; 
+             elem.style.marginLeft      = (-1 * EWidth  / 2) +'px';
+             elem.style.marginTop       = (-1 * EHeight / 2) +'px';
+             elem.innerHTML             = EHtml;
+             elem.innerHTML             = soobs;  
+             elem.setAttribute('class', 'myclass'); 
+             document.body.appendChild(elem);
+
+             
+
+            // Hiden  
+             setTimeout(function() {
+                                    elem.style.display = 'none';  
+                                    elh.style.display  = 'none';
+                                   }, 
+                                    SecWait * 2000);
+}  
+
+
+/***********************************************************************************************************
+   Создание элемента для сообщения
+   EName    - Имя елемента
+   EWidth   - Ширина
+   EHeight  - Высота
+   EHtml    - Текст  
+   SecWait  - Задержка на экране
+***********************************************************************************************************/
+function CenteredDiv(EName, EWidth, EHeight, EHtml)
+{
+           //var elem = document.getElementById('DIV1'); 
+             var elem                       = document.createElement('divnotify');
+                 elem.style.width           = EWidth  + 'px';
+                 elem.style.height          = EHeight + 'px';
+                 elem.style.position        = 'absolute';
+                 elem.style.color           = '#777'; 
+                 elem.style.border          = '0px gray solid';  
+                 elem.style.padding         = '10px';  
+                 elem.style.textShadow      = '0px 1px 0px #FFF'; 
+                 elem.style.backgroundColor = 'white';  
+                 elem.style.top             = '50%';
+                 elem.style.left            = '50%';
+                 elem.style.marginLeft      = (-1 * EWidth  / 2) +'px';
+                 elem.style.marginTop       = (-1 * EHeight / 2) +'px';
+                 elem.innerHTML             = EHtml;
+                 document.body.appendChild(elem);
+}  
+
+/***********************************************************************************************************
+   Отображение элемента для сообщения
+   EWidth   - Ширина
+   EHeight  - Высота
+   EHtml    - Текст  
+   SecWait  - Задержка на экране
+   
+   Кратковременный показ окна на экране а потом плавное его скрытие
+   Особенность : элемент должен быть создан декларативно (не динамически)!
+   иначе JQuery его не видит
+***********************************************************************************************************/
+function CenteredNotify(EWidth, EHeight, EHtml)
+{
+                var elem = document.getElementById('DIV1'); 
+
+                 elem.style.width           = EWidth  + 'px';
+                 elem.style.height          = EHeight + 'px';
+                 elem.style.position        = 'absolute';
+                 elem.style.color           = '#777'; 
+                 elem.style.border          = '2px gray solid';  
+                 elem.style.padding         = '10px';  
+                 elem.style.textShadow      = '0px 1px 0px #FFF'; 
+                 elem.style.boxShadow       = '1px 2px 15px #CCC'; 
+
+                 elem.style.borderRadius    = '5px';
+                 elem.style.backgroundColor = '#D7E3E3';  
+                 elem.style.top             = '50%';
+                 elem.style.left            = '50%';
+                 elem.style.marginLeft      = (-1 * EWidth  /2) +'px';
+                 elem.style.marginTop       = (-1 * EHeight /2) +'px';
+                 elem.innerHTML             = EHtml;
+                 $("#DIV1").fadeIn(3000).delay(5000).fadeOut(1000);
+}  
+
+/***********************************************************************************************************
+ Отображение элемента для сообщения
+ EWidth   - Ширина
+ EHeight  - Высота
+ EHtml    - Текст  
+ SecWait  - Задержка на экране
+   
+ Кратковременный показ окна на экране а потом плавное его скрытие
+ Особенность : элемент должен быть создан декларативно (не динамически)!
+ иначе JQuery его не видит
+***********************************************************************************************************/
+function fadeoutf()
+{
+   $("#divnotify").fadeOut(3000);
+}
+
+</SCRIPT>
+      </HEAD>
+	  <BODY>
+          <h3>Использование всплывающего сообщения</h3>
+           <DIV ID='DIV1' style="display:none;" >
+                <SPAN>Пример</SPAN> 
+    	    </DIV>
+          
+               <br>
+               <input name="Buts" type="button" value="Показ сообщения с подложкой на 3 секунды" onclick="CenteredDivs('Nameelement',500,200,'Пример вода',5)"><br>  
+               <input name="Buts" type="button" value="Показ сообщения с постоянным показом" onclick="CenteredDiv('Nameelement',500,200,'Пример вода')"><br>  
+               <input name="Buts" type="button" value="" onclick="fadeoutf()"><br> 
+               <input name="Buts" type="button" value="Центровка " onclick="CenteredNotify(400,100,'Новость<br>Ві забіли ввести новою систему сообщений');"><br> 
+
+
+
+	  </BODY>
+</HTML>
