@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="windows 1251">
+    <title>||Работа с элементами||</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+  
+ 
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" >
+   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" >
+  
+   
+   
+   
+    <style type="text/css" >
+         .cl-alertwindow { 
+                            font-family: Arial, Helvetica, sans-serif ;  
+                            position: absolute ;
+                              border: 3px  solid #990033 ;
+                              width: 600px;
+                              height: auto;
+                              margin-left: 50%;
+                              left: -300px;
+                              margin-top: 20%;
+                              top: -100px;
+                              border-radius:5px;
+                              padding: 7px;
+                              box-shadow: 1px 5px 15px #777;
+                              z-index: 999;
+                              background: #f9c667; /* Old browsers */
+                              background: -moz-linear-gradient(top, #f9c667 0%, #f79621 100%); /* FF3.6+ */
+                              background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9c667), color-stop(100%,#f79621)); /* Chrome,Safari4+ */
+                              background: -webkit-linear-gradient(top, #f9c667 0%,#f79621 100%); /* Chrome10+,Safari5.1+ */
+                              background: -o-linear-gradient(top, #f9c667 0%,#f79621 100%); /* Opera 11.10+ */
+                              background: -ms-linear-gradient(top, #f9c667 0%,#f79621 100%); /* IE10+ */
+                              background: linear-gradient(to bottom, #f9c667 0%,#f79621 100%); /* W3C */
+                              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9c667', endColorstr='#f79621',GradientType=0 ); /* IE6-9 */
+                         
+/* 
+                            background: #ffd65e; /* Old browsers */
+//*background: -moz-linear-gradient(top, #ffd65e 0%, #febf04 100%); /* FF3.6+ */
+//*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffd65e), color-stop(100%,#febf04)); /* Chrome,Safari4+ */
+//*background: -webkit-linear-gradient(top, #ffd65e 0%,#febf04 100%); /* Chrome10+,Safari5.1+ */
+//*background: -o-linear-gradient(top, #ffd65e 0%,#febf04 100%); /* Opera 11.10+ */
+//*background: -ms-linear-gradient(top, #ffd65e 0%,#febf04 100%); /* IE10+ */
+//*background: linear-gradient(to bottom, #ffd65e 0%,#febf04 100%); /* W3C */
+//*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd65e', endColorstr='#febf04',GradientType=0 ); /* IE6-9 */
+*/
+                            }
+                         
+                            .cl-alertwindow .cl-head     {text-align: center; font-size: 24px;color: #CC0000 ;font-weight: bold ; /*text-shadow: 2px 0px 2px #CCC;*/  text-shadow: black 0px 0px 0px -2px, #666666 0px 0px 0px 0px, white 1px 1px 0px 0px; }                
+                            .cl-alertwindow .cl-body     {font-size: 14px; font-weight: bolder; color: #333333  ;   }
+                            .cl-alertwindow .cl-subBody  {min-height:200px; border: 1px solid #FF6600; margin-bottom: 5px; padding: 5px;  border-radius:5px;}
+                            .cl-alertwindow .cl-ok       {float:right; height: 35px; font-weight: bold ; width: 100px;}
+                            .cl-alertwindow .cl-ok:hover {cursor: pointer; background-color: #33CC33;  }
+       
+        .cl-alertwindow .cl-gray    {
+                                         background: #606c88; /* Old browsers */
+                                         background: -moz-linear-gradient(top, #606c88 0%, #3f4c6b 100%); /* FF3.6+ */
+                                         background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#606c88), color-stop(100%,#3f4c6b)); /* Chrome,Safari4+ */
+                                         background: -webkit-linear-gradient(top, #606c88 0%,#3f4c6b 100%); /* Chrome10+,Safari5.1+ */
+                                         background: -o-linear-gradient(top, #606c88 0%,#3f4c6b 100%); /* Opera 11.10+ */
+                                         background: -ms-linear-gradient(top, #606c88 0%,#3f4c6b 100%); /* IE10+ */
+                                         background: linear-gradient(to bottom, #606c88 0%,#3f4c6b 100%); /* W3C */
+                                         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+                                    }
+       
+        #org_div1                   {background-color: #333333 ;height: 300px;width: 100px;}
+        .my-message                 {width:300px; height:110px;  background-color:#F08080; text-align: center;   border: 2px groove black;}
+        .my-message-title           {height:20px;font-size:120%; background-color:red;}
+        .my-message-body            {padding: 5px; height: 50px;}
+    </style>
+
+
+   
+    <script type="text/javascript"   language="javascript" >
+     var my_div = null;
+     var newDiv = null;
+	
+	// Огловление для сообщения
+     var H001   = 'Cообщение об ошибке';
+     var H002   = 'Нагадування';
+     var H003   = 'Предупреждение';
+     var H004   = 'Попередження';
+     var H005   = 'Увага';
+     var H006   = 'Предупреждение об ошибке';
+     var H007   = 'Внимание';
+     var H008   = 'Важное сообщение';
+     var H009   = 'Предупреждение о системной ошибке';
+    
+    // Описание переменных для сообщения
+     var E001   = 'Поле сумма должно быть заполненнео до конца';
+     var E002   = 'В поле наименование не должно быть символов верхнего ряда клавиатуры';
+     var E003   = 'Не правильный формат суммы. <br> Сумма должна быть <b style="color:red;">000000.00</b> ';
+     var E004   = 'Поле обязательно должно иметь укстановленную дату. <br> Формат даты <b style="color:red;">ДД-ММ-ГГГГ</b> ';
+     var E005   = 'В программе «1С:Управление торговлей, ред. 10.3» есть очень удобный и полезный отчет о контактной информации. Отчет служит для получения списка контактной информации, при этом он имеет достаточно много настроек.';
+     var E006   = 'Обязательное поля к заполнению';
+     var E007   = 'Сумма не может быть отрицательной';
+     var E008   = 'Сумма очень большая';
+     var E009   = 'Документ не может быть оформлен прошедшей датой';
+     var E010   = 'Не верный формат даты';
+     var E011   = 'Не верный формат числа';
+     var E012   = 'Не заполнено поле справочника контрагента';
+     var E013   = 'Не заполнена поле справочника вида документа';
+     var E014   = 'Не заполнена поле справочника типа документа';
+     var E015   = 'Не заполнена поле справочника вида оплаты';
+     var E016   = 'Не заполнена поле справочника места зберегання';
+     var E017   = '<b>Предупреждение</b> Не используйте процедуру, описанную в этой статье при наличии операционной системы, установленной изготовителем Оборудования. В ТАКИХ системах куст system создает пароли и учетные записи пользователей, которые не существовали ранее. При использовании процедуры, описанной в этой статье, может оказаться невозможным войти обратно в консоль восстановления для восстановления исходных кустов реестра. ';
+     var E018   = 'Обязательно сообщите в отдел ИТ';
+     var E020   = 'Телефон для справок';
+     var E021   = 'Вы не зарегистрированны в системе документооборота. Обратаитесь за помощью к Вашему руководителю, или в отдел юридической попомщи по <a href="mailto:nkhoroshak@winner.ua">адресу </a> ';
+     var E022   = '';
+     var E023   = '';
+     var E024   = '';
+     var E025   = '';
+     var E026   = '';
+     var E027   = '';
+     var E028   = '';
+     var E029   = '';
+     var E030   = '';
+     var E031   = '';
+     var E032   = '';
+     var E033   = '';
+     var E034   = '';
+     var E035   = '';
+     var E036   = '';
+     var E037   = '';
+     var E038   = '';
+     var E039   = '';
+     var E040   = '';
+     var E041   = '';
+
+    // Подножье
+     var N001  ='<br>Позвоните по телефону внутреннего сообщения - 21455';
+     var N002  ='<br> ';
+    
+    
+
+// ******************************************************************************
+// Создание сообщения
+// ******************************************************************************
+       function CreatealertWindow(Headstr, Bodystr, Delstr)
+        {
+      
+        // создаем новый элемент div и добавляем в него немного контента
+           newDiv = document.createElement("div");
+           newDiv.id = "alertwindow";
+          
+          
+           Headstr=H008;
+          
+           newDiv.className = "cl-alertwindow" ;
+      
+           newDiv.innerHTML = '<div class="cl-head">'     + Headstr + '</div><br>' +
+                              '<div class="cl-subBody"> ' +
+                              '     <p class="cl-body">'  + Bodystr  + '<br><br></p><br>' +
+                              '</div> ' +
+                              '<input class="cl-ok" type="button" onClick="delAlerrt()" value="Close"/>'  ;
+       
+
+      // добавляем только что соданый элемент в дерево DOM
+      // my_div = document.getElementById("org_div1");
+      // document.body.insertBefore(newDiv, my_div);
+         document.body.appendChild(newDiv)
+       
+
+
+       // Гашение сообщения через 5 секунд без попомщи пользователя
+       if (Delstr=='Y')
+          {
+            setTimeout('document.body.removeChild(document.getElementById("alertwindow"))', 5000);
+          }
+}
+
+
+function createMessage(title, body) {
+  var container = document.createElement('div')
+  container.innerHTML = '<div class="my-message"> \
+    <div class="my-message-title">'+title+'</div> \
+    <div class="my-message-body">'+body+'</div> \
+    <input class="my-message-ok" type="button" value="OK"/> \
+  </div>'
+  return container.firstChild
+}
+
+function positionMessage(elem) {
+  elem.style.position = 'absolute'
+
+  var scroll = document.documentElement.scrollTop || document.body.scrollTop
+  elem.style.top = scroll + 200 + 'px'
+
+  elem.style.left = Math.floor(document.body.clientWidth/2) - 150 + 'px'
+}
+
+
+
+function addCloseOnClick(messageElem) {
+
+  var input = messageElem.getElementsByTagName('INPUT')[0]
+
+  input.onclick = function() {
+    messageElem.parentNode.removeChild(messageElem)
+  }
+
+}
+
+
+function Hdalert()
+{
+  document.getElementById('alertwindow').style.display='none';
+}
+   
+
+///---------------------------------------------------------
+function createMessage(title, body) {
+  var container = document.createElement('div')
+
+  container.innerHTML = '<div class="my-message"> \
+    <div class="my-message-title">'+title+'</div> \
+    <div class="my-message-body">'+body+'</div> \
+    <input class="my-message-ok" type="button" value="OK"/> \
+  </div>'
+
+  return container.firstChild
+}
+
+
+
+function positionMessage(elem) {
+  elem.style.position = 'absolute'
+
+  var scroll = document.documentElement.scrollTop || document.body.scrollTop
+  elem.style.top = scroll + 200 + 'px'
+
+  elem.style.left = Math.floor(document.body.clientWidth/2) - 150 + 'px'
+}
+
+
+
+function addCloseOnClick(messageElem) {
+  var input = messageElem.getElementsByTagName('INPUT')[0]
+  input.onclick = function() {
+    messageElem.parentNode.removeChild(messageElem)
+  }
+}
+
+
+function setupMessageButton(title, body) {
+  var messageElem = createMessage(title, body)
+  positionMessage(messageElem)
+  addCloseOnClick(messageElem)
+  document.body.appendChild(messageElem)
+}
+
+
+// ******************************************************************************
+// Удаление элемента созданного динамически
+// ******************************************************************************
+function delAlerrt()
+{
+//setTimeout('document.body.removeChild(document.getElementById("alertwindow"))', 5000);
+  document.body.removeChild(document.getElementById("alertwindow"));
+}
+
+
+
+
+function Test1()
+{
+  CreatealertWindow(H007,E021,'Y');
+}
+   
+function Test2()
+{
+   $('#d11').hide('slow').delay(1000).show('slow');
+   
+   $('#d12').hide('slow').delay(1000).show('slow');
+   $('#d14').hide('slow').delay(1000).show('slow');
+   
+   
+    $("#d11").fadeIn(3000, function () {
+	
+                                        $("#d12").fadeOut(4000, function(){$('#d14').hide('slow').delay(1000).show('slow');});
+                                        }
+				     );
+	 
+	 
+}
+   
+   
+    </script>
+  </head>
+ 
+  <body id="bbody">
+        <input type="button" value="Cообщение ждет нажатия" onclick="CreatealertWindow('Сообщение об ошибке','Вниманеи сообщение для введения пропущенной информации','N')" style="width: 247px"/>
+        <br>
+        <input type="button" value="Cообщение погаснет само" onclick="CreatealertWindow('Сообщение об ошибке','Вниманеи сообщение для введения пропущенной информации','Y')" style="width: 248px"/>
+        <br>
+        <input name="Button1" type="button" value="Test1" onclick="Test1()" style="width: 249px">
+        <br>
+        <input name="Button1" type="button" value="Закрыть" onclick="delAlerrt()" style="width: 249px">
+		<input name="Button2" type="button" value="Закрыть" onclick="Test2()" style="width: 249px">
+        
+		
+        <div  id="d11" style="background:#CCC;">
+		<h1>Test</h1>
+        </div>
+		
+		<div  id="d12" style="background:#CCC;">
+		<h1>Test 2</h1>
+        </div>
+		
+		<div  id="d14" style="background:#CCC;">
+		<h1>Test 3</h1>
+        </div>
+		
+		
+		
+</body>
+
+
+</html>  
