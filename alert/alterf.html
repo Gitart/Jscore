@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!-- saved from url=(0060)http://dealerportal.winner.ua/Informwinner/Reports/soop.aspx -->
+<HTML dir=ltr>
+<HEAD>
+<META content="IE=7" http-equiv="X-UA-Compatible">
+<TITLE></TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type><!--
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+-->
+<STYLE type=text/css>.cl01 * {
+	FONT-SIZE: 12px; FONT-FAMILY: "Arial"; LETTER-SPACING: 2px
+}
+.cl01 {
+	BORDER-TOP: #cccccc 3px solid; BORDER-RIGHT: #cccccc 3px solid; BACKGROUND: #fbfbfb; BORDER-BOTTOM: #cccccc 3px solid; POSITION: absolute; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 5px; MARGIN-LEFT: -350px; LEFT: 50%; BORDER-LEFT: #cccccc 3px solid; TOP: 10%; PADDING-RIGHT: 5px; WIDTH: 700px; -moz-box-shadow: 7px 9px 13px 0 #000; -webkit-box-shadow: 7px 9px 13px 0 #000; box-shadow: 7px 9px 13px 0 #000; border-radius: 5px
+}
+.cl02 IMG {
+	MARGIN: 5px
+}
+.cl02 {
+	BORDER-TOP: blue 0px solid; HEIGHT: 150px; BORDER-RIGHT: blue 0px solid; VERTICAL-ALIGN: middle; BORDER-BOTTOM: blue 0px solid; FLOAT: left; BORDER-LEFT: blue 0px solid; LINE-HEIGHT: 100px; MARGIN-RIGHT: 10px
+}
+.cl03 {
+	BORDER-TOP: gray 0px solid; BORDER-RIGHT: gray 0px solid; BORDER-BOTTOM: gray 0px solid; FLOAT: left; BORDER-LEFT: gray 0px solid; DISPLAY: block; WIDTH: 88%
+}
+.cl03 H4 {
+	FONT-SIZE: 20px; COLOR: red; PADDING-BOTTOM: 5px; TEXT-ALIGN: center; PADDING-TOP: 5px; PADDING-LEFT: 5px; DISPLAY: block; PADDING-RIGHT: 5px
+}
+.divnotify-class {
+	BORDER-TOP: #ff3300 4px solid; BORDER-RIGHT: #ff3300 4px solid; BORDER-BOTTOM: #ff3300 4px solid; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; PADDING-LEFT: 10px; BORDER-LEFT: #ff3300 4px solid; TOP: 10px; PADDING-RIGHT: 10px; WIDTH: 600px; BACKGROUND-COLOR: #f7f9f7
+}
+.divnotify-class IMG {
+	VERTICAL-ALIGN: middle
+}
+.divnotify-class STRONG {
+	FONT-SIZE: 18px; VERTICAL-ALIGN: middle; COLOR: purple
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+
+// ***********************************************************************************************************
+// Плавный выезд элемента с верху 
+// Постепенный выезд окна на середину экрана
+// Элемент в виде подсказки за ранее должен быть оформлен
+// Должен иметь авбсолютную позицию опредленную в стиле
+// Функция фызывает сама себя поэтому переменную передавать нужно только глобальную
+// ***********************************************************************************************************
+
+var Txtnotification;
+
+function Notification(){
+
+  var par = document.getElementById('notifywindow');                 // поиск элемента 
+      par.style.position        = 'absolute';                        // положение абсолютное  
+      par.style.display         = '';                                // показ на экран  
+   // par.style.backgroundColor = 'orange';                          // цвет фона 
+     
+
+
+  var lboddy = document.getElementById('L_body');                   // ссылка на сообщение тела оповещения
+      lboddy.innerHTML='Помилка заповнення! '; 
+
+ var lboddy = document.getElementById('L_head');                    // ссылка на оглавление оповещения
+      lboddy.innerHTML=Txtnotification;
+
+
+    
+  if (parseInt(par.style.top) < 300)                                 // Пока не достигнет сверху позицию 300 пикселей
+     {
+       par.style.top = parseInt(par.style.top) + 5;                  // приращение по 5 пиквелей (скорость)
+       setTimeout(arguments.callee, 10);                             // задержка перед повтором 10 миллисекунды (скорость) 
+     }
+    else
+    {
+      setTimeout(function() 
+                {
+                  par.style.display ='none'; 
+                  par.style.top     =5;
+                }, 5000);                                           // Гаснет через секунды само
+    }
+}
+
+
+
+// ***********************************************************************************************************
+// Скрытие элемента
+// Савченко Артур
+// ***********************************************************************************************************
+function ahidden()
+{
+  document.getElementById('notifywindow').style.top     = 10;
+  document.getElementById('notifywindow').style.display = "none";
+}
+
+</SCRIPT>
+
+<META name=GENERATOR content="MSHTML 10.00.9200.16576"></HEAD>
+<BODY>
+<FORM id=form1 method=post name=form1 action=soop.aspx>
+<DIV><INPUT id=MSO_PageHashCode type=hidden value=250-2001542208 
+name=MSO_PageHashCode> <INPUT id=__VIEWSTATE type=hidden 
+value=/wEPDwUKMTE4MzIxOTM3OGRk66DC1/KhaFZcnbnxpDrpM57mzQ0= name=__VIEWSTATE> 
+</DIV><INPUT onclick="Notification(); Txtnotification='Помилка заповнення вин кода';" type=button value="После нажатия кнопки вісвечивается окно на 5 сек и гаснет"> 
+
+<DIV id=notifywindow2 class=cl01 style="DISPLAY: none">
+<DIV id=d_02 class=cl02><IMG src="soop_files/497px-Error.svg.png" width=50 
+height=50> </DIV>
+<DIV id=d_02 class=cl03>
+<H4 id=L_head2>Описание ошибки</H4><SPAN id=L_body2>Внимание произошла не 
+придвиденная ошибка прошу вас разобраться <BR>Пример написания сообщения может 
+быть любым Внимание произошла не придвиденная ошибка прошу вас разобраться 
+<BR>Внимание произошла не придвиденная ошибка прошу вас разобраться 
+<BR><BR></SPAN></DIV></DIV></FORM>
+<DIV id=notifywindow class=divnotify-class 
+style="POSITION: absolute; MARGIN-LEFT: -300px; LEFT: 50%; DISPLAY: none; TOP: 5px">
+<DIV id=zakr style="FLOAT: right"><A onclick=ahidden() 
+href="http://dealerportal.winner.ua/Informwinner/Reports/soop.aspx#">Закрыть</A> 
+</DIV><IMG hspace=2 vspace=2 src="soop_files/comment_48.png"> <STRONG><LABEL 
+id=L_head></LABEL></STRONG>
+<P><LABEL id=L_body></LABEL></P></DIV></BODY></HTML>
