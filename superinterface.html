@@ -1,0 +1,980 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!--
+http://cssdeck.com/labs/jctdhgkj
+-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="noodp,noydir" /> 
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>Extreme WebDesk</title>
+<link rel="icon" href="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/styles/smoothness/jquery-ui-1.8.16.custom.css">
+<script type="text/javascript" src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/scripts/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/scripts/jquery.transform-0.9.3.min.js"></script>
+<script type="text/javascript" src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/scripts/jquery.animate-shadow-min.js"></script>
+<style>
+/* ============== CSS Default - HTML ============== */
+
+html		{ margin:0px; padding:0px; }
+body		{ margin:0px; padding:0px; }
+div			{ margin:0px; padding:0px; }
+span		{ margin:0px; padding:0px; }
+ul			{ margin:0px; padding:0px; }
+li			{ margin:0px; padding:0px; list-style:none; }
+fieldset	{ margin:0px; padding:0px; }
+legend		{ margin:0px; padding:0px; }
+label		{ margin:0px; padding:0px; }
+form		{ margin:0px; padding:0px; }
+input		{ margin:0px; padding:0px; outline:none; }
+select		{ margin:0px; padding:0px; outline:none;}
+option		{ margin:0px; padding:0px; }
+textarea	{ margin:0px; padding:0px; outline:none;}
+table		{ margin:0px; padding:0px; }
+tr			{ margin:0px; padding:0px; }
+td			{ margin:0px; padding:0px; }
+a			{ margin:0px; padding:0px; }
+p			{ margin:0px; padding:0px; }
+h1			{ margin:0px; padding:0px; }
+h2			{ margin:0px; padding:0px; }
+h3			{ margin:0px; padding:0px; }
+img			{ margin:0px; padding:0px; border:0px; }
+
+a 			{ color:#333; text-decoration:none; }
+a:hover		{ color:#999; text-decoration:none; }
+a:active 	{ color:#333; text-decoration:none; }
+a:visited 	{ color:#333; text-decoration:none; }
+
+/* ============== CSS Default ============== */
+
+body
+{
+	font-family:Verdana, Geneva, sans-serif; 
+	font-size:12px;
+	color:#333;
+	background:#FFF;
+	overflow-x:hidden;
+}
+
+input[type=submit], input[type=button]
+{
+	background:#CCC;
+	background:-webkit-linear-gradient(#FFF, #DDD);
+	background:-moz-linear-gradient(#FFF, #DDD);
+	background:-o-linear-gradient(#FFF, #DDD);
+	
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	
+	border:1px #BBB solid;
+	border-radius:3px;
+	
+	padding:4px 12px 4px 12px;
+	
+	box-shadow:1px 1px 1px rgba(0,0,0,0.1);
+	
+}
+
+button, input[type=submit], input[type=button], #x:-moz-any-link, x:default 
+{
+	padding:2px 10px 2px 10px !important;
+}
+
+input[type=submit]:disabled, input[type=button]:disabled, 
+input[type=submit]:hover:disabled, input[type=button]:hover:disabled, 
+input[type=submit]:active:disabled, input[type=button]:active:disabled
+{
+	background:#CCC;
+	background:-webkit-linear-gradient(#FFF, #DDD);
+	background:-moz-linear-gradient(#FFF, #DDD);
+	background:-o-linear-gradient(#FFF, #DDD);
+	
+	box-shadow:1px 1px 1px rgba(0,0,0,0.1);
+	
+	cursor:not-allowed;
+
+	opacity:0.6;
+}
+
+input[type=submit]:hover, input[type=button]:hover
+{
+	background:#DDD;
+	background:-webkit-linear-gradient(#FFF, #EEE);
+	background:-moz-linear-gradient(#FFF, #EEE);
+	background:-o-linear-gradient(#FFF, #EEE);
+}
+
+input[type=submit]:active, input[type=button]:active
+{
+	background:#CCC;
+	background:-webkit-linear-gradient(#EEE, #CCC);
+	background:-moz-linear-gradient(#EEE, #CCC);
+	background:-o-linear-gradient(#EEE, #CCC);
+	box-shadow:inset 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+input[type=text], input[type=password]
+{
+	background:#FFF;
+	border:1px #BBB solid;
+	border-radius:3px;
+	
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	
+	width:140px;
+	
+	padding:4px 4px 4px 4px;
+	
+	box-shadow:inset 1px 1px 3px rgba(0,0,0,0.2);
+	
+}
+
+input[type=text], input[type=password], #x:-moz-any-link, x:default 
+{
+	padding:3px !important;
+}
+
+input[type=text]:disabled, input[type=password]:disabled, 
+input[type=text]:hover:disabled, input[type=password]:hover:disabled, 
+input[type=text]:active:disabled, input[type=password]:active:disabled,
+select:disabled, textarea:disabled
+{
+	cursor:not-allowed;
+	opacity:0.6;
+}
+
+input:focus, select:focus, textarea:focus
+{
+	border:1px #333 solid;
+}
+
+select
+{
+	border:1px #BBB solid;
+	border-radius:3px;
+	
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	
+	padding:3px 3px 3px 3px;		
+}
+
+select, #x:-moz-any-link, x:default 
+{
+	padding:2px !important;
+}
+
+option
+{
+}
+
+textarea
+{	
+	border:1px #BBB solid;
+	border-radius:3px;
+	
+	min-width:140px;
+	max-width:auto;
+	min-height:80px;
+	max-height:120px;
+	
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	
+	resize:vertical;
+	
+	padding:5px;	
+	
+	box-shadow:inset 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+textarea, #x:-moz-any-link, x:default 
+{
+	padding:3px !important;
+}
+
+#false-button	
+{
+	position:relative;
+	background:#CCC;
+	background:-webkit-linear-gradient(#FFF, #DDD);
+	background:-moz-linear-gradient(#FFF, #DDD);
+	background:-o-linear-gradient(#FFF, #DDD);
+	
+	border:1px #BBB solid;
+	border-radius:3px;
+	
+	padding:4px 12px 4px 12px;
+	
+	box-shadow:1px 1px 1px rgba(0,0,0,0.1);
+	
+	cursor:default;
+}
+
+#false-button:hover
+{
+	background:#DDD;
+	background:-webkit-linear-gradient(#FFF, #EEE);
+	background:-moz-linear-gradient(#FFF, #EEE);
+	background:-o-linear-gradient(#FFF, #EEE);
+}
+
+#false-button:active	
+{
+	background:#CCC;
+	background:-webkit-linear-gradient(#EEE, #CCC);
+	background:-moz-linear-gradient(#EEE, #CCC);
+	background:-o-linear-gradient(#EEE, #CCC);
+	box-shadow:inset 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+body
+{ 
+	margin:0px; 
+	font-family:Verdana, Geneva, sans-serif;
+	overflow:hidden;
+}
+#wrap
+{
+	position:absolute; 
+	width:100%; 
+	height:100%;
+	z-index:500;
+	display:none;
+}
+#wrap-window
+{
+	position:absolute; 
+	width:100%; 
+	height:100%;
+	z-index:53;
+	display:none;
+}
+#loader
+{
+	position:absolute;
+	padding:20px 40px 20px 40px;
+	top:50%;
+	left:50%;
+	margin:-48px 0 0 -68px;
+	background:rgba(0,0,0,0.6);
+	border-radius:10px;
+	box-shadow:0 0 15px rgba(0,0,0,0.7);
+	display:none;
+	z-index:501;
+}
+#loader img
+{
+	width:48px;
+}
+#centro
+{ 
+	position:absolute; 
+	width:100%; 
+	height:100%;
+	background:url(http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/bg.png) center;
+}
+#gradient
+{
+	position:absolute; 
+	width:100%; 
+	height:100%;
+	background: -webkit-radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));
+	background: -moz-radial-gradient(rgba(255,255,255,0), rgba(0,0,0,0.6));
+	background: -o-radial-gradient(rgba(255,255,255,0), rgba(0,0,0,0.6));
+	background: -ms-radial-gradient(rgba(255,255,255,0), rgba(0,0,0,0.6));
+}
+#intera
+{
+	position:absolute;
+	top:30px;
+	right:30px;
+	text-align:center;
+	z-index:30;
+}
+#intera input
+{
+	padding:8px 8px 8px 8px;
+	width:170px;
+	background:#333;
+	border-top:1px #111 solid;
+	border-left:1px #111 solid;
+	border-bottom:1px #555 solid;
+	border-right:1px #555 solid;
+	box-shadow:inset 2px 2px 5px rgba(0,0,0,0.3);
+	color:#AAA;
+	font-size:14px;
+}
+#logo-effect
+{
+	position:absolute; 
+	width:600px; 
+	height:600px;
+	top:50%;
+	left:50%;
+	margin:-300px 0 0 -300px
+}
+#logo
+{ 
+	position:absolute;
+	width:600px;
+	height:auto;
+	top:50%;
+	left:50%;
+	margin:-120px 0 0 -300px;
+	color:#FFF; 
+	font-size:100px; 
+	font-weight:bold;
+	text-align:center;
+	text-shadow:0 2px 10px rgba(0,0,0,0.6);
+	z-index:5;
+}
+#logo p
+{
+	position:relative;
+	display:inline-block;
+	padding:0px;
+	margin:0px;
+	cursor:move;
+}
+#logo p:nth-child(1)	{ top:-200px; left:-100px; opacity:0; }
+#logo p:nth-child(2)	{ top:200px; left:100px; opacity:0; }
+#logo p:nth-child(3)	{ top:-200px; left:80px; opacity:0; }
+#logo p:nth-child(4)	{ top:200px; left:-100px; opacity:0; }
+#logo p:nth-child(5)	{ top:-200px; left:100px; opacity:0; }
+#logo p:nth-child(6)	{ top:200px; left:80px; opacity:0; }
+#logo p:nth-child(7)	{ top:-200px; left:-100px; opacity:0; }
+#logo p:nth-child(8)	{ top:200px; left:100px; opacity:0; }
+#logo p:nth-child(9)	{ top:200px; left:90px; opacity:0; }
+#logo p:nth-child(10)	{ top:200px; left:-100px; opacity:0; }
+#logo p:nth-child(11)	{ top:-200px; left:100px; opacity:0; }
+#logo p:nth-child(12)	{ top:200px; left:80px; opacity:0; }
+#janela
+{ 
+	position:absolute; 
+	width:100px; 
+	height:50px;
+	padding:44px 7px 7px 7px;
+	top:-100px;
+	left:-100px;
+	background:rgba(255,255,255,0.2);
+	border:1px #888 solid;
+	border-radius:3px;
+	box-shadow:none;
+	opacity:0;
+	z-index:50;
+}
+#content
+{
+	position:relative;
+	width:100%;
+	height:100%;
+	background:#EEE;
+}
+#cabecalho
+{
+	position:relative;
+	top:-38px;
+	padding:10px;
+	background: -webkit-linear-gradient(#DDD, #CCC);
+	background: -moz-linear-gradient(#DDD, #CCC);
+	background: -o-linear-gradient(#DDD, #CCC);
+	background: -ms-linear-gradient(#DDD, #CCC);
+	margin-bottom:-38px;
+	border-bottom:1px #BBB solid;
+	color:#666;
+	font-weight:bold;
+	font-size:14px;
+	text-shadow:-0 0 3px #999;
+	cursor:default;
+	z-index:100;
+}
+#cabecalho #mini img
+{
+	position:relative;
+	width:64px;
+	float:left;
+	top:-8px;
+	left:-4px;
+	padding-right:4px;
+	cursor:pointer;
+}
+#cabecalho #func
+{
+	position:relative;
+	float:right;
+	top:-17px;
+	right:-2px;
+}
+#cabecalho #func li
+{
+	float:left;
+	vertical-align:middle;
+}
+#cabecalho #func img
+{
+	position:relative;
+	width:32px;
+	top:-8px;
+	padding:0 0px 0 12px;
+	cursor:pointer;
+}
+#conteudo
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+	padding:0px;
+	margin:0px;
+}
+#content iframe
+{
+	position:relative;
+	width:100%;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	border:none;
+	background:#EEE;
+	display:none;
+}
+.ui-resizable-helper
+{ 
+	border: 1px dotted #CCC;
+}
+#menu
+{
+	position:absolute;
+	width:100%;
+	height:auto;
+	text-align:center;
+	bottom:0px;
+	
+	box-shadow:inset 0 3px 15px rgba(0,0,0,0.8), 0 0 15px rgba(255,255,255,0.6);
+	background: -webkit-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+	background: -moz-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+	background: -o-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+	background: -ms-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+	
+	z-index:30;
+}
+#menu ul
+{
+	position:relative;
+	width:704px;
+	height:64px;
+	margin:0 auto;
+	top:0px;
+}
+#menu li
+{
+	float:left;
+	position:relative;
+	cursor:pointer;
+	margin:30px 10px 30px 10px;
+}
+#menu img
+{
+	position:relative;
+	width:48px;
+	margin:0px;
+	padding:10px;
+	border-radius:8px;
+	box-shadow:0 1px 3px rgba(0,0,0,0.6);
+	
+	background: -webkit-linear-gradient(rgba(160,160,160,1) 0%, rgba(100,100,100,1) 3%, rgba(40,40,40,1) 100%);
+	background: -moz-linear-gradient(rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 3%, rgba(200,200,200,0.2) 70%);
+	background: -o-linear-gradient(rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 3%, rgba(200,200,200,0.2) 70%);
+	background: -ms-linear-gradient(rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 3%, rgba(200,200,200,0.2) 70%);
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<div id="wrap"></div>
+<div id="wrap-window"></div>
+<div id="loader"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/loader.gif" alt=""></div>
+<div id="centro">
+
+	<div id="intera"><input type="text" name="intera" placeholder="Digite e Pressione Enter" maxlength="12"></div>
+
+    <div id="gradient"></div>
+
+    <div id="logo-effect">
+			<div id="logo"><p>W</p><p>e</p><p>b</p><p>D</p><p>e</p><p>s</p><p>k</p></div>
+    </div>
+      
+    <div id="menu">
+    <ul id="menu-sort">
+        <li class="desenho"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/dock/textedit.png" alt=""></li>
+        <li class="diretorio"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/dock/icon_downloads.png" alt=""></li>
+        <li class="video"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/dock/icon_imovie.png" alt=""></li>
+        <li class="odontograma"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/dock/pages.png" alt=""></li>
+        <li class="webclin"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/dock/icon_textedit.png" alt=""></li>
+        <li class="browser"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/dock/icon_chrome.png" alt=""></li>
+        <li class="jogo"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/dock/chess.png" alt=""></li>
+        <li class="agenda"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/dock/wallet.png" alt=""></li>
+    </ul>
+    </div>
+    
+</div>
+
+
+<script>
+$(document).ready(function(){
+	
+	$('body').disableSelection();
+	
+	$(window).resize(function(){
+		WindowAlign();
+	});
+		
+	var count_win 	= 0;
+	var count_clo 	= 0;
+	var janela_name = '';
+	
+	function WindowAlign()
+	{
+		$(window).width();
+		$(window).height();
+		
+		$('#centro #janela').each(function(i){
+			
+			if(!$(this).attr('title'))
+			{
+				if(i<=3)
+				{
+					posX = 20;
+					posY = (220*i)+(($(window).width()/2)-(220+320));
+				}
+				if(i>3) 
+				{
+					posX = 260;
+					posY = ((220*i)-(220*4))+(($(window).width()/2)-(220+320));
+				}
+				$(this).animate({
+					'top'		:''+posX+'px',
+					'left'		:''+posY+'px',
+					'width'		:'400px',
+					'height'	:'400px'
+				},{
+					queue		:false,
+					duration	:600,
+					easing		:'easeOutBack'
+				});
+			}
+			
+		});
+	}
+	
+	function WindowFocus(winSel,focusType,buttonFull,focusReturn)
+	{
+		if(focusType)
+		{
+			WindowFocus('#centro #janela');
+			$(winSel).attr('title','max');
+			$(winSel).css({
+				'z-index'	:'55',
+				'opacity'	:'1'
+			}).animate({
+				scale		:[1],
+				'top'		:$('input[name=win_posY]',winSel).val(),
+				'left'		:$('input[name=win_posX]',winSel).val(),
+				'width'		:$('input[name=win_sizeX]',winSel).val()+'px',
+				'height'	:$('input[name=win_sizeY]',winSel).val()+'px'
+			},300,'easeOutBack',function(){
+				$(this).draggable('enable').resizable('enable');
+				$('#func li',this).show(0,function(){
+					if(!buttonFull)	$('.maximize',real_this).hide();
+				});
+				$('iframe',this).fadeIn(600);
+				$(this).animate({boxShadow:'0 0 50px rgba(0,0,0,0.8)'},600);
+			});	
+		}
+		else
+		{	
+			$(winSel).removeAttr('title');
+			$(winSel+' iframe').hide(0,function(){
+				$(this).parents('#janela').css({
+					'z-index'	: '50',
+					'opacity'	: '0.3',
+					'box-shadow': 'none'
+				}).animate({
+					scale 		: [0.5]
+				},{
+					queue		:false,
+					duration	:300,
+					easing		:'easeOutBack',
+					complete: function(){
+						$(this).draggable('disable').resizable('disable');
+						$('#func li',this).hide();
+						if(!focusReturn) WindowAlign();
+					}
+				});
+			});
+		}
+	}
+		
+	function WindowCreate(imgTitle,title,name,content,sizeX,sizeY,resizeEnable,buttonFull)
+	{					
+		if(!$('#centro #janela[align='+name+']').attr('id'))
+		{
+			WindowFocus('#centro #janela');
+			
+			count_win++;
+			count_clo++;
+					
+			html_window  = '<div id="janela" class="janela_'+count_win+'" align="'+name+'" title="max">';
+			html_window += '<input type="hidden" name="win_sizeX" value="'+sizeX+'">';
+			html_window += '<input type="hidden" name="win_sizeY" value="'+sizeY+'">';
+			html_window += '<input type="hidden" name="win_posX" value="'+(count_clo*5)+'px">';
+			html_window += '<input type="hidden" name="win_posY" value="'+(count_clo*5)+'px">';
+			html_window += '<div id="content">';
+			html_window += '<ul>';
+			html_window += '	<li id="cabecalho">';
+			html_window += '	<ul>';
+			html_window += '		<li id="mini"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/dock/'+imgTitle+'.png" alt=""></li>';
+			html_window += '		<li id="text"><p>'+title+'</p></li>';
+			html_window += '		<li id="func">';
+			html_window += '		<ul>';
+			html_window += '			<li class="iconize"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/janela/view_multicolumn.png" alt=""></li>';
+			html_window += '			<li class="maximize"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/janela/windows_fullscreen.png" alt=""></li>';
+			html_window += '			<li class="close"><img src="http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/images/icones/janela/window_suppressed.png" alt=""></li>';
+			html_window += '		</ul>';
+			html_window += '		</li>';
+			html_window += '	</ul>';
+			html_window += '	</li>';
+			html_window += '	<li id="conteudo"><iframe src="" allowtransparency="1"></iframe></li>';
+			html_window += '</ul>';
+			html_window += '</div>';
+			html_window += '</div>';
+			
+			$('#centro').append(html_window);
+			//===========Monta e Anima Janela
+			$('.janela_'+count_win).css({'z-index':'55'}).animate({
+				'width'		:''+sizeX+'px',
+				'height'	:''+sizeY+'px',
+				'top'		:''+(count_clo*5)+'px',
+				'left'		:''+(count_clo*5)+'px',
+				'opacity'	:'1',
+			},600,'easeOutBack',function(){
+				$('#conteudo iframe',this).hide().attr('src',content);
+				$(this).animate({boxShadow:'0 0 50px rgba(0,0,0,0.8)'},600,function(){
+					$('#conteudo iframe',this).fadeIn(600);
+				});
+				//===========Ativa Drag de Janela
+				$(this).draggable({ 
+					containment		: 'parent',
+					cursor			: 'move',
+					handle 			: '#cabecalho', 
+					cancel			: 'img',
+					iframeFix		: true,
+					scroll			: false,
+					start			: function(){
+						$('#conteudo iframe',this).hide();
+						$(this).css({'box-shadow':'none'});
+					},
+					stop			: function(){
+						$('input[name=win_posX]',this).val($(this).css('left'));
+						$('input[name=win_posY]',this).val($(this).css('top'));
+						$('#conteudo iframe',this).fadeIn(600);
+						$(this).animate({boxShadow:'0 0 50px rgba(0,0,0,0.8)'},600);
+					}
+				});
+				//===========Ativa Resize de Janela
+				if(resizeEnable)
+				{
+					$(this).resizable({ 
+						containment		: 'parent', 
+						minWidth		: 350, 
+						minHeight		: 100, 
+						animate			: true, 
+						animateEasing	: 'easeOutBack',
+						start			: function(){
+							$('#conteudo iframe',this).hide();
+							$('#wrap-window').hide();
+							$(this).css({'box-shadow':'none'});
+						},
+						stop			: function(){
+							$('#wrap-window').fadeOut(600);
+							$('#conteudo iframe',this).fadeIn(600);	
+							$(this).animate({boxShadow:'0 0 50px rgba(0,0,0,0.8)'},600);
+						}
+					});
+				}
+				//===========Desativa FullScreen
+				if(!buttonFull)
+				{
+					$('.maximize',this).hide();
+				}
+			});
+			//===========Efeitos nos Icones da Janela
+			$('.janela_'+count_win+' #cabecalho img').hover(function(){
+				$(this).stop().animate({opacity:'0.6'},600);
+			},function(){
+				$(this).stop().animate({opacity:'1'},600);
+			});
+			//===========Focus na Janela
+			$('.janela_'+count_win).click(function(){
+				if($(this).css('opacity')<1)
+				{
+					WindowFocus(this,1,buttonFull);
+				}
+			});
+			//===========Funcoes Clique
+			$('.janela_'+count_win+' #func li').click(function(){	
+				//===========Desfoque de Janela	
+				if($(this).attr('class') == 'iconize')
+				{
+					$(this).parents('#janela').removeAttr('title');
+					$(this).parents('#janela').animate({'opacity':'1'},100,function(){
+						real_this = this;
+						$('iframe',this).hide(0,function(){
+							$(real_this).css({
+								'z-index'		:'50',
+								'opacity'		:'0.3',
+								'box-shadow'	: 'none'
+							}).animate({
+								scale			:[0.5]
+							},300,'easeOutBack',function(){
+								$(this).draggable('disable').resizable('disable');
+								$('#func li',this).hide();
+								WindowAlign();
+							});
+						});
+					});					
+				}
+				//===========Maximiza Janela
+				if($(this).attr('class') == 'maximize')
+				{
+					$(this).parents('#janela').animate({'opacity':'1',boxShadow:'none'},0,function(){
+						real_this = this;
+						$('iframe',this).animate({'opacity':'0'},0,function(){
+							$(real_this).animate({
+								'width'		:'100%',
+								'height'	:'100%',
+								'top'		:-46,
+								'left'		:-8
+							},600,'easeInBack',function(){
+								$('#cabecalho',this).animate({'top':'-30px','opacity':'0.2'},0,function(){
+									$(this).hover(function(){
+										$(this).stop().animate({'top':'0px','opacity':'1'},300);
+									},function(){
+										$(this).stop().animate({'top':'-30px','opacity':'0.2'},300);
+									});
+									$('.iconize',this).hide();
+									$('.maximize img',this).attr('src','images/icones/janela/windows_nofullscreen.png');
+									$('.maximize',this).attr('class','minimize');
+									$('iframe',real_this).animate({'opacity':'1'},function(){
+										$('#wrap').hide();
+									});
+								});
+							});
+						});
+					});
+				}
+				//===========Minimiza Janela
+				if($(this).attr('class') == 'minimize')
+				{
+					$(this).parents('#janela').animate({'opacity':'1'},0,function(){
+						real_this = this;
+						$('#cabecalho',real_this).unbind('mouseenter mouseleave');
+						$('#cabecalho',real_this).animate({'top':'-38px','opacity':'1'},0,function(){
+							$('iframe',real_this).animate({'opacity':'0'},0,function(){
+								$(real_this).animate({
+									'width'		:''+sizeX+'px',
+									'height'	:''+sizeY+'px',
+									'top'		:''+(count_clo*5)+'px',
+									'left'		:''+(count_clo*5)+'px',
+								},600,'easeOutBack',function(){
+									$(this).animate({boxShadow:'0 0 15px rgba(0,0,0,0.8)'},0);
+									$('.iconize',this).show();
+									$('.minimize img',this).attr('src','images/icones/janela/windows_fullscreen.png');
+									$('.minimize',this).attr('class','maximize');
+									$('iframe',real_this).animate({'opacity':'1'},function(){
+										$('#wrap').hide();
+									});
+								});
+							});
+						});
+					});
+				}
+				//===========Fecha Janela
+				if($(this).attr('class') == 'close')
+				{
+					$('#wrap').show();
+					$(this).parents('#janela').animate({'opacity':'1',boxShadow:'none'},0,function(){
+						real_this = this;
+						$('iframe',this).hide(0,function(){
+							$(real_this).animate({scale:[0],'opacity':'0'},600,'easeInBack',function(){
+								count_clo--
+								$(this).remove();
+								$('#wrap').hide();
+								WindowAlign();
+							});
+						});
+					});
+				}
+			});
+		}
+		else
+		{
+			WindowFocus('#centro #janela[align='+name+']',1,buttonFull);
+		}		
+						
+	}
+	
+	$('#wrap, #loader').show();
+	$('#menu li').transform({scale:[0]});
+	window.onload = function(){
+		
+		$('#wrap, #loader').fadeOut(300,function(){
+			//=============Logo Montador
+			for(i=1;i<=$('#logo p').length;i++)
+			{
+				$('#logo p:nth-child('+i+')').delay(i*100).animate({rotate:'360deg','top':'0px','left':'0px','opacity':'1'},800,'easeOutBack');
+			}
+			//=============Menu Montador
+			for(a=1;a<=$('#menu li').length;a++)
+			{
+				$('#menu li:nth-child('+a+')').delay(a*50).animate({scale:[1]},800,'easeOutBack');
+			}
+			//=============Logo Drag
+			$('#logo p').draggable({ containment: '#centro' });
+		});		
+		//=============Menu Sortable
+		$('#menu-sort').sortable({containment:'parent'});
+		//=============Menu Hover	
+		$('#menu li').hover(function(){
+			$('img',this).animate({translateY:'-15px',scale:[1.2],boxShadow:'0 15px 30px rgba(0,0,0,1)'},{queue:false,duration:600,easing:'easeOutBack'});	
+		},function(){
+			$('img',this).animate({translateY:'0px',scale:[1.0],boxShadow:'0 1px 3px rgba(0,0,0,0.6)'},{queue:false,duration:600,easing:'easeOutBack'});	
+		});
+		//=============Menu Click
+		$('#menu li').click(function(){
+						
+			if($(this).attr('class') == 'agenda')
+			{
+				WindowCreate('wallet','WebAgenda 1.7',$(this).attr('class'),'http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/conteudo/agenda','918','575');
+				$('#wrap').fadeIn(300);
+				$('img',this).animate({bottom:'50px'},300,function(){
+					$(this).animate({bottom:'0px'},600,'easeOutBounce',function(){
+						$('#wrap').fadeOut(300);
+					});
+				});
+			}
+			if($(this).attr('class') == 'diretorio')
+			{
+				WindowCreate('icon_downloads','File Manager 1.0',$(this).attr('class'),'http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/conteudo/diretorio','480','480',1,1);
+				$('#wrap').fadeIn(300);
+				$('img',this).animate({bottom:'50px'},300,function(){
+					$(this).animate({bottom:'0px'},600,'easeOutBounce',function(){
+						$('#wrap').fadeOut(300);
+					});
+				});
+			}
+			if($(this).attr('class') == 'odontograma')
+			{
+				WindowCreate('pages','Odontograma',$(this).attr('class'),'http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/conteudo/odontograma/','965','470');
+				$('#wrap').fadeIn(300);
+				$('img',this).animate({bottom:'50px'},300,function(){
+					$(this).animate({bottom:'0px'},600,'easeOutBounce',function(){
+						$('#wrap').fadeOut(300);
+					});
+				});
+			}
+			if($(this).attr('class') == 'jogo')
+			{
+				WindowCreate('chess','jQuery Games',$(this).attr('class'),'http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/conteudo/jogo','520','520',1,1);
+				$('#wrap').fadeIn(300);
+				$('img',this).animate({bottom:'50px'},300,function(){
+					$(this).animate({bottom:'0px'},600,'easeOutBounce',function(){
+						$('#wrap').fadeOut(300);
+					});
+				});
+			}
+			if($(this).attr('class') == 'video')
+			{
+				WindowCreate('icon_imovie','Galeria de Videos',$(this).attr('class'),'http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/conteudo/video','840','520',1,1);
+				$('#wrap').fadeIn(300);
+				$('img',this).animate({bottom:'50px'},300,function(){
+					$(this).animate({bottom:'0px'},600,'easeOutBounce',function(){
+						$('#wrap').fadeOut(300);
+					});
+				});
+			}
+			if($(this).attr('class') == 'desenho')
+			{
+				WindowCreate('textedit','HTML5 SketchPad',$(this).attr('class'),'http://jobs.levelhard.com.br/jobs/sw_webdesk_v0/conteudo/desenho','640','480');
+				$('#wrap').fadeIn(300);
+				$('img',this).animate({bottom:'50px'},300,function(){
+					$(this).animate({bottom:'0px'},600,'easeOutBounce',function(){
+						$('#wrap').fadeOut(300);
+					});
+				});
+			}
+			if($(this).attr('class') == 'webclin')
+			{
+				WindowCreate('icon_textedit','WebClin 2.0',$(this).attr('class'),'http://webclin.levelhard.com','1000','580',1,1);
+				$('#wrap').fadeIn(300);
+				$('img',this).animate({bottom:'50px'},300,function(){
+					$(this).animate({bottom:'0px'},600,'easeOutBounce',function(){
+						$('#wrap').fadeOut(300);
+					});
+				});
+			}
+			if($(this).attr('class') == 'browser')
+			{
+				WindowCreate('icon_chrome','jBrowser 1.0',$(this).attr('class'),'http://levelhard.com.br/','800','480',1,1);
+				$('#wrap').fadeIn(300);
+				$('img',this).animate({bottom:'50px'},300,function(){
+					$(this).animate({bottom:'0px'},600,'easeOutBounce',function(){
+						$('#wrap').fadeOut(300);
+					});
+				});
+			}
+
+		});
+		//=============Altera Logo
+		$('input[name=intera]').keyup(function(e){
+			
+			if(e.keyCode == 13)
+			{				
+				if($('input[name=intera]').val())
+				{
+					$('#menu li').unbind('keyup');
+					
+					var teste = '';
+					$.each($(this).val(),function(i,l){
+						teste = teste+'<p>'+l+'</p>';
+					});
+					$('#logo').html(teste);
+					
+					for(i=1;i<=$('#logo p').length;i++)
+					{
+						$('#logo p:nth-child('+i+')').delay(i*100).animate({rotate:'360deg','top':'0px','left':'0px','opacity':'1'},800,'easeOutBack');
+					}
+					$('#logo p').draggable({containment:'#centro'});
+					$('input[name=intera]').val('');
+				}
+			}
+			
+		});
+
+	}
+				
+});
+
+</script>
+
+</body>
+</html>
