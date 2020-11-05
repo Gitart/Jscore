@@ -1,3 +1,4 @@
+// Chan
 <script>
 function chks(){
         // Установить всем флажок
