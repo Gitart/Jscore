@@ -67,9 +67,9 @@
 			return (document.cookie = [
 				encode(key), '=', stringifyCookieValue(value),
 				options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
-				options.path    ? '; path=' + options.path : '',
-				options.domain  ? '; domain=' + options.domain : '',
-				options.secure  ? '; secure' : ''
+				options.path    ? '; path='    + options.path : '',
+				options.domain  ? '; domain='  + options.domain : '',
+				options.secure  ? '; secure'   : ''
 			].join(''));
 		}
 
@@ -91,7 +91,7 @@
 			if (key === name) {
 				// If second argument (value) is a function it's a converter...
 				result = read(cookie, value);
-				break;
+				break ;
 			}
 
 			// Prevent storing a cookie that we couldn't decode.
