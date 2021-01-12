@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0037)file:///C:/MORION/html/structure.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      <title>Head Office</title>
+    
+      <link rel="stylesheet" href="./Head Office_files/jquery-ui.css">
+      <script src="./Head Office_files/jquery-1.10.2.js"></script>
+      <script src="./Head Office_files/jquery-ui.js"></script>
+	  
+	    <link rel="stylesheet" href="./Head Office_files/bootstrap.min.css">
+      <link rel="stylesheet" href="./Head Office_files/bootstrap-theme.min.css">
+      
+      <script src="./Head Office_files/jquery.min.js"></script>
+      <script src="./Head Office_files/bootstrap.min.js"></script>
+
+      <link rel="stylesheet" href="./Head Office_files/core.css">
+       
+      <!-- Include Bootstrap Datepicker 
+           http://eternicode.github.io/bootstrap-datepicker/?markup=input&format=&weekStart=&startDate=&endDate=&startView=0&minViewMode=0&maxViewMode=1&todayBtn=true&clearBtn=false&language=ru&orientation=auto&multidate=&multidateSeparator=&todayHighlight=on&keyboardNavigation=on&forceParse=on#sandbox
+
+           http://xdsoft.net/jqplugins/datetimepicker/
+           http://stefangabos.ro/jquery/zebra-datepicker/
+           http://ionden.com/a/plugins/ion.calendar/en.html
+       -->
+
+      <link rel="stylesheet" href="./Head Office_files/datepicker.min.css">
+      <link rel="stylesheet" href="./Head Office_files/datepicker3.min.css">
+      <script src="./Head Office_files/bootstrap-datepicker.min.js"></script>
+    
+      <script src="./Head Office_files/mask.js"></script>
+    
+      <!--https://github.com/digitalBush/jquery.maskedinput-->
+      <script>
+           $(function($){
+                      $("#Busscode").mask("99/99/9999",{placeholder:"99/99/9999"});
+                      $("#Code").mask("?999999999999", {placeholder:"XXXXXXXXXXXX"});
+                      $("#Country").mask("(999) 999-9999? x99999",{placeholder:"XXXXXXXXX"});
+                      $("#Street").mask("99/99/9999",{completed:function(){alert("You typed the following: "+this.val());}});
+                    });
+      </script>
+    
+      <script>
+              $(function() {
+                $( "#datepickerss" ).datepicker();
+              });
+      </script>
+    
+    
+      <script>
+              // Save information
+              function Saveinformation(){
+                $Post(url:"inform/save",
+                      data:"Data",
+                      suuccess(){
+                                  $("#Ok").html("Данне по аптеки записаны.")
+                                 };
+                    )}
+              
+     </script>
+
+<script>
+// var cuisines = ["Chinese","Indian"];     
+// var sel = document.getElementById('CuisineList');
+// for(var i = 0; i < cuisines.length; i++) {
+//     var opt = document.createElement('option');
+//     opt.innerHTML = cuisines[i];
+//     opt.value = cuisines[i];
+//     sel.appendChild(opt);
+// }
+
+ function Changeregion(data){
+     //alert(data.value);
+     //alert(data.selectedIndex);
+
+      var select = document.getElementById("Area"); 
+      var idx=data.selectedIndex;
+					  
+		  var options = ["02.Винницкая", "06.Житомирская", "03.Киевская", "04.Кировоградская", "05.Полтавская","06.Сумская","07.Черкасская","08.Черниговская"]; 
+					  
+			// Центр
+			if (idx==1) {
+				  var options = ["02.Винницкая", "06.Житомирская", "10.Киевская", "12.Кировоградская", "17.Полтавская", "19.Сумская", "24.Черкасская", "25.Черниговская"]; 
+			}
+
+      // Южный					  
+			if (idx==2) {
+			   options = ["01.АР Крым", "08.Запорожская", "15.Николаевская", "16.Одесская", "22.Херсонская", "27.Севастопольская"]; 
+			}
+					  
+			// Bосточный
+			if (idx==3) {
+			    options = ["04.Днепропетровськая", "05.Донецкая", "13.Луганськая", "21.Харківськая"]; 
+			}
+					  
+			// Западный      
+			if (idx==4) {
+          options = ["03.Волынскую", "07.Закарпатскую", "09.Ивано-Франковскую", "14.Львовскую", "18.Ровенскую", "20.Тернопольскую", "23.Хмельницкую", "26.Черновицкую"]; 
+      }
+				
+      // Optional: Clear all existing options first:
+      select.innerHTML = "";
+                      
+      // Populate list with options:
+      for(var i = 0; i < options.length; i++) {
+          
+          var opt = options[i].split(".");
+			    var codereg = opt[0];  
+					var namereg = opt[1];
+          select.innerHTML += "<option value=\"" + codereg + "\">" + namereg + "</option>";
+          }
+      }
+
+
+
+function ParseUrl(){
+  var url=window.location;
+
+  //alert(url.search.split("&")[1].split("=")[1]);
+  alert(getParameterByName("ID",url));
+  alert(getParameterByName("id",url));
+  alert(getParameterByName("er",url));
+  alert(getParameterByName("key",url));
+  alert(getParameterByName("mode",url));
+  alert(getParameterByName("type",url));
+  alert(getParameterByName("region",url));
+  
+  alert(getParameterByName("ern",url));
+
+   var select = document.getElementById("Region"); 
+   select.selectedIndex=2;
+    select.onchange();
+
+  
+}
+
+
+
+
+
+
+// ****************************************************************
+// Get url & parameters
+// ****************************************************************
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function Spl(Parser, Num){
+  return Parser.split("&")[Num].split("=")[1];
+}
+
+</script>
+
+</head>
+<body>
+    
+
+
+<a href="file:///C:/MORION/html/structure.html#sss" onclick="ParseUrl()">Parse Url</a>
+
+   <!--Header notification-->
+   <div id="Headinform"></div>
+
+   <div id="formmain" class="formbody">
+        <div id="formhead" class="frm_head">
+              <h3 onclick="Changeregion()">Новая аптека</h3>
+              <p>Для регистрации новой аптеки заполните поля в форме.</p>
+         </div>
+         <hr>
+        
+       <div id="formbody" class="frmmain">
+            <div>
+                  <label class="frm_label">Корпорация</label>
+                  <!--<input type="text" id="Corpcode" name="Corpcode"/>-->
+                  
+                  <select id="frm">
+                          <option val="C1"> Организ1  </option>
+                          <option val="C2"> Организ1  </option>
+                          <option val="C3"> Организ1  </option>
+                          <option val="C4"> Организ1  </option>
+                          <option val="C5"> Организ1  </option>
+                          <option val="C6"> Организ1  </option>
+                          <option val="C7"> Организ1  </option>
+                          <option val="C8"> Организ1  </option>
+                          <option val="C9"> Организ1  </option>
+                  </select>
+             </div>
+
+             <div>
+                  <label class="frm_label">Код сети</label>
+                  <input type="text" id="Busscode" name="Busscode">
+             </div>
+
+             <div>
+                  <label class="frm_label">Наименование</label>
+                  <input type="text" id="Name" name="Namecorp">
+             </div>
+
+             <div>
+                  <label class="frm_label">Код аптеки</label>
+                  <input type="text" id="Code" name="Code">
+             </div>
+             
+             <div>
+                  <label class="frm_label">Страна</label>
+                  <input type="text" id="Country" name="Country">
+             </div>
+           
+
+            <div>
+                  <label class="frm_label">Регион</label>
+                  <select id="Region" onchange="Changeregion(this)">
+                            <option val="0">-- Выберите регион --</option>
+                            <option val="1">Центральный</option>
+                            <option val="2">Южный</option>
+                            <option val="3">Западный</option>
+                            <option val="4">Восточный</option>
+                  </select>         
+             </div>
+
+             <div>
+                  <label class="frm_label">Область</label>
+                  <select id="Area">
+                            <option val="0">-- Выберите область --</option>
+                            
+                            <option val="01">АР Крим</option>
+                            <option val="02">Вінницька</option>
+                            <option val="03">Волинська</option>
+                            <option val="04">Дніпропетровська</option>
+                            <option val="05">Донецька</option>
+                            <option val="06">Житомирська</option>
+                            <option val="07">Закарпатська</option>
+                            <option val="08">Запорізька</option>
+							<option val="09">Івано-Франківська</option>
+                            <option val="10">Київська</option>
+							<option val="11">Київ</option>
+							<option val="12">Кіровоградська</option>
+                            <option val="13">Луганська</option>
+                            <option val="14">Львівська</option>
+                            <option val="15">Миколаївська</option>
+                            <option val="16">Одеська</option>
+                            <option val="17">Полтавська</option>
+                            <option val="18">Рівненська</option>
+                            <option val="19">Сумська</option>
+                            <option val="20">Тернопільська</option>
+                            <option val="21">Харківська</option>
+                            <option val="22">Херсонська</option>
+                            <option val="23">Хмельницька</option>
+                            <option val="24">Черкаська</option>
+                            <option val="25">Чернівецька</option>
+                            <option val="26">Чернігівська</option>
+                  </select>         
+             </div>
+
+             <div>
+                  <label class="frm_label">Город</label>
+                  <input type="text" id="City" name="City">
+             </div>
+
+             <div>
+                  <label class="frm_label">Улица дом</label>
+                  <input type="text" name="Street" id="Street">
+             </div>
+
+             <div>
+                  <label class="frm_label">E_mail</label>
+                  <input type="text" id="Note" name="Note">
+             </div>
+       
+             <div>
+                  <label class="frm_label">Телефон</label>
+                  <input type="text" id="Telephone" name="Note">
+             </div>
+           
+           
+             <div>
+                  <label class="frm_label">Технический специалист</label>
+                  <select id="Ts">
+                          <option val="C1"> Прохоров Олег    </option>
+                          <option val="C2"> Степаненко Иван  </option>
+                          <option val="C3"> Руженко Игорь    </option>
+                          <option val="C4"> Пром Игорь       </option>
+                          <option val="C5"> Павленко Паша    </option>
+                          <option val="C6"> Организ1         </option>
+                          <option val="C7"> Организ1         </option>
+                          <option val="C8"> Организ1         </option>
+                          <option val="C9"> Организ1         </option>
+                  </select>
+             </div>
+                      
+             <div class="form-group has-error">
+                  <label class="frm_label">Примечание</label>
+                  <input type="text" id="Noted" name="Note">
+             </div>
+           
+             <hr>
+             <div class="panel-footer clearfix">
+                  <div class="pull-right">
+                       <input type="reset" class="btn btn-info  btn-sm" id="Reject" value="Отказаться" onclick="Saveinformation();">
+                       <input type="button" class="btn btn-default  btn-sm" id="Inform" value="Справка" onclick="Information();">
+				       <input type="Submit" class="btn btn-success  btn-sm" id="Save" value="Сохранить" onclick="Saveinformation();">
+                  </div>
+             </div>
+        </div>
+
+        <div id="forfooter" class="footter">
+             <small></small>
+        </div>
+       
+       <!--
+         <div class="input-group input-append date" id="datePicker">
+                           <input type="text" class="form-control" name="date" />
+                           <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+         </div>
+         -->
+   </div>
+           
+    <!--Inform div-->
+    <div id="Informdiv"></div>    
+
+    <!--Notify window-->
+    <div id="notify" style="display: none;">
+         <div id="notify_head"></div>
+         <div id="notify_body"></div>
+         <div id="notify_foot"></div>
+    </div>
+    
+
+    
+    
+    <script>
+$(document).ready(function() {
+    $('#datePicker')
+        .datepicker({
+            format: 'dd/mm/yyyy',
+         maxViewMode: 1,
+    todayBtn: true,
+    language: "ru",
+    todayHighlight: true
+        })
+        .on('changeDate', function(e) {
+            // Revalidate the date field
+            $('#eventForm').formValidation('revalidateField', 'date');
+        });
+
+    $('#eventForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The name is required'
+                    }
+                }
+            },
+            date: {
+                validators: {
+                    notEmpty: {
+                        message: 'The date is required'
+                    },
+                    date: {
+                        format: 'MM/DD/YYYY',
+                        message: 'The date is not a valid'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
+</body></html>
