@@ -1,0 +1,66 @@
+    html     {
+    	       font-family: calibri;
+               color: #777;
+              }
+
+    h3,div,p {
+    	       padding: 0px; 
+    	       margin:  0px;
+    	     }
+
+
+    .frm_head{ 
+    	      color:            #400000;
+    	      background-colo:  #707070;
+             }
+
+    .formbody{
+              margin-top:       15px;
+    	      position:         absolute; 
+    	      width:            700px; 
+    	      background-color: #F8F8F8; 
+    	      border:           1px #CCC solid; 
+    	      left:             50%; 
+    	      margin-left:      -350px;
+    	      border-radius:    5px;
+    	      padding:          30px;
+    	      box-shadow:       10px 5px 15px #202020;
+              }
+    
+    .frm_label{
+    	       width: 200px; 
+    	       display: inline-block;
+    	      }
+
+    .frmmain input[type="button"], input[type="reset"], input[type="submit"]{
+    	           width: 150px; 
+                   font-weight: bold;
+                   margin: 2px;
+                   padding: 4px;
+              } 
+
+    .frmmain input[type="text"], input[type="password"], select{
+    	           width:       400px; 
+                   font-weight: bold;
+                   margin:      2px;
+                   padding:     5px;
+                   font-size-adjust: 12px;
+                   border: 1px #C8C8C8 solid;
+                   border-radius: 2px;
+              }
+
+     .frmmain   select{
+                   height: 33px;
+     }
+     
+
+     .header_color{
+               color:#
+     }
+     /*.frmmain input:hover{background-color: #FFFFCC;} 	
+     
+
+
+
+
+
