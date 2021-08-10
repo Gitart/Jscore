@@ -26,9 +26,31 @@ myMethod3: function(newConfig) {
               this.myConfig = newConfig;
               console.log(this.myConfig.language);
           }
- }
+ },
+
+// 
+myMet: {
+         useCa: function() {
+             return 'Пример вложенной функции';
+         },
+
+         useCl: function() {
+             return 'Новый выстр..............';
+         },
+
+         language: 'en'
+} 
+
 };
 
+
+
+function Mee(){  
+    console.log(myModule.myMet.useCl()); 
+    console.log(myModule.myMet.useCa()); 
+    console.log(myModule.myMet.language); 
+
+}
 
 function Mytest(){
 
