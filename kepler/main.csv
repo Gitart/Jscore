@@ -1,28 +1,5 @@
 TreeID,qSpecies,qAddress,SiteOrder,qSiteInfo,PlantType,PlantDate,Plan,Age,DBH,latitude,longitude
-141565,Myoporum laetum :: Myoporum,501X Baker St,1,Sidewalk: Curb side : Cutout,Tree,1988-07-21 00:00,1988,29,21,37.77596769,-122.4413967
-232565,Metrosideros excelsa :: New Zealand Xmas Tree,940 Elizabeth St,1,Sidewalk: Curb side : Yard,Tree,2017-03-20 00:00,2017,0,3,37.75171022,-122.441498
-119263,Pinus radiata :: Monterey Pine,495X Lakeshore Dr,1,Median : Yard,Tree,,,,,,
-207368,Ligustrum japonicum :: Japanese Privet,920 Kirkham St,1,Sidewalk: Curb side : Cutout,Tree,,,,6,37.76021031,-122.4707394
-188702,Acacia melanoxylon :: Blackwood Acacia,1501 Evans Ave,2,:,Tree,,,,17,37.74220867,-122.3872932
-141566,Myoporum laetum :: Myoporum,501X Baker St,2,Sidewalk: Curb side : Cutout,Tree,,,,14,37.77570453,-122.4414629
-188697,Acacia melanoxylon :: Blackwood Acacia,1301 Evans Ave,13,:,Tree,,,,15,37.73973386,-122.3829339
-122650,Acer rubrum :: Red Maple,300x Hickory St,6,Sidewalk: Curb side : Cutout,Tree,2016-11-10 00:00,2016,1,3,,
-203507,Agonis flexuosa :: Peppermint Willow,920 Kirkham St,2,Sidewalk: Curb side : Cutout,Tree,,,,23,37.76018051,-122.4708661
-122670,Lyonothamnus floribundus subsp. asplenifolius :: Santa Cruz Ironwood,301x Hickory St,3,Sidewalk: Curb side : Cutout,Tree,2016-11-10 00:00,2016,1,3,,
-122658,Acer rubrum :: Red Maple,300x Hickory St,14,Sidewalk: Curb side : Cutout,Tree,2016-11-10 00:00,2016,1,3,,
-122660,Acer rubrum :: Red Maple,300x Hickory St,16,Sidewalk: Curb side : Cutout,Tree,2016-11-10 00:00,2016,1,3,,
-122648,Acer rubrum :: Red Maple,300x Hickory St,4,Sidewalk: Curb side : Cutout,Tree,2016-11-10 00:00,2016,1,3,,
-196590,Pyrus calleryana :: Ornamental Pear,43 Lafayette St,2,:,Tree,,,,10,37.77303718,-122.4172458
-196591,Pyrus calleryana :: Ornamental Pear,43 Lafayette St,3,:,Tree,,,,13,37.77305251,-122.4172809
-122649,Acer rubrum :: Red Maple,300x Hickory St,5,Sidewalk: Curb side : Cutout,Tree,2016-11-10 00:00,2016,1,3,,
-145278,Fraxinus uhdei :: Shamel Ash: Evergreen Ash,730 11th Ave,1,Sidewalk: Curb side : Cutout,Tree,2017-03-20 00:00,2017,0,0,37.77448101,-122.4691091
-96369,Lophostemon confertus :: Brisbane Box,168 Cervantes Blvd,1,Sidewalk: Curb side : Cutout,Tree,2011-08-09 00:00,2011,6,24,37.80468521,-122.4402315
-182260,Arbutus 'Marina' :: Hybrid Strawberry Tree,1471 28th Ave,1,Sidewalk: Curb side : Cutout,Tree,,,,5,37.75995923,-122.4866885
-251179,Podocarpus gracilor :: Fern Pine,1043 Minna St,2,Sidewalk: Property side : Cutout,Tree,,,,,37.77353367,-122.4169045
-251178,Podocarpus gracilor :: Fern Pine,1043 Minna St,1,Sidewalk: Property side : Cutout,Tree,,,,,37.77353367,-122.4169045
-203506,Agonis flexuosa :: Peppermint Willow,910 Kirkham St,4,Sidewalk: Curb side : Cutout,Tree,,,,15,37.76026555,-122.4705695
-52566,Hakea suaveolens :: Sweet Hakea Tree,1555 40th Ave,1,Sidewalk: Curb side : Cutout,Tree,2016-01-12 00:00,2016,1,2,37.75778273,-122.4993677
-22346,Lophostemon confertus :: Brisbane Box,5280 03rd St,1,Sidewalk: Curb side : Cutout,Tree,2014-06-27 00:00,2014,3,3,37.72954822,-122.3926894
-23567,Platanus x hispanica :: Sycamore: London Plane,2975 Van Ness Ave,1,Sidewalk: Curb side : Cutout,Tree,1992-05-27 00:00,1992,25,3,37.80304673,-122.4250636
-237469,Prunus cerasifera :: Cherry Plum,4200 23rd St,1,Sidewalk: Curb side : Cutout,Tree,2000-07-17 00:00,2000,17,0,37.7528239,-122.4366208
-244214,Tree(s) ::,342 Scott St,1,Sidewalk: Curb side : Yard,Tree,2017-03-20 00:00,2017,0,3,37.77300994,-122.4355982
+141565,Myoporum laetum :: Myoporum,501X Baker St,1,Sidewalk: Curb side : Cutout,Tree,1988-07-21 00:00,1988,29,21,50.77596769,30.4413967
+232565,Metrosideros excelsa :: New Zealand Xmas Tree,940 Elizabeth St,1,Sidewalk: Curb side : Yard,Tree,2017-03-20 00:00,2017,0,3,50.75171022,30.441498
+207368,Ligustrum japonicum :: Japanese Privet,920 Kirkham St,1,Sidewalk: Curb side : Cutout,Tree,,,,6,50.76021031,30.4707394
+188702,Acacia melanoxylon :: Blackwood Acacia,1501 Evans Ave,2,:,Tree,,,,17,50.74220867,30.3872932
