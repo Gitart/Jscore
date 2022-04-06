@@ -1,10 +1,11 @@
+## Open Modal window in boostrap 5 version
+```js
 var galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'), {
   keyboard: false
 });
 
-
 galleryModal.show();
-
+```
 
 ## Sample
 ```js
