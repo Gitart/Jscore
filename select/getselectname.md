@@ -23,3 +23,11 @@ If you wanted to get the string "Mr" if the first option was selected (instead o
 $( "#myselect option:selected" ).text();
 // => "Mr"
 ```
+
+
+### JS
+```js
+  var options = select.options;
+  var id      = options[options.selectedIndex].id;
+  var value   = options[options.selectedIndex].value;
+``
