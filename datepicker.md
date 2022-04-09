@@ -24,3 +24,79 @@
                       $( "#datereg" ).datepicker({minDate: -100, maxDate: "+0D", dateFormat: 'yy.dd.mm hh:mm',  onSelect: function(datetext){ $(this).val(datetext);}});
              });
 ```
+
+
+sample page html
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    {{template "libs"}}
+    {{template "calendarlib"}}
+
+    <script type="text/javascript">
+			$(document).ready(function() {
+
+          
+			  $('#cr').datepicker({
+			    format:        'dd-mm-yyyy',
+			    endDate:       '+100d',
+			    minDate:        -100, 
+			    autoclose:      true,
+			    todayBtn:       true,
+			    todayHighlight: true,
+			    weekStart:      1,
+			    changeMonth:    true,
+			    title:          "Календар",
+			    language:       "ru"
+			  });
+			});
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+      {{template "mainmenu"}}
+    <div/>
+
+   <div class="container"> 
+	   	<h1>{{.Title}}</h1>
+
+	    <form id="documentform" action="/info/save" method="POST">
+	           <input  type="hidden"  name="id" id="id">
+
+	            <div class=" row">
+	              <label  class="col-sm-3 col-form-label">Назва </label>
+	              <div class="col-sm-9">
+	                 <input type="text" class="form-control" name="title" id="title" placeholder="Назва товару" autofocus required>
+	              </div>
+	            </div>
+	          
+	            <div class=" row">
+	                  <label  class="col-sm-3 col-form-label">Дата</label>
+	                  <div class="col-sm-9">
+	                       <input type="text" class="form-control" name="cr" id="cr" autocomplete="off" >
+	                        
+	                  </div>
+	            </div>
+	      </div>
+
+	      <div class="modal-footer">
+	        <button type="submit" class="btn btn-secondary btn-sm" >Отправить</button>
+	      </div>
+	    </form>
+   </div>
+</body>
+</html>
+```
+
+
+## Library
+```js
+<!-- Calendar -->
+{{define "calendarlib"}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ru.min.js"></script>
+{{end}}
+```
+
