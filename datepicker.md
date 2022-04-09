@@ -1,4 +1,7 @@
+# Calendar
+[Link to js calendar](https://bootstrap-datepicker.readthedocs.io/en/latest/options.html)
 
+```js
             $(function() {
 
                       
@@ -26,4 +29,4 @@
 
                       $( "#datereg" ).datepicker({minDate: -100, maxDate: "+0D", dateFormat: 'yy.dd.mm hh:mm',  onSelect: function(datetext){ $(this).val(datetext);}});
              });
-
+```
