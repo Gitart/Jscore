@@ -17,6 +17,18 @@
       $( "div" ).removeData( "blah" );
       
 ```
+## Get js data
+
+```js
+var elem = document.createElement( "span" );
+$( elem ).data( "foo" ); // undefined
+$( elem ).data(); // {}
+ 
+$( elem ).data( "foo", 42 );
+$( elem ).data( "foo" ); // 42
+$( elem ).data(); // { foo: 42 }
+```
+
 
 ## Data-value
 
