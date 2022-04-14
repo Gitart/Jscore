@@ -1,3 +1,20 @@
+## Data operation
+
+```js
+$( "button" ).index( this ) ) {
+      <!-- Get -->
+      value = $( "div" ).data( "blah" );
+      
+      <!--  Set   -->
+      $( "div" ).data( "blah", "hello" );
+      
+      <!-- Set     -->
+      $( "div" ).data( "blah", 86 );
+    
+      <!--Удалить    -->
+      $( "div" ).removeData( "blah" );
+      
+```
 
 ## Data-value
 
