@@ -24,4 +24,47 @@ var country = obj.country;
 $("#obj-details").text(country);
 ```
 
+## Data value
 
+```js
+$(document).ready(function() {
+  $('button').on('click', function() {
+    console.log(this.dataset.id, $(this).data().id, $(this).data('id'));
+  });
+});
+```
+
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<tbody>
+  <tr>
+    <td>
+      <button type="button" data-id="1">btn #1</button>
+      <button type="button" data-id="2">btn #2</button>
+      <br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="button" data-id="3">btn #1</button>
+      <button type="button" data-id="4">btn #2</button>
+      <br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="button" data-id="5">btn #1</button>
+      <button type="button" data-id="6">btn# 2</button>
+      <br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="button" data-id="7">btn #1</button>
+      <button type="button" data-id="8">btn #2</button>
+      <br>
+    </td>
+  </tr>
+</tbody>
+```
