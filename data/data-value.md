@@ -1,4 +1,6 @@
 ## Data set
+https://api.jquery.com/data/
+
 ```js
 $( "body" ).data( "foo", 52 );
 $( "body" ).data( "bar", { isManual: true } );
