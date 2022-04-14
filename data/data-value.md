@@ -1,7 +1,9 @@
 ## Data operation
 
 ```js
-$( "button" ).index( this ) ) {
+     <!-- Get index       -->
+     $( "button" ).index( this )
+
       <!-- Get -->
       value = $( "div" ).data( "blah" );
       
