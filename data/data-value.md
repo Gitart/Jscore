@@ -1,3 +1,13 @@
+## Data set
+```js
+$( "body" ).data( "foo", 52 );
+$( "body" ).data( "bar", { isManual: true } );
+$( "body" ).data( { baz: [ 1, 2, 3 ] } );
+$( "body" ).data( "foo" ); // 52
+$( "body" ).data(); // { foo: 52, bar: { isManual: true }, baz: [ 1, 2, 3 ] }
+```
+
+
 ## Data operation
 
 ```js
