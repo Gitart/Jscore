@@ -25,6 +25,7 @@ $("#obj-details").text(country);
 ```
 
 ## Data value
+http://jsfiddle.net/guest271314/6LcfS/
 
 ```js
 $(document).ready(function() {
