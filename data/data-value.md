@@ -1,3 +1,65 @@
+## Get data in option select
+
+```js
+  alert($("#product_id").find(':selected').data("qt"));
+  
+```
+
+
+```html
+<select class="form-select" id="product_id" name="product_id" 
+                        data-qt="3444-333" data-id="217496D-P078" >
+                        
+                  {{range .Products}}
+                      <option title="({{.Qty}} | {{.Weight}})" data-qt="{{.Qty}}" value="{{.Id}}">{{.Title}}   </option>
+                  {{end}}
+                </select>
+```
+
+
+### full code
+```html
+// Update open window
+// Get and Fill form items
+function ShowModal(id) {
+
+  $("#buttonsave").hide();
+  $("#buttonupdate").show();
+
+  // $("#numdocument").html("Продукт # "+ id);
+  url =  "/item/" + id;
+  $.ajax({
+         method:  "GET",
+         url:     "/item/" + id,
+         dataType: "json",
+                    
+         success: function (data, dt)
+            {
+       
+                alert($("#product_id").attr("data-qt")); 
+                alert($("#product_id").data("id"));
+
+                alert($("#product_id").find(':selected').data("qt"));
+
+               $('#id').val(data.id);
+               $('#product').val(data.product);
+               $('#product_name').html("Товар # "+ data.product_id);
+               $('#product_id').val(data.product_id);
+               $('#price').val(data.price);
+               $('#qty').val(data.qty);
+               $('#weight').val(data.weight);
+               $('#remark').val(data.remark);
+            }
+  });
+
+  var myModal = new bootstrap.Modal(document.getElementById("windowitems"), {});
+  myModal.show();
+}
+```
+
+
+
+
 ## Data set
 https://api.jquery.com/data/
 
