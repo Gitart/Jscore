@@ -7,7 +7,16 @@
       alert($("#product_id").attr("data-qt")); 
      alert($("#product_id").data("id")); 
 ```
+## Data other
+```js
+<div data-role="page" data-last-value="43" data-hidden="true" data-options='{"name":"John"}'></div>
+The following comparisons are all true:
 
+$( "div" ).data( "role" ) === "page";
+$( "div" ).data( "lastValue" ) === 43;
+$( "div" ).data( "hidden" ) === true;
+$( "div" ).data( "options" ).name === "John";
+```
 
 ## Object
 
