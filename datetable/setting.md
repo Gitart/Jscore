@@ -81,3 +81,84 @@ function CloseWindow(){
 </body>
 </html>
 ```
+
+
+
+
+## Js core
+```js
+var myWindow;
+
+function openCenteredWindow(url) {
+    var width  = 800;
+    var height = 400;
+    var left   = parseInt((screen.availWidth/2)  - (width/2));
+    var top    = parseInt((screen.availHeight/2) - (height/2));
+    // var windowFeatures = "width=" + width + ",height=" + height + ",status,resizable,left=" + left + ",top=" + top + "screenX=" + left + ",screenY=" + top;
+    var windowFeatures = "width=" + width + ",height=" + height + ",resizable,left=" + left + ",top=" + top + "screenX=" + left + ",screenY=" + top;
+    myWindow = window.open(url, "subWind", windowFeatures);
+}
+
+// Change 
+function LoadDatType(){
+	id = $("#typ").val();
+
+	// alert(id);
+	$('#typeget').html("");
+
+	if (id=="0"){
+    	var data = [
+                  {"id": "0", "name": "-- Оберить підставу для отримання -- "}
+                ];
+    }      
+
+	if (id=="1"){
+    	var data = [
+                    {"id": "1", "name": "Митна декларація"},
+                    {"id": "2", "name": "Рахунок-фактура"}
+                 ];
+    }      
+
+	if (id=="2"){
+    	var data = [
+                    {"id": "3", "name": "Лист звернення"},
+                  ];
+        $("#num").focus();       
+    }      
+
+    $.each(data, function(i, option) {
+        $('#typeget').append($('<option/>').attr("value", option.id).text(option.name));
+    });
+}
+
+//  Hidden fields before change
+function FrmHidden(){
+
+id = $("#typeget").val();
+
+if (id=="1") {
+	console.log("ed");
+	$("#div_company").hide();
+  $("#div_recipient").hide();
+	$("#div_tag").hide();
+	$("#div_td_num").hide();
+	$("#div_num").hide();
+ 
+  } else if (id=="2") {
+  	console.log("dva");
+	$("#div_company").show();
+	$("#div_recipient").show();
+	$("#div_tag").show();
+	$("#div_td_num").show();
+	$("#div_num").show();
+	
+  } else if (id=="3") {
+  	console.log("tri");
+	$("#div_company").hide();
+	$("#div_tag").hide();
+	$("#div_td_num").show();
+	$("#div_num").show();
+	$("#div_recipient").show();
+  }
+}
+```
