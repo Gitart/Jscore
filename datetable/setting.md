@@ -5,6 +5,7 @@ $(document).ready(function() {
           ajax: {
               url:     "/docs",
               dataSrc: "data",
+              type:    "POST",
           },
          "pageLength": 10,
          "processing": true,
@@ -13,8 +14,8 @@ $(document).ready(function() {
                          "lengthMenu":   "Записів : _MENU_",
                          "zeroRecords":  "Записів немає",
                          "info":         "Сторінок _PAGE_ із _PAGES_",
-                         "infoEmpty":    "Нет данных ",
-                         "infoFiltered": "(Знайдено _MAX_ всього записів)",
+                         "infoEmpty":    "Данні відсутні ",
+                         "infoFiltered": "Знайдено _MAX_ записів",
                          "search":       "Пошук : "
                      },
       "columns": [
@@ -25,8 +26,10 @@ $(document).ready(function() {
       ]
   });
 
+// table.ajax.url( 'newData.json' ).load();
 
-$('#list_md').on( 'dblclick', 'tr', function () {
+// Dblcklic for open window
+$('#list_md').on('dblclick', 'tr', function () {
        var rowData = table.row(this).data();
        SetNumber(rowData.num);
        CloseWindow();
@@ -41,6 +44,22 @@ function SetNumber(num){
 // close
 function CloseWindow(){
    window.close();
+}
+
+// Add new records
+function AddingRow(){
+  var table = $('#list_md').DataTable();
+  
+table.rows.add( [ {
+        "id":       "Tiger Nixon",
+        "company":   "System Architect",
+        "num":     "$3,120"
+    }, {
+        "id": "Garrett Winters",
+        "company": "Director",
+        "num": "$5,300"
+    } ] )
+    .draw();
 }
 ```
 
