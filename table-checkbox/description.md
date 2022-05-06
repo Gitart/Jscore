@@ -1,6 +1,6 @@
-## Work with checkbox
+# Work with checkbox
 
-# Get alll check box
+### Get alll check box
 ```js
  // Get checks checkboxes
      function updateCount(){
@@ -20,7 +20,7 @@
  ```  
  
  
- ## Set all checkbox
+ ### Set all checkbox
  ```js
  // Set - unset checkboxes
     function updateCheckAll(){
