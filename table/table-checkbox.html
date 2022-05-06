@@ -8,7 +8,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
     <link   rel="stylesheet"   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    <script type="text/javascript">
+
+<style type="text/css">
+  #mtable td:nth-child(1){text-align: center; width: 70px;}
+
+  .checkboxclass {
+        width: 1.2em !important;
+        height: 1.2em !important;
+        border-radius: 1px !important;
+   }
+
+  .checkboxclass:hover{cursor: pointer;}
+</style>
+
+
+<script type="text/javascript">
+
+$("input[type='checkbox']").change(function () {
+    if ($("input[type='checkbox']:checked").length > 0)
+        $("#b1").prop("disabled", false);
+    else
+        $("#b1").prop("disabled", true);
+});
+
 
      function updateCount(){
         var selected = new Array();
@@ -21,23 +43,25 @@
            alert("nothing checket")
         }
 
-        alert(selected);
+        // alert(selected);
+        $("#shoresult").text(selected);
       }
     </script>
   </head>
 
 <body>
 <div class="container">
-   <h2>Table samples</h2>
+   <h2 >Table samples</h2>
+   <h3 id="shoresult"></h3>
    <table id="mtable" class="table table-bordered">
-          <tr>  <td><input id="1w" type="checkbox"></td><td>Samples $1</td></tr>
-          <tr>  <td><input id="2w" type="checkbox"></td><td>Samples $2</td></tr>
-          <tr>  <td><input id="3w" type="checkbox"></td><td>Samples $3</td></tr>
-          <tr>  <td><input id="4w" type="checkbox"></td><td>Samples $1</td></tr>
-          <tr>  <td><input id="5w" type="checkbox"></td><td>Samples $2</td></tr>
-          <tr>  <td><input id="6w" type="checkbox"></td><td>Samples $3</td></tr>
+          <tr>  <td><input id="1w" class="checkboxclass" type="checkbox"></td><td>Samples $1</td></tr>
+          <tr>  <td><input id="2w" class="checkboxclass" type="checkbox"></td><td>Samples $2</td></tr>
+          <tr>  <td><input id="3w" class="checkboxclass" type="checkbox"></td><td>Samples $3</td></tr>
+          <tr>  <td><input id="4w" class="checkboxclass" type="checkbox"></td><td>Samples $1</td></tr>
+          <tr>  <td><input id="5w" class="checkboxclass" type="checkbox"></td><td>Samples $2</td></tr>
+          <tr>  <td><input id="6w" class="checkboxclass" type="checkbox"></td><td>Samples $3</td></tr>
    </table>
-   <input type="button" onclick="updateCount()" name="Check"  value="Check IT field" ></input>
+   <input id="b1" type="button" onclick="updateCount()" name="Check"  value="Check IT field" ></input>
  </div>
  </body>
  </html>
