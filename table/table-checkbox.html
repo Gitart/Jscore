@@ -31,7 +31,29 @@ $("input[type='checkbox']").change(function () {
         $("#b1").prop("disabled", true);
 });
 
+    // Set all checkboxes
+    function updateCheckUncheckAll(){
+       $("input[type=checkbox]").each(function () {
+            $(this).attr('checked',false)
+            // alert($(this).attr('id'));
+        });
+    }
 
+    // Set - unset checkboxes
+    function updateCheckAll(){
+      // Убрать - установиь все галочки в таблице
+      if (!$("#headbox").is(":checked")) {
+        updateCheckUncheckAll()
+        return
+      }
+
+       $("input[type=checkbox]").each(function () {
+            $(this).attr('checked','checked')
+            // alert($(this).attr('id'));
+        });
+    }
+
+     // Get checks checkboxes
      function updateCount(){
         var selected = new Array();
         $("input[type=checkbox]:checked").each(function () {
@@ -44,7 +66,7 @@ $("input[type='checkbox']").change(function () {
         }
 
         // alert(selected);
-        $("#shoresult").text(selected);
+        $("#shoresult").text("IN ("+selected+")");
       }
     </script>
   </head>
@@ -54,14 +76,35 @@ $("input[type='checkbox']").change(function () {
    <h2 >Table samples</h2>
    <h3 id="shoresult"></h3>
    <table id="mtable" class="table table-bordered">
+    <thead>
+         <tr>  <td>
+                 <input id="headbox" onclick="updateCheckAll()" 
+                   class="checkboxclass" type="checkbox">
+                </td>
+                <td>Title</td>
+         </tr>
+    </thead>
+    <tbody>
           <tr>  <td><input id="1w" class="checkboxclass" type="checkbox"></td><td>Samples $1</td></tr>
           <tr>  <td><input id="2w" class="checkboxclass" type="checkbox"></td><td>Samples $2</td></tr>
           <tr>  <td><input id="3w" class="checkboxclass" type="checkbox"></td><td>Samples $3</td></tr>
           <tr>  <td><input id="4w" class="checkboxclass" type="checkbox"></td><td>Samples $1</td></tr>
           <tr>  <td><input id="5w" class="checkboxclass" type="checkbox"></td><td>Samples $2</td></tr>
           <tr>  <td><input id="6w" class="checkboxclass" type="checkbox"></td><td>Samples $3</td></tr>
+    </tbody>
    </table>
-   <input id="b1" type="button" onclick="updateCount()" name="Check"  value="Check IT field" ></input>
+
+
+   <input id="b1" type="button" onclick="updateCount()"    name="Check"     value="Check IT field" ></input>
+   <input id="b1" type="button" onclick="updateCheckAll()" name="Checkall"  value="Check all" ></input>
+   <input id="b1" type="button" onclick="updateCheckUncheckAll()" name="UnCheckall"  value="UN Check all" ></input>
+
+  <p>
+    Пример работы с  выбором в чек-боксах. Снятие установки всех галочек.
+    Получение только выбранных галочек.
+  </p>
+  <hr>
+  <a href="https://stackoverflow.com/questions/2834350/get-checkbox-value-in-jquery">Samples for work with checkboxes</a>
  </div>
  </body>
  </html>
