@@ -6,9 +6,9 @@
 ## Conclusion 
 Для правильной работы необходимо использовать чистый JS для установки галочек
 
-'''js
+```js
     document.getElementById(id).checked = true;
-'''
+```
 
 
 ### Get alll check box
