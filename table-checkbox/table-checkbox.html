@@ -24,8 +24,8 @@
 
 <script type="text/javascript">
 
-$("input[type='checkbox']").change(function () {
-    if ($("input[type='checkbox']:checked").length > 0)
+$("thead input[type='checkbox']").change(function () {
+    if ($("tbody input[type='checkbox']:checked").length > 0)
         $("#b1").prop("disabled", false);
     else
         $("#b1").prop("disabled", true);
@@ -33,8 +33,20 @@ $("input[type='checkbox']").change(function () {
 
     // Set all checkboxes
     function updateCheckUncheckAll(){
-       $("input[type=checkbox]").each(function () {
-            $(this).attr('checked',false)
+       $("tbody input[type=checkbox]").each(function () {
+            // $(this).attr('checked', false)
+            // alert($(this).attr('id'));
+            var id = $(this).attr('id');
+            document.getElementById(id).checked = false;
+        });
+    }
+
+    // Set - unset checkboxes
+    function CheckAllbox(){
+       $("tbody input[type=checkbox]").each(function () {
+            var id = $(this).attr('id');
+            document.getElementById(id).checked = true;
+            // $(this).prop('checked',true);
             // alert($(this).attr('id'));
         });
     }
@@ -43,37 +55,39 @@ $("input[type='checkbox']").change(function () {
     function updateCheckAll(){
       // Убрать - установиь все галочки в таблице
       if (!$("#headbox").is(":checked")) {
-        updateCheckUncheckAll()
-        return
+          updateCheckUncheckAll()
+          return
       }
 
-       $("input[type=checkbox]").each(function () {
-            $(this).attr('checked','checked')
+       $("tbody input[type=checkbox]").each(function () {
+            // $(this).attr('checked','checked')
             // alert($(this).attr('id'));
+             var id = $(this).attr('id');
+            document.getElementById(id).checked = true;
         });
     }
 
      // Get checks checkboxes
      function updateCount(){
         var selected = new Array();
-        $("input[type=checkbox]:checked").each(function () {
+        $("tbody input[type=checkbox]:checked").each(function () {
             // alert($(this).attr('id'));
             selected.push($(this).attr('id'));
         });
 
         if (selected.length==0) {
-           alert("nothing checket")
+            $("#shoresult").text("Nothing Selected !");
+        }else{
+            // alert(selected);
+            $("#shoresult").text("IN (" + selected + ")");
         }
-
-        // alert(selected);
-        $("#shoresult").text("IN ("+selected+")");
       }
     </script>
   </head>
 
 <body>
 <div class="container">
-   <h2 >Table samples</h2>
+   <h2 >🛠Table samples</h2>
    <h3 id="shoresult"></h3>
    <table id="mtable" class="table table-bordered">
     <thead>
@@ -94,10 +108,11 @@ $("input[type='checkbox']").change(function () {
     </tbody>
    </table>
 
-
+   <hr>
    <input id="b1" type="button" onclick="updateCount()"    name="Check"     value="Check IT field" ></input>
    <input id="b1" type="button" onclick="updateCheckAll()" name="Checkall"  value="Check all" ></input>
    <input id="b1" type="button" onclick="updateCheckUncheckAll()" name="UnCheckall"  value="UN Check all" ></input>
+   <input id="b1" type="button" onclick="CheckAllbox()" name="UnCheckall"  value="Check all box" ></input>
 
   <p>
     Пример работы с  выбором в чек-боксах. Снятие установки всех галочек.
