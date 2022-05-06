@@ -3,6 +3,13 @@
 При использовании Jquery в обработке checkbox - не всегда правильно работает.
 Если были сняты галочки - Jqery не правильно обрабатывает обход всех checkbox.
 
+## Conclusion 
+Для правильной работы необходимо использовать чистый JS для установки галочек
+
+'''js
+    document.getElementById(id).checked = true;
+'''
+
 
 ### Get alll check box
 ```js
