@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+  <head runat="server">
+      <META name="WebPartPageExpansion" content="full">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+      <script>
+         function tst(){
+           var valute_index = document.getElementById('sel0').selectedIndex;                         // 1
+           var valute_text  = document.getElementById('sel0').options[valute_index].text;            // text 
+      	   var valute_val   = document.getElementById('sel0').value;                                 // 001
+      	   var value_html   = document.getElementById('sel0').innerHTML;
+      	 
+           alert("Index : " + valute_index);
+      	   alert("Text  : " + valute_text);
+      	   alert("Value : " + valute_val);
+      	   alert("Html  : " + value_html);
+
+           document.getElementById('outtext').innerHTML=valute_text;
+           document.getElementById('outtext').innerHTML+=valute_index;
+           document.getElementById('outtext').innerHTML+=valute_val;
+         }
+
+
+         var qs = (function(a) {
+    if (a == "") return {};
+    var b = {};
+    for (var i = 0; i < a.length; ++i)
+    {
+        var p=a[i].split('=', 2);
+        if (p.length == 1)
+            b[p[0]] = "";
+        else
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+})(window.location.search.substr(1).split('&'));
+
+
+function Urlquery(){
+        alert(qs["topic"]);
+        alert(qs["ttt"]);
+}
+
+
+function qss(key) {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars[key];
+}
+
+function Urlquery2(){
+        alert(qss["topic"]);
+        alert(qss["ttt"]);
+}
+
+// main-test.html?topic=ssssss&ttt=3444
+function get_query(){
+    var url = location.search;
+    var qs = url.substring(url.indexOf('?') + 1).split('&');
+    for(var i = 0, result = {}; i < qs.length; i++){
+        qs[i] = qs[i].split('=');
+        result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+    }
+    return result;
+}
+
+// main-test.html?topic=ssssss&ttt=3444
+function Urlquery3(){
+  var $_GET = get_query();
+        console.log($_GET);
+        alert($_GET.topic);
+        alert($_GET.ttt)
+}
+
+
+function Querytt(){
+  var qd = {};
+location.search.substr(1).split("&").forEach(function(item) {(item.split("=")[0] in qd) ? qd[item.split("=")[0]].push(item.split("=")[1]) : qd[item.split("=")[0]] = [item.split("=")[1]]})
+   console.log(qd["ttt"][0]);
+}
+
+
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function Queryttt(){
+  console.log(getParameterByName('ttt'));
+}
+
+</script>
+</head>
+<body>
+
+<div class="container">
+      <h2>Пример использования select</h2>
+      <hr>
+      <select id="sel0" class="form-select">
+        <option value="001">Пример имени</option>
+        <option value="002" select>Новыое системное имя</option>
+        <option value="003">Тестовое значение меню</option>
+      </select>
+      <hr>
+      
+      <input type="button" value="Тест пример для проверки" onclick="tst()" class="form-control">
+      <br>
+      <input type="button" value="Тест query" onclick="Urlquery()" class="form-control">
+      <br>
+      <input type="button" value="Тест query 2" onclick="Urlquery2()" class="form-control">
+      <br>
+      <input type="button" value="Тест query 2" onclick="Urlquery3()" class="form-control">
+      <br>
+      <input type="button" value="Тест query 5" onclick="Querytt()" class="form-control">
+      <br>
+      <input type="button" value="Тест query 52" onclick="Queryttt()" class="form-control">
+
+
+
+      
+      <div id="outtext"></div>
+</div>
+
+</body>
+</html>
