@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<title>Data set sample</title>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+   <style type="text/css">
+   	
+   	button[data-y='85160'] {
+          width: 300px;
+    }
+
+    button[data-x='4143542'] {
+          background-color: #ff5722 !important;
+          width: 300px;
+    }
+</style>
+
+
+<script type="text/javascript">
+function ShowDiv(){
+		const el = document.querySelector('#user');
+		
+		// el.id === 'user'
+		// el.dataset.id === '1234567890'
+		//  el.dataset.user === 'johndoe'
+		// el.dataset.dateOfBirth === '122'
+		el.dataset.object=`{"rtt":"testforobject"}`
+		console.log(el.dataset.id)
+		console.log(el.dataset.user)
+		console.log(el.dataset.dateOfBirth)
+		
+		// set a data attribute
+		el.dataset.dateOfBirth = '1960-10-03';
+		// Result on JS: el.dataset.dateOfBirth === '1960-10-03'
+		// Result on HTML: <div id="user" data-id="1234567890" data-user="johndoe" data-date-of-birth="1960-10-03">John 		Doe</div>
+		
+		console.log(el.dataset.id)
+		console.log(el.dataset.user)
+		console.log(el.dataset.dateOfBirth)
+		console.log("INFO: " + el.dataset.info)
+		console.log(el.dataset.object)
+		
+		var obj=JSON.parse(el.dataset.object);
+		console.log(obj.rtt)
+		
+		var ar=JSON.parse(el.dataset.array);
+		console.log(ar[0])
+		
+		delete el.dataset.dateOfBirth;
+		// Result on JS: el.dataset.dateOfBirth === undefined
+		// Result on HTML: <div id="user" data-id="1234567890" data-user="johndoe">John Doe</div>
+		
+		if ('someDataAttr' in el.dataset === false) {
+		  el.dataset.someDataAttr = 'Дата новая для функций';
+		  // Result on JS: 'someDataAttr' in el.dataset === true
+		  // Result on HTML: <div id="user" data-id="1234567890" data-user="johndoe" data-some-data-attr = 		"mydata">John Doe</div>
+		}
+		
+		console.log('someDataAttr' in el.dataset === false);
+		console.log(el.dataset.someDataAttr);
+}
+
+// Get value from dataset
+function spaceships(id){
+	// alert(id)
+	const el = document.querySelector('#buttontest');
+    console.log(el.dataset.shields)
+    console.log(el.dataset.shipId)
+    console.log(el.dataset.weapons)
+    console.log(el.dataset.x)
+    console.log(el.dataset.length)
+}
+
+// Test add change and get datase value
+function datasetget(){
+    $("#user").data("foo","New value");
+    const els = $("#user").data("foo");
+    
+    // var ars=JSON.parse(els.dataset);
+    console.log("Get user foo: " + els);
+
+	$("#user").data("foo","test");
+	rr = $("#user").data("foo");
+    console.log("Get user: " + rr);
+
+    // Changed old variable with attr !!!
+    $("#user").attr("data-foo","Sony");
+
+	qy = $("#user").data("foo");
+	gh = $("#user").attr("data-foo");
+	uu = $("#user").data("options").name
+	da = $("#user").data("array")[0]
+
+	console.log("Get        : " + qy)
+    console.log("Foo attr   : " + gh)
+    console.log("User name  : " + uu)
+    console.log("Car name   : " + da)
+
+    var el = document.querySelector('#user');
+	console.log("Foo date 11   : " + el.dataset.foo)
+	console.log("Foo options   : " + el.dataset.options)
+
+	var ar=JSON.parse(el.dataset.options);
+	console.log("Foo options : " + ar.name)
+    console.log("Foo options : " + ar.car)
+
+    var ars=JSON.parse(el.dataset.array);
+	console.log("Car BMW  : " + ars[1])
+
+    console.log($("#user").data("foo"));
+    console.log($("#user").data());
+
+    elem = document.querySelector('#user');
+    console.log("Foo date nm   : " + el.dataset.foo)
+}
+</script>
+</head>
+
+<body>
+	<div class="w3-container">
+         <div class="w3-container w3-teal">
+           <h1>USED DATASET </h1>
+           <p>Для просмотра результата нажмите F12 </p>
+         </div>
+         <br>
+
+      <div class="w3-container">
+        <p>Dataset - использование для хранения данных в элементах так и управление стилями CSS</p>
+        <hr>
+           <div id="user" 
+                data-id            = "1234567890" 
+                data-user          = "johndoe" 
+                data-info          = "information"
+                data-array         ='["Ford", "BMW", "Audi", "Fiat" ]'
+                data-options       = '{"name":"John", "car":"ford"}'
+                data-date-of-birth = "01-02-2022" 
+                data-foo           = "Test-4444"
+                data-object        = '{"name":"John", "car":"ford"}'>
+           </div>
+
+           <button class="w3-button w3-indigo" 
+                   onclick="ShowDiv()">Проверка в лог
+           </button>
+
+           <button id="buttontest"
+                   class="w3-button w3-teal" 
+                   data-ship-id="324" 
+                   data-weapons="laserI laserII" 
+                   data-shields="72%"
+                   data-x="414354" 
+                   data-y="85160" 
+                   data-z="31940"
+                   onclick="spaceships(this.dataset.shipId)">Проверка работы dataset
+            </button>
+
+            <button id="buttontest2"
+                    class="w3-button w3-purple" 
+                    data-ship-id="324" 
+                    data-weapons="laserI laserII" 
+                    data-shields="72%"
+                    data-x="4143542" 
+                    data-y="85160" 
+                    data-z="31940"
+                    onclick="spaceships(this.dataset.shipId)">Проверка 
+            </button>
+            
+            <button id="buttontest3"
+                    class="w3-button w3-purple" 
+                    data-ship-id="324" 
+                    data-weapons="laserI laserII" 
+                    data-shields="72%"
+                    data-x="41" 
+                    data-y="85160" 
+                    data-z="31940"
+                    onclick="datasetget()">Установка 
+            </button>
+       </div>
+    </div>   
+<body>
+</html>
