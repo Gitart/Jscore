@@ -1,6 +1,7 @@
 ## Работа с select с помощью JQuery
 Сборник методов JQuery для работы с выпадающими списками   SELECT
-  
+ [link](https://snipp.ru/jquery/jquery-select#)
+ 
 ```js
 $('#select').val();
 // или
