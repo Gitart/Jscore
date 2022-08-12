@@ -582,6 +582,10 @@ $('#js-button-6').click(function(){
 </script>
 ```
 
+## Select fro loop
+```js
+var array = {1: 'яблоко', 2: 'апельсин', 3: 'виноград'}; $.each(array, function(key, value) {	$(`#select option[value="${key}"]`).prop('selected', true);});
+```
 
 
 
