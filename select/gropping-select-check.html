@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">    
+	<title>Селект с чекбоксами</title>
+	
+	<style type="text/css">
+	html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+	body{
+		margin: 0;
+		padding: 0;	
+		text-align: center;
+	}
+	</style>
+</head>
+<body style="font-size: 14px; position: relative; padding: 15px 20px;">
+	<div class="checkselect">
+	<label><input type="checkbox" name="brands[]" value="1" checked> Google Inc.</label>
+	<label><input type="checkbox" name="brands[]" value="2"> Apple Inc.</label>
+	<label><input type="checkbox" name="brands[]" value="3"> Microsoft</label>
+	<label><input type="checkbox" name="brands[]" value="4"> Facebook</label>
+	<label><input type="checkbox" name="brands[]" value="5"> Amazon</label>
+	<label><input type="checkbox" name="brands[]" value="6"> Verizon</label>
+</div>
+ 
+<div class="checkselect">
+	<label><input type="checkbox" name="brands[]" value="1" checked>Google Inc.</label>
+	<label><input type="checkbox" name="brands[]" value="2" checked>Apple Inc.</label>
+	<label><input type="checkbox" name="brands[]" value="3">Microsoft</label>
+	<label><input type="checkbox" name="brands[]" value="4">AT&T</label>
+	<label><input type="checkbox" name="brands[]" value="5">Facebook</label>
+	<label><input type="checkbox" name="brands[]" value="6">Visa</label>
+	<label><input type="checkbox" name="brands[]" value="7">Amazon</label>
+	<label><input type="checkbox" name="brands[]" value="8">Verizon</label>
+	<label><input type="checkbox" name="brands[]" value="9">McDonald's</label>
+	<label><input type="checkbox" name="brands[]" value="10">IBM</label>
+	<label><input type="checkbox" name="brands[]" value="11">Tencent</label>
+	<label><input type="checkbox" name="brands[]" value="12">Philip Morris</label>
+	<label><input type="checkbox" name="brands[]" value="13">Coca-Cola</label>
+	<label><input type="checkbox" name="brands[]" value="14">Wells Fargo</label>
+	<label><input type="checkbox" name="brands[]" value="15">China Mobile</label>
+	<label><input type="checkbox" name="brands[]" value="16">GE</label>
+	<label><input type="checkbox" name="brands[]" value="17">UPS</label>
+	<label><input type="checkbox" name="brands[]" value="18">Alibaba Group</label>
+	<label><input type="checkbox" name="brands[]" value="19">Disney</label>
+	<label><input type="checkbox" name="brands[]" value="20">MasterCard</label>
+</div>
+ 
+<div class="checkselect">
+	<label><input type="checkbox" name="brands[]" value="1" checked>Manitowoc Crane Group</label>
+	<label><input type="checkbox" name="brands[]" value="2" checked>Construction Equipment</label>
+	<label><input type="checkbox" name="brands[]" value="3" checked>PCM Cranes International GMBH</label>
+	<label><input type="checkbox" name="brands[]" value="4">Erdmann Export-Import</label>
+	<label><input type="checkbox" name="brands[]" value="5">Scandinavian & UK Machines</label>
+	<label><input type="checkbox" name="brands[]" value="6">Feel Industrial Engineering</label>
+</div>
+
+<link rel="stylesheet" href="https://snipp.ru/cdn/bootstrap/4.3/bootstrap.min.css">
+<style type="text/css">
+body{
+	background: url(https://snipp.ru/img/checkselect-1.png) 50% 0 no-repeat;
+}
+
+.checkselect {
+	position: relative;
+	display: inline-block;
+	min-width: 200px;
+	text-align: left;
+}
+.checkselect-control {
+	position: relative;
+	padding: 0 !important;
+}		
+.checkselect-control select {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+	padding-left: 5px;
+	height: 30px;
+}
+.checkselect-over {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0; 			
+	cursor: pointer;
+}
+.checkselect-popup {
+	display: none;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	max-height: 200px;
+	position: absolute;
+	top: 100%;
+	left: 0px; 
+	border: 1px solid #dadada;
+	border-top: none;
+	background: #fff;
+	z-index: 9999;
+	overflow: auto;
+	user-select: none;
+}	
+.checkselect label {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 4px 6px 4px 25px;
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.1;
+	cursor: pointer;
+}			
+.checkselect-popup input {
+	position: absolute;
+	top: 5px; 
+	left: 8px;
+	margin: 0 !important;
+	padding: 0;
+}
+.checkselect-popup label:hover {
+	background: #03a2ff;
+	color: #fff;
+}
+.checkselect-popup fieldset {
+	display: block;
+	margin:  0;
+	padding: 0;
+	border: none;
+}
+.checkselect-popup fieldset input {
+	left: 15px;
+}		
+.checkselect-popup fieldset label {
+	padding-left: 32px;
+}		
+.checkselect-popup legend {
+	display: block;
+	margin: 0;
+	padding: 5px 8px;
+	font-weight: 700;
+	font-size: 1em;
+	line-height: 1.1;
+}
+</style>
+
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script>
+(function($) {
+	function setChecked(target) {
+		var checked = $(target).find("input[type='checkbox']:checked").length;
+		if (checked) {
+			$(target).find('select option:first').html('Выбрано: ' + checked);
+		} else {
+			$(target).find('select option:first').html('Выберите из списка');
+		}
+	}
+
+	$.fn.checkselect = function() {
+		this.wrapInner('<div class="checkselect-popup"></div>');
+		this.prepend(
+			'<div class="checkselect-control">' +
+				'<select class="form-control"><option></option></select>' +
+				'<div class="checkselect-over"></div>' +
+			'</div>'
+		);	
+
+		this.each(function(){
+			setChecked(this);
+		});		
+		this.find('input[type="checkbox"]').click(function(){
+			setChecked($(this).parents('.checkselect'));
+		});
+
+		this.parent().find('.checkselect-control').on('click', function(){
+			$popup = $(this).next();
+			$('.checkselect-popup').not($popup).css('display', 'none');
+			if ($popup.is(':hidden')) {
+				$popup.css('display', 'block');
+				$(this).find('select').focus();
+			} else {
+				$popup.css('display', 'none');
+			}
+		});
+
+		$('html, body').on('click', function(e){
+			if ($(e.target).closest('.checkselect').length == 0){
+				$('.checkselect-popup').css('display', 'none');
+			}
+		});
+	};
+})(jQuery);	
+
+$('.checkselect').checkselect();
+</script>
+</body>
+</html>
