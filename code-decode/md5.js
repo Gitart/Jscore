@@ -66,3 +66,15 @@ console.log(result);
  
 var result = MD5('Прародителем текста-рыбы является известный "Lorem Ipsum"');
 console.log(result);
+
+
+
+
+// Used
+/*
+var result = MD5('Lorem Ipsum is simply dummy text of the printing');
+console.log(result);
+ 
+var result = MD5('Прародителем текста-рыбы является известный "Lorem Ipsum"');
+console.log(result);
+*/
