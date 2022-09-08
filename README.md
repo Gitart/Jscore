@@ -1,5 +1,5 @@
 # JS
-![image](https://user-images.githubusercontent.com/3950155/189186424-92121334-5a60-415f-9550-23f8912db5b0.png)
+![image](https://user-images.githubusercontent.com/3950155/189186881-db954ba1-b33d-4163-8294-363ee541a91a.png)
 
 ### Work Samples at JavaScript
 Function and Samples Javascript Code
