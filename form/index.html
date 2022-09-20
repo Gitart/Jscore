@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <title>Валидация формы на jQuery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" >
+</head>
+
+
+
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+       <div class="col-4">
+        <h2>Валидация формы</h2>
+        <hr>
+
+  <form class="form" id="myForm" role="form">
+        <div class="form-group">
+          <label for="inputEmail">Введите email:</label>
+          <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Введите email">
+        </div>
+        
+        <div class="form-group">
+          <label for="inputName">Введите имя:</label>
+          <input type="text" class="form-control" name="name" id="inputName" placeholder="Введите имя">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+
+   </div>
+    </div>
+   </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+  
+  <script>
+
+  $("#myForm").validate({
+  rules: {
+    email: {
+      required: true,
+      email:    true
+    },
+
+    name: {
+    required: true,
+      minlength: 5  
+    }
+    
+    },
+  messages: {
+    email: {
+      required: "Поле email обязательно для заполнения",
+    },
+
+  name: {
+    required: "Поле имя обязательно для заполнения",
+    minlength: jQuery.validator.format("Длина имени должна быть больше 5-ти символов")
+  }
+
+  },
+   submitHandler: function() {
+     alert("Валидация успешна!");
+  }
+});
+</script>
+  
+</body>
+</html>
