@@ -4,7 +4,8 @@ It’s the same as any dynamic modification to a webpage - use DOM APIs to build
 
 Here’s the basics for both approaches - I have a simple HTML page
 
-`<!doctype html>
+```html
+<!doctype html>
 <!-- jsontable.html -->
 <head>
 <title>JSON To Table</title>
@@ -31,7 +32,8 @@ The basic idea is simple - convert the JSON string to an object - traverse the J
 
 The data is hardcoded but could come from anywhere
 
-``// jsontable.js
+```
+// jsontable.js
 
 document.addEventListener("DOMContentLoaded", ()=>{
   let jsonstr=`[
