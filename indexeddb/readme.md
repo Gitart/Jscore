@@ -1,5 +1,7 @@
 # indexedDb
 
+![image](https://user-images.githubusercontent.com/3950155/194380278-320e0d06-9ce2-4efb-92fb-cd50b0d9d1ff.png)
+
 
 ## [Типичная схема работы с базой](https://developer.mozilla.org/ru/docs/Web/API/IndexedDB_API/Using_IndexedDB#pattern "Permalink to Типичная схема работы с базой")
 
