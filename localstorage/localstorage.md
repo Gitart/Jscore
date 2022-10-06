@@ -92,4 +92,45 @@ localStorage.getItem(‘key’);
 var username= localStorage.getItem(‘username’);
 ```
 
-    
+*   To store data in the local storage setItem() function is used.
+
+    1.  localStorage.setItem (‘key’,’value’);
+
+    **Example**
+    1.  localStorage.setItem (‘username’,’ABC’);
+
+    We can only store strings in local storage. To save objects in local first convert object into JSON string and then store this string in local storage as in the following:
+
+    1.  localStorage.setItem (‘object’, JSON.stringify(object));
+
+*   To retrieve data from the local storage getItem() function is used.
+
+    1.  localStorage.getItem(‘key’);
+
+    **Example**
+
+    1.  var username\= localStorage.getItem(‘username’);
+
+    If JSON string is stored in local storage, then you can convert it into the object as in the following:
+
+    1.  var object\=JSON.parse(localStorage.getItem(‘object’));
+
+*   To delete a particular key from local storage removeItem function is used.
+
+    1.  localStorage.removeItem(‘key’);
+
+    **Example**
+
+    1.  localStorage.removeItem(‘username’);
+
+*    To delete all keys from local storage clear function is used:
+
+    1.  localStorage.clear();
+
+    To get all KEY / VALUE pairs from local storage, you can loop through local storage like the following:
+
+    1.  for(var i\=0;i<localStorage.length;i++)
+    2.  {
+    3.     var key\= localStorage.key(i);
+    4.     var value\= localStorage.getItem(key);
+    5.  }    
