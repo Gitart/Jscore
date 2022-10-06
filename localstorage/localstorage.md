@@ -139,3 +139,8 @@ var username= localStorage.getItem(‘username’);
     3.     var key\= localStorage.key(i);
     4.     var value\= localStorage.getItem(key);
     5.  }    
+
+
+## Cookies
+ document.cookie = "Available on both client and server side";
+ 
