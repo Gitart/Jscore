@@ -2,6 +2,14 @@
 
 Значение локального хранилища можно легко разделить между несколькими окнами одного и того же браузера. Файлы cookie позволяют хранить только 4 КБ данных, но WebStorage (как локальный, так и сеансовый) предоставляет около 10 МБ места для хранения данных.
 
+```
+sessionStorage.setItem("sessionData", "I am set in session storage.");    
+    localStorage.setItem("localData", "I am set in local storage.");    
+    document.cookie = "Available on both client and server side";   
+```
+
+
+## Other
 
 *   To store data in session storage, setItem () function is used.
 
