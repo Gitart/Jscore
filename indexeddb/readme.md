@@ -116,4 +116,7 @@ function getData(objectStoreName){
 
 
 ### Link
-https://developer.mozilla.org/ru/docs/Web/API/IndexedDB_API/Using_IndexedDB
+https://developer.mozilla.org/ru/docs/Web/API/IndexedDB_API/Using_IndexedDB     
+https://javascript.info/indexeddb   
+
+
