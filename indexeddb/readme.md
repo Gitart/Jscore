@@ -98,3 +98,18 @@ function getData(objectStoreName){
     };
 }
 ```
+
+
+
+## [Смотрите также](https://developer.mozilla.org/ru/docs/Web/API/IndexedDB_API#%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5 "Permalink to Смотрите также")
+
+*   [localForage](https://localforage.github.io/localForage/): Polyfill, предоставляющий простое имя: синтаксис значения для клиентского хранилища данных, которое использует IndexedDB в фоновом режиме, но обращается к WebSQL, а затем к localStorage в браузерах, которые не поддерживают IndexedDB.
+*   [Dexie.js](https://www.dexie.org/): Обёртка для IndexedDB, позволяющая значительно ускорить разработку кода благодаря красивому и простому синтаксису.
+*   [ZangoDB](https://github.com/erikolson186/zangodb): Интерфейс, подобный MongoDB, для IndexedDB, который поддерживает большинство знакомых функций фильтрации, проекции, сортировки, обновления и агрегирования MongoDB.
+*   [JsStore](https://jsstore.net/): Оболочка IndexedDB с синтаксисом, подобным SQL.
+*   [MiniMongo](https://github.com/mWater/minimongo): Клиентский MongoDB, поддерживаемый localStorage, с синхронизацией сервера по http. MiniMongo используется в MeteorJS.
+*   [PouchDB](https://pouchdb.com/): Клиентская реализация CouchDB в браузере с использованием IndexedDB
+*   [idb](https://www.npmjs.com/package/idb): Крошечная (~1,15 КБ) библиотека, которая в основном представляет API IndexedDB, но с небольшими улучшениями, которые имеют большое значение для удобства использования.
+*   [idb-keyval](https://www.npmjs.com/package/idb-keyval): Суперпростое-маленькое (~600 Б) хранилище ключей на основе Promise, реализованное с помощью IndexedDB
+*   [sifrr-storage:](https://www.npmjs.com/package/@sifrr/storage) Небольшая (~2 КБ) библиотека на основе Promise для хранения ключей и значений на стороне клиента. Работает с IndexedDB, localStorage, WebSQL, Cookies. Может автоматически использовать поддерживаемое хранилище, доступное в зависимости от приоритета.
+*   [lovefield](https://github.com/google/lovefield): Lovefield - это реляционная база данных для веб-приложений. Написана на JavaScript, работает кроссбраузерно. Предоставляет API-интерфейсы, подобные SQL, быстрые, безопасные и простые в использовании.
