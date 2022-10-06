@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"  rel="stylesheet"/>
+  <link  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"  rel="stylesheet"/>
+  <link  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"  rel="stylesheet"/>
+  <script  type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+  
+
+<script type="text/javascript">
+
+function CreatStorage() {
+          let openRequest = indexedDB.open("Mdb", 1);
+    
+          openRequest.onsuccess = function() {
+              // let db = openRequest.result;
+                  // let transaction = db.transaction("books", "readwrite");
+                  // db.createObjectStore('books', {keyPath: 'id'});
+                  // db.createObjectStore('people', {keyPath: 'id'});
+                  alert("Хранилище создано");
+          }
+}
+
+// Cоздание базы данных
+function CreateDB() {
+        let openRequest = indexedDB.open("Mdb", 1);
+
+       // создаём хранилище объектов для books, если ешё не существует
+        openRequest.onupgradeneeded = function() {
+              let db = openRequest.result;
+              
+              if (!db.objectStoreNames.contains('books')) { // если хранилище "books" не существует
+                    db.createObjectStore('books', {keyPath: 'id'}); // создаём хранилище
+              }
+
+              if (!db.objectStoreNames.contains('people')) { // если хранилище "books" не существует
+                    db.createObjectStore('people', {keyPath: 'id'}); // создаём хранилище
+              }
+          };
+}
+
+// Удаление
+function deleteDb(){
+        let openRequest = indexedDB.deleteDatabase("Mdb");
+        
+        openRequest.onerror = function() {
+            alert("Ошибка при удалении");
+            console.error("Error", openRequest.error);
+        }
+
+        openRequest.onsuccess = function() {
+            alert("удалена база");
+        }
+} 
+
+// Add new record
+function addRec(table, Obj) {
+           let openRequest = indexedDB.open("Mdb", 1);
+
+            openRequest.onsuccess = function() {
+                       let db = openRequest.result;
+                       let transaction = db.transaction(table, "readwrite"); 
+                       let tr = transaction.objectStore(table).add(Obj); 
+                       // let request = tr.add(Obj);
+            }
+}
+
+
+// Add new records in other tables
+function AddNewRecord(){
+       nm = NeId();
+       // nm.toString()
+
+       let books =  {id:nm, price:120,  title: "Двенадцать стульев"};
+       addRec("books", books);
+}
+     
+
+function NeId(){
+  return Date.now()
+} 
+
+
+function GetRec(table, id){
+        let openRequest = indexedDB.open("Mdb", 1);
+
+            openRequest.onsuccess = function() {
+                       let db = openRequest.result;
+                       let trans = db.transaction(table, "readwrite"); 
+                       let tr    = trans.objectStore(table); 
+                       let req   = tr.get(id)
+             
+                       req.onsuccess = function() {
+                          console.log(req.result);  
+                       }
+            }
+}
+</script>
+
+
+</head>
+<body>
+<div class="container">
+  <h3>Test browser cahshe storage</h3>
+  <hr>
+
+    <button type="button" class="btn btn-success" onclick="CreatStorage()">Cоздание хранилища</button>
+    <button type="button" class="btn btn-success" onclick="CreateDB()">Создание базы данных в хранилище</button>
+    <button type="button" class="btn btn-danger" onclick="deleteDb()">Удалить базу данных</button>
+    <button type="button" class="btn btn-warning" onclick="AddNewRecord()">Записать</button>
+    <button type="button" class="btn btn-info" onclick='GetRec("books","1665078164811")'>Получить</button>
+    <br>
+    <hr>
+
+  <!-- Facebook -->
+  <a class="btn text-white" style="background-color: #3b5998;" href="#!" role="button"> <i class="fab fa-facebook-f"></i></a>
+  
+  <!-- Twitter -->
+  <a class="btn text-white" style="background-color: #55acee;" href="#!" role="button">  <i class="fab fa-twitter"></i></a>
+
+  <!-- Google -->
+  <a class="btn text-white" style="background-color: #dd4b39;" href="#!" role="button">  <i class="fab fa-google"></i></a>
+
+  <!-- Instagram -->
+  <a class="btn text-white" style="background-color: #ac2bac;" href="#!" role="button">  <i class="fab fa-instagram"></i></a>
+
+</div>  
+</body>
+</html>  
