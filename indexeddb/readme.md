@@ -1,6 +1,7 @@
 # indexedDb
+![image](https://user-images.githubusercontent.com/3950155/194381862-8d532f40-b0ef-4801-b842-6b8b66973d63.png)
 
-![image](https://user-images.githubusercontent.com/3950155/194380278-320e0d06-9ce2-4efb-92fb-cd50b0d9d1ff.png)
+
 
 ## Подходит ли IndexedDB для хранения состояния?
 
