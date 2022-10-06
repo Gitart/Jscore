@@ -113,3 +113,7 @@ function getData(objectStoreName){
 *   [idb-keyval](https://www.npmjs.com/package/idb-keyval): Суперпростое-маленькое (~600 Б) хранилище ключей на основе Promise, реализованное с помощью IndexedDB
 *   [sifrr-storage:](https://www.npmjs.com/package/@sifrr/storage) Небольшая (~2 КБ) библиотека на основе Promise для хранения ключей и значений на стороне клиента. Работает с IndexedDB, localStorage, WebSQL, Cookies. Может автоматически использовать поддерживаемое хранилище, доступное в зависимости от приоритета.
 *   [lovefield](https://github.com/google/lovefield): Lovefield - это реляционная база данных для веб-приложений. Написана на JavaScript, работает кроссбраузерно. Предоставляет API-интерфейсы, подобные SQL, быстрые, безопасные и простые в использовании.
+
+
+### Link
+https://developer.mozilla.org/ru/docs/Web/API/IndexedDB_API/Using_IndexedDB
