@@ -1,4 +1,4 @@
-## ⚒ Created rlrmants in DOM from JSON by template
+## ⚒ Create elements in DOM from JSON by template
 
 
 Used template
