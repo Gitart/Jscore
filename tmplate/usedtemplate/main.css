@@ -1,0 +1,40 @@
+body{
+	font-family: "Inter"; 
+	font-size: 14px; 
+	background-color: #f7f7f7
+}
+
+tbody tr:hover {
+	cursor: pointer; 
+	background-color: #273746!important; 
+	color: #ccc!important;
+}
+
+#listdocuments td:nth-child(1){
+	text-align: left; 
+	width: 420px;
+}
+
+h4 { font-weight: 700; 
+	 color: #F24E4E;
+}
+    	
+.list-card{background-color: white; 
+    	   padding: 20px; 
+    	   border-radius: 3px; 
+    	   border: 1px solid #ccc; 
+    	   margin-bottom: 20px; 
+    	   margin-top: 10px;
+    	   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+}
+
+.m-img{
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3)); 
+    color: #F24E4E; 
+    height: 50px;
+}	   
+
+.table-striped>tbody>tr:nth-of-type(odd)>*:hover {
+	--bs-table-accent-bg: var(--bs-table-striped-bg);
+    color: white;
+}
