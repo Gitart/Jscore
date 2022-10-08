@@ -1,0 +1,85 @@
+var data = {"people": [
+        {
+            "name": "Иано Петрович",
+            "description": "🔔 This is a brief description of my service.",
+            "image": "mandg1.jpg",
+            "type": "first",
+            "insured": "yes",
+            "license": "NA",
+            "picture": "mandg1.jpg",
+            "yearsinbusiness": "8",
+            "distance": 15
+        },
+        {
+            "name": "Степан Игориевич",
+            "description": "⚙️ This is a brief description of my service.",
+            "image": "mandg2.jpg",
+            "type": "second",
+            "insured": "yes",
+            "license": "NA",
+            "picture": "mandg2.jpg",
+            "yearsinbusiness": "8",
+            "distance": 19
+        },
+
+        {
+            "name": "Ирина Абрамовна Игориевич",
+            "description": "😼 This is a brief description of my service.",
+            "image": "mandg2.jpg",
+            "type": "second",
+            "insured": "yes",
+            "license": "NA",
+            "picture": "mandg2.jpg",
+            "yearsinbusiness": "8",
+            "distance": 19
+        },
+
+          {
+            "name": "Алина Игревна",
+            "description": "📗 This is a brief description of my service.",
+            "image": "mandg2.jpg",
+            "type": "second",
+            "insured": "yes",
+            "license": "NA",
+            "picture": "mandg2.jpg",
+            "yearsinbusiness": "8",
+            "distance": 19
+        },
+
+        {
+            "name": "Абдурахман Ибн Хатаб Абрамовна Игориевич",
+            "description": "🔑 This is a brief description of my service.",
+            "image": "mandg2.jpg",
+            "type": "second",
+            "insured": "yes",
+            "license": "NA",
+            "picture": "mandg2.jpg",
+            "yearsinbusiness": "8",
+            "distance": 19
+        },
+
+          {
+            "name": "Джин Ибн Абдурахман",
+            "description": "🏷️ This is a brief description of my service.",
+            "image": "mandg2.jpg",
+            "type": "second",
+            "insured": "yes",
+            "license": "NA",
+            "picture": "mandg2.jpg",
+            "yearsinbusiness": "8",
+            "distance": 19
+        },
+
+          {
+            "name": "Bиктор Валентинович Игревна",
+            "description": "💵 Продуктовый менеджер.",
+            "image": "mandg2.jpg",
+            "type": "second",
+            "insured": "yes",
+            "license": "NA",
+            "picture": "mandg2.jpg",
+            "yearsinbusiness": "8",
+            "distance": 19
+        }
+    ]
+};
