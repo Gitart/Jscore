@@ -1,0 +1,149 @@
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <style type="text/css">
+
+
+      input[type="button"]{
+        color:         black; 
+        border:        1px solid grey;
+        border-radius: 1px ;
+        font-weight:   bold; 
+        padding:       3px;
+        margin:        2px;
+        cursor:        pointer;
+        display:       inline-block;
+        width:         250px;
+      }
+
+     input[type="button"]:hover{
+       background-color: lightseagreen; 
+     }
+    </style>
+
+
+    <script type="text/javascript">
+     
+     function TstSumm1() {
+        var m = ["dddd","Saaaamn"]
+        itera = m.values(); 
+
+        // console.log(itera.next())
+        // console.log(itera.next().value)
+
+
+        for (const it of itera) {
+            console.log(it);
+         }
+
+        // 2 variant
+        const arr = ["a", "b", "c", "d", "e"];
+        const iterator = arr.values();
+
+        for (const letter of iterator) {
+            console.log(letter);
+         } 
+
+
+        var arrs = ["a", "b", "c", "d", "e"];
+        const values = arrs.values();
+        for (const letter of values) {
+          console.log(letter);
+        }
+     }
+
+     
+     function TstSumm() {
+        ar=[2,5,12,9];
+        const logArrayElements = (element, index /*, array */) => {
+              console.log(`a[${index}] = ${element}`);
+         };
+         // Notice that index 2 is skipped, since there is no item at
+         // that position in the array.
+         ar.forEach(logArrayElements);
+     }
+
+
+      function SumArray(){
+        let arraySparse = [1, 3, 5, 7];
+        let numCallbackRuns = 0;
+
+        arraySparse.forEach((element) => {
+          console.log({ element });
+          numCallbackRuns++;
+        });
+
+        console.log({ numCallbackRuns });
+      }
+
+
+      function mp(){
+        var m = new Array();
+        m.id     = 123;
+        m.titile = "Name product";
+        m.tags   = ["news", "titles", "others"];
+        m.other  = ['Яблоко', {name: 'Джон' }, true, function() { alert('привет'); } ];
+        m.lim    = {"title": "lime color"};
+        m.limits = {"title":{"number":"Number + title "}, "titme": "lime color"};
+        m.tags.push("old");
+        m.tags.push("Новаое значение");
+
+
+        mm=["news","apple","other","rim"] 
+        console.log("********************************");
+        mm.forEach(
+                  element => console.log(element), 
+                  index =>   console.log(index),
+                  array =>   console.log(array)
+           );
+
+        console.log(m);
+        console.log(m.id) ;
+        console.log(m.lim.title);
+        console.log("title lime" + m.limits.title.number);
+
+        // console.log("-------------->>");
+        // const arrByID = m.filter(filterByID);
+        // console.log('Filtered Array\n', arrByID);
+
+       m1 = ["Первый", "Второй", "Третьи", "Четвертый"]   
+
+       const dWords = m.filter((word, index, arr) => {
+             arr.pop();
+             return m.length < 3;
+       })
+
+       console.log("====== :: > " + dWords);
+       words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present'];
+
+       const deleteWords = words.filter((word, index, arr) => {
+             arr.pop();
+             return word.length < 6;
+       })
+
+       console.log(deleteWords);
+      }
+
+      function filterByID(item) {
+         return console.log("---------------!!!-"+item.id);
+      }
+
+    </script>
+</head>
+
+<body>
+  <h2>Test array</h2>
+  <hr>
+  <div class="container">
+    <input clasas="btna btn-success" type="button" name="test" onclick="mp()" value="Нажмите на меня ">
+    <input clasas="btna btn-success" type="button" name="test" onclick="mp()" value="Работа с массивом">
+    <input clasas="btna btn-success" type="button" name="test" onclick="mp()" value="Поиск ...">
+    <input clasas="btna btn-success" type="button" name="test" onclick="SumArray()" value="Cуммирование ...">
+    <input clasas="btna btn-success" type="button" name="test" onclick="TstSumm()" value="Cуммирование ...">
+    <input type="button" name="test" onclick="TstSumm1()" value="Iterations ...">
+  </div>
+</body>
+</html>
