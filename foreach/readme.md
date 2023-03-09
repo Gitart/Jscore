@@ -1,4 +1,6 @@
 ## lodash
+
+Example https://preview.colorlib.com/theme/bootstrap/multiselect-10/   
 https://lodash.com/
 https://preview.colorlib.com/theme/bootstrap/multiselect-10/js/main.js  
 
