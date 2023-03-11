@@ -1,4 +1,4 @@
-## Work wit data in JS
+## 🍒 Work wit data in JS
 
 1. Get **Data- ** data from JS 
 2. Bind data to element or elements  
