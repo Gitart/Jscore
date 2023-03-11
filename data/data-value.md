@@ -2,18 +2,15 @@
 
 ```js
   alert($("#product_id").find(':selected').data("qt"));
-  
 ```
 
-
+### HTML
 ```html
-<select class="form-select" id="product_id" name="product_id" 
-                        data-qt="3444-333" data-id="217496D-P078" >
-                        
-                  {{range .Products}}
-                      <option title="({{.Qty}} | {{.Weight}})" data-qt="{{.Qty}}" value="{{.Id}}">{{.Title}}   </option>
-                  {{end}}
-                </select>
+<select class="form-select" id="product_id" name="product_id" data-qt="3444-333" data-id="217496D-P078" >
+ {{range .Products}}
+         <option title="({{.Qty}} | {{.Weight}})" data-qt="{{.Qty}}" value="{{.Id}}">{{.Title}}   </option>
+ {{end}}
+</select>
 ```
 
 
