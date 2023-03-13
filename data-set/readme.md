@@ -148,5 +148,27 @@ buttons.forEach(button => {
 В приведенном выше коде мы выбираем все элементы, которые содержат наш пользовательский data-modal-idатрибут. Затем мы просматриваем их и добавляем прослушиватель событий щелчка к каждому из них. Внутри этого прослушивателя событий мы используем модальный идентификатор, чтобы получить модальную ссылку на эту кнопку, и добавляем класс show, чтобы он теперь был виден.
 Этот код также является гибким, поскольку он получит любой элемент с пользовательским data-modal-idатрибутом. Это означает, что если мы добавим новую кнопку, которая ссылается на новое модальное окно, нам не нужно будет писать дополнительный JavaScript.
 
+
+## Loop
+```js
+console.log("-- GET values --")
+var x = document.getElementById('html_example').dataset;
+console.log("s:", x.s );
+for (var i of JSON.parse(x.list)) console.log("list_i:",i)
+
+var y = document.getElementById('g1').dataset;
+console.log("s:", y.s );
+for (var i of JSON.parse(y.list)) console.log("list_i:",i)
+
+console.log("-- SET values --");
+y.s="BYE!"; y.list="null";
+console.log( document.getElementById('svg_example').innerHTML )
+<p id="html_example" data-list="[1,2,3]" data-s="Hello123">Hello!</p>
+<svg id="svg_example">
+  <g id="g1" data-list="[4,5,6]" data-s="Hello456 SVG"></g>
+</svg>
+```
+
+
 ## Заключение
 Атрибуты данных в JavaScript невероятно полезны. Они позволяют вам писать чрезвычайно гибкий код, что означает, что вы можете тратить больше времени на написание HTML для своего проекта и меньше времени беспокоиться о написании настраиваемого прослушивателя событий для каждого нового добавляемого элемента.
