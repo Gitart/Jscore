@@ -1,4 +1,32 @@
 # 1  - selected
+```js
+var table = $("#example").DataTable({
+    columns: [
+        { name: 'col-name' },
+        { name: 'col-position' },
+        { name: 'col-salary' },
+        { name: 'col-office' },        
+        { name: 'col-extn' },
+        { name: 'col-email' }
+    ]
+});
+
+$("#example").on('click', 'td', function() {
+    //get the initialization options
+    var columns = table.settings().init().columns;
+    //get the index of the clickec cell
+    var colIndex = table.cell(this).index().column;
+    alert('you clicked on the column with the name '+columns[colIndex].name);
+})
+
+var columns = table.settings().init().columns;
+table.columns().every(function(index) { 
+    console.log(columns[index].name);
+})    
+
+```
+
+# 2 
 
 ```js
 var editor; // use a global for the submit and return data rendering in the examples
