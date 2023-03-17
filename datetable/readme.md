@@ -267,4 +267,24 @@ function  RefreshTable(){
 ![image](https://user-images.githubusercontent.com/3950155/225939699-5a62ac91-04cd-4c6b-8c7f-108d076bef0b.png)
 
 
+# Deferred rendering:
+
+```js
+$('#example').dataTable( {
+  "ajax": "sources/arrays.txt",
+  "deferRender": true
+} );
+```
+
+## Events with deferred rendering:
+```js
+$('#example tbody').on( 'click', 'td', function () {
+    alert( 'Clicked on: '+this.innerHTML );
+} );
+ 
+$('#example').dataTable( {
+  "ajax": "sources/arrays.txt",
+  "deferRender": true
+} );
+```
 
