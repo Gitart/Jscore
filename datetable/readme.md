@@ -84,5 +84,8 @@ function  RefreshTableCall(){
 }
 ```
 
+## Binded button
+![image](https://user-images.githubusercontent.com/3950155/225937522-d6128df0-8016-425b-ac93-8e171c96f6ae.png)
+
 
 
