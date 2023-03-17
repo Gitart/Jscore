@@ -349,7 +349,96 @@ function SearchClear(){
 }
 ```
 
+## Hide field
+```js
+function HideField(){
+    var dt = $('#logstab').DataTable()
+    dt.column(1).visible(true);
+}
+```
+
+## Hide columns dynamically
+The previous answers are using legacy DataTables syntax. In v 1.10+, you can use column().visible():
+
+```js
+var dt = $('#example').DataTable();
+//hide the first column
+dt.column(0).visible(false);
+To hide multiple columns, columns().visible() can be used:
+
+var dt = $('#example').DataTable();
+//hide the second and third columns
+dt.columns([1,2]).visible(false);
+```
+
+## Here is a Fiddle Demo.
+
+Hide columns when the table is initialized
+To hide columns when the table is initialized, you can use the columns option:
+```js
+$('#example').DataTable( {
+    'columns' : [
+        null,
+        //hide the second column
+        {'visible' : false },
+        null,
+        //hide the fourth column
+        {'visible' : false }
+    ]
+});
+```
+
+For the above method, you need to specify null for columns that should remain visible and have no other column options specified. Or, you can use columnDefs to target a specific column:
+
+```js
+$('#example').DataTable( {
+    'columnDefs' : [
+        //hide the second & fourth column
+        { 'visible': false, 'targets': [1,3] }
+    ]
+});
+```
+
+```js
+"aoColumnDefs": [{ "bVisible": false, "aTargets": [0] }]
+```
+
+## Hide but serchible
+```js
+$(document).ready(function() {
+     $('#example').dataTable( {
+
+        columns= [
+          { 
+           "data": "name_data",
+           "visible": false
+           }
+        ]
+  });
+});
+
+var example = $('#exampleTable').DataTable({
+    "columnDefs": [
+        {
+            "targets": [0],
+            "visible": false,
+            "searchable": false
+        }
+    ]
+});
+```
 
 
-## Eow Selector
+## Hide fileds
+```js
+var dt = $('#example').DataTable();
+//hide the second and third columns
+dt.columns([1,2]).visible(false);
+```
+
+
+
+
+
+## Row Selector
 https://datatables.net/reference/type/row-selector  
