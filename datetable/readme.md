@@ -257,7 +257,7 @@ function  RefreshTable(){
 }
 ```
 
-## RowID
+#RowID
 Присвоение каждой записи ID в атрибутах TR
 
 ![image](https://user-images.githubusercontent.com/3950155/225939018-bf37fcab-6330-4158-a645-796d32a6946c.png)
@@ -265,6 +265,21 @@ function  RefreshTable(){
 В форме выглядит так   
 
 ![image](https://user-images.githubusercontent.com/3950155/225939699-5a62ac91-04cd-4c6b-8c7f-108d076bef0b.png)
+
+## Get Row ID
+
+```js
+var table = $('#myTable').DataTable();
+ 
+$('#myTable').on( 'click', 'tr', function () {
+    var id = table.row( this ).id();
+ 
+    alert( 'Clicked row id '+id );
+} );
+```
+
+![image](https://user-images.githubusercontent.com/3950155/225951451-d4bb1b73-65b6-4785-bbec-c2a4e5387fbc.png)
+
 
 
 # Deferred rendering:
