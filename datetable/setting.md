@@ -183,3 +183,13 @@ if (id=="1") {
   }
 }
 ```
+
+
+## Hide field
+```js
+
+function HideField(){
+    var dt = $('#logstab').DataTable()
+    dt.column(1).visible(true);
+}
+```
