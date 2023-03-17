@@ -327,3 +327,5 @@ $('#example').dataTable( {
 } );
 ```
 
+## Eow Selector
+https://datatables.net/reference/type/row-selector  
