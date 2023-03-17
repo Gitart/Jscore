@@ -327,5 +327,29 @@ $('#example').dataTable( {
 } );
 ```
 
+## Delete draw
+```js
+table.row( selector ).remove().draw();.
+```
+
+## Search in table 
+```js
+function Search(){
+    var table = $('#logstab').DataTable()
+    table.search( 'Fiona' );
+    table.draw();
+}
+```
+
+## Clear conditional Search in table 
+```js
+function SearchClear(){
+    var table = $('#logstab').DataTable()
+    table.search( '' ).draw();
+}
+```
+
+
+
 ## Eow Selector
 https://datatables.net/reference/type/row-selector  
