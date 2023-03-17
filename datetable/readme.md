@@ -75,11 +75,35 @@ $(document).ready( function () {
     });
 });
 ```
+
 ## Get ID
 ```js
 var table = $('#example').DataTable();
 var row = table.row('#row-42');
 ```
+
+## Get ID
+```js
+var appListTable = $(".app-list__table").DataTable({
+  dom: "",
+  // Load json with list of applicants
+  ajax: "https://api.myjson.com/bins/391gc",
+  columns: [{
+    "data": "uid"
+  }, {
+    "data": "location"
+  }, {
+    "data": "date"
+  }],
+  // Set rows IDs
+  rowId: function(a) {
+    return 'id_' + a.uid;
+  },
+});
+```
+
+
+
 
 ## Select multiple rows by id:
 ```js
