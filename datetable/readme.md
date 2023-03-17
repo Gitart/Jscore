@@ -75,6 +75,86 @@ $(document).ready( function () {
     });
 });
 ```
+## Get ID
+```js
+var table = $('#example').DataTable();
+var row = table.row('#row-42');
+```
+
+## Select multiple rows by id:
+```js
+var table = $('#example').DataTable();
+var rows = table.rows( [ '#row-42', '#row-51' ] );
+```
+
+
+## Select rows by class name:
+```js
+var table = $('#example').DataTable();
+var rows = table.rows('.priority');
+```
+
+## Select rows by two class name selectors:
+```js
+var table = $('#example').DataTable();
+var rows = table.rows('.important, .intermediate');
+```
+
+## Get the data for a row that was clicked upon:
+```js
+var table = $('#example').DataTable();
+ 
+$('#example tbody').on( 'click', 'tr', function () {
+  var rowData = table.row( this ).data();
+  // ... do something with `rowData`
+} );
+```
+
+## JS function
+```js
+var table = $('#example').DataTable();
+ 
+var names = table
+    .rows( function ( idx, data, node ) {
+        return data.first_name.charAt(0) === 'A' ?
+            true : false;
+    } )
+    .data();
+```
+
+
+# JGuery
+
+## Get data from rows in a jQuery instance:
+
+```js
+var rows = $('tr.immediate');
+var table = $('#example').DataTable();
+var rowData = table.rows( rows ).data();
+```
+
+## Use jQuery selectors to get the data in the fifth row of the table:
+
+```js
+var rowData1 = table.rows( ':nth-child(5)' ).data();
+var rowData2 = table.rows( ':eq(4)' ).data();
+```
+
+
+# Array
+## Get the data for two rows, based on id:
+
+```js
+var table = $('#example').DataTable();
+var data = table.rows( ['#row-42', '#row-91'] ).data();
+```
+
+## Mix row-selector types - id and class selector
+```js
+var table = $('#example').DataTable();
+var data = table.rows( ['#row-42', '.important'] ).data();
+```
+
 
 ## Refresh table
 ```js
