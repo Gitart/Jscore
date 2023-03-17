@@ -1,3 +1,4 @@
+```js
 var editor; // use a global for the submit and return data rendering in the examples
  
 $(document).ready(function() {
@@ -84,3 +85,5 @@ $(document).ready(function() {
         } ]
     } );
 } );
+
+```
