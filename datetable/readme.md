@@ -75,3 +75,14 @@ $(document).ready( function () {
     });
 });
 ```
+
+## Refresh table
+```js
+function  RefreshTableCall(){
+    var table = $('#usercalls').DataTable()
+    table.ajax.reload( null, false );
+}
+```
+
+
+
