@@ -147,8 +147,52 @@ var names = table
 ```
 
 
-# JGuery
+# Bind data to table
+```
+$(document).ready( function () {
+        // Set table
+        var table = $('#tablegroup').DataTable({
+            "scrollY":         "500px",
+            rowId:             'group_id',
+            deferRender        : true,
+            "scrollCollapse":  true, // fixed head
+            "paging":          false,
+            "stateSave":       true,
+            "language": {
+                "lengthMenu":   "Recs : _MENU_",
+                "zeroRecords":  "No records",
+                "info":         "Сторінок _PAGE_ із _PAGES_",
+                "infoEmpty":    "Data is empty",
+                "infoFiltered": "Find _MAX_ recs",
+                "search":       "Search 🔎  "
+            }
+        });
 
+        // Open window
+        table.on('click', 'tr', function() {
+
+            var tr = $(this).closest('tr');
+            var pos = $(this).text();
+            var row = table.row(tr);
+
+            console.log(" array fields  " + row.data());
+            console.log(" id    " + row.data()[0]);
+            console.log(" name  " + row.data()[1]);
+            console.log(" cnt   " + row.data()[2]);
+
+            console.log("pos " + pos);
+            alert(pos);
+
+            var ids = $(this).attr('id');
+            GetGroupData(ids);
+        });
+});
+```
+
+
+
+
+# JGuery
 ## Get data from rows in a jQuery instance:
 
 ```js
