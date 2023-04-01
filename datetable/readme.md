@@ -102,15 +102,11 @@ var appListTable = $(".app-list__table").DataTable({
 });
 ```
 
-
-
-
 ## Select multiple rows by id:
 ```js
 var table = $('#example').DataTable();
 var rows = table.rows( [ '#row-42', '#row-51' ] );
 ```
-
 
 ## Select rows by class name:
 ```js
@@ -190,6 +186,22 @@ $(document).ready( function () {
 ```
 
 
+## Bind with button 
+```js
+ // Delete calls
+    table.on('click', 'input', function() {
+        var ids = $(this).parents('tr').attr('id');
+
+        DeleteCallId(ids);
+          // var idx = table.cell(this).index().row;
+          // var idss = table.row($(this).parents('tr')).data();
+          // console.log(ids);
+           data1 = $(this).parent().index();
+           
+           console.log(data1)
+          // console.log(ids)
+     });
+```
 
 
 # JGuery
