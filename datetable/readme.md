@@ -389,6 +389,8 @@ $('#myTable').on( 'click', 'tr', function () {
 ## Get source two filed 
 ![image](https://user-images.githubusercontent.com/3950155/229362283-05329dc9-3b41-4bd7-bf00-a9f51d52a3b8.png)
 
+Geting this field value  
+![image](https://user-images.githubusercontent.com/3950155/229362389-8b5b5692-2f8c-4602-882d-7b02de37cd8f.png)
   
 
 # Deferred rendering:
