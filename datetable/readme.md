@@ -362,6 +362,32 @@ $('#myTable').on( 'click', 'tr', function () {
 
 
 
+#FIND ID
+
+### Html 
+![image](https://user-images.githubusercontent.com/3950155/229362064-fe0ea19a-8f4d-417d-ab02-cfc7d5290f17.png)
+
+#### Binding for each records <tr>
+
+```js
+
+    $("#tableorders tr").click(function (){
+        var trid = $(this).closest('tr').attr('id')
+        var id=trid.split(":")[1];
+
+        var triddata = $(this).closest('tr')
+        var textdata = triddata.find("td:eq(1)").text()
+
+        localStorage.setItem("iddocument",id)
+
+        console.log(textdata);
+        console.log(id);
+    });
+   ```
+    
+
+
+
 # Deferred rendering:
 
 ```js
