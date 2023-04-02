@@ -337,7 +337,7 @@ function  RefreshTable(){
 }
 ```
 
-#RowID
+# RowID
 Присвоение каждой записи ID в атрибутах TR
 
 ![image](https://user-images.githubusercontent.com/3950155/225939018-bf37fcab-6330-4158-a645-796d32a6946c.png)
@@ -362,7 +362,7 @@ $('#myTable').on( 'click', 'tr', function () {
 
 
 
-#FIND ID
+# FIND ID
 
 ### Html 
 ![image](https://user-images.githubusercontent.com/3950155/229362064-fe0ea19a-8f4d-417d-ab02-cfc7d5290f17.png)
@@ -386,7 +386,10 @@ $('#myTable').on( 'click', 'tr', function () {
    ```
     
 
+## Get source two filed 
+![image](https://user-images.githubusercontent.com/3950155/229362283-05329dc9-3b41-4bd7-bf00-a9f51d52a3b8.png)
 
+  
 
 # Deferred rendering:
 
