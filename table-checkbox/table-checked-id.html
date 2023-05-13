@@ -1,0 +1,74 @@
+<html>
+
+<head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+ 
+ <script type="text/javascript">
+ $(document).ready(function() {
+ 
+
+  $('#retrieve-ids').click(function() {
+
+    // Get all checked checkboxes
+    var selectedTables = $('.table-checkbox:checked'); 
+    var recordIds = [];
+
+    selectedTables.each(function() {
+
+        tt=$(this)[0].id
+        recordIds.push(tt);
+        
+
+
+    //   var tableName = $(this).data('table'); // Get the table name from the data attribute
+    //   var tableRecords = $('#' + tableName + ' tr'); // Assuming table IDs are the same as table names
+
+    //   tableRecords.each(function() {
+    //     var recordId = $(this).find('td:first').text(); // Assuming the record ID is in the first column (td element)
+    //     recordIds.push(recordId);
+    //   });
+    
+     });
+
+    console.log(recordIds); // Output the array of record IDs
+  });
+});
+
+</script> 
+
+</head>
+
+
+<body>
+
+
+<table class="table table-bordered" >
+  <tr id="1">
+    <td><input id="01" type="checkbox" class="table-checkbox" data-table="table1"></td>
+    <td>Table 1</td>
+  </tr>
+  <tr>
+    <td><input  id="02"  type="checkbox" class="table-checkbox" data-table="table2"></td>
+    <td>Table 2</td>
+  </tr>
+  <tr>
+    <td><input  id="03"  type="checkbox" class="table-checkbox" data-table="table1"></td>
+    <td>Table 1</td>
+  </tr>
+  <tr>
+    <td><input  id="04" type="checkbox" class="table-checkbox" data-table="table1"></td>
+    <td>Table 1</td>
+  </tr>
+  <tr>
+    <td><input  id="05" type="checkbox" class="table-checkbox" data-table="table1"></td>
+    <td>Table 1</td>
+  </tr>
+
+  
+</table>
+
+<button id="retrieve-ids">Retrieve IDs</button>
+</body>
+</html>
+
