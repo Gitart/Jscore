@@ -76,6 +76,45 @@ $(document).ready( function () {
 });
 ```
 
+
+## Example Data for Ajax
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "tn": "11",
+      "created_at": "0001-01-01T00:00:00Z",
+      "location_id": 1,
+      "teem_id": 1,
+      "department_id": 2,
+      "position_id": 3,
+      "first_name": "Степаненко",
+      "middle_name": "Иван",
+      "last_name": "Петрович",
+      "koef": 1,
+      "salary": 1233,
+      "remark": ""
+    },
+    {
+      "id": 3,
+      "tn": "333",
+      "created_at": "0001-01-01T00:00:00Z",
+      "location_id": 1,
+      "teem_id": 1,
+      "department_id": 1,
+      "position_id": 1,
+      "first_name": "Прокопенко",
+      "middle_name": "Ирина",
+      "last_name": "Степановна",
+      "koef": 1,
+      "salary": 100,
+      "remark": ""
+    }
+  ]
+}
+````
+
 ## Get ID
 ```js
 var table = $('#example').DataTable();
