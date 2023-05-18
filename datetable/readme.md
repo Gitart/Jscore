@@ -183,7 +183,7 @@ var names = table
 
 
 # Bind data to table
-```
+```js
 $(document).ready( function () {
         // Set table
         var table = $('#tablegroup').DataTable({
@@ -434,9 +434,6 @@ $('#myTable').on( 'click', 'tr', function () {
 ## Advanced variant 
   ![image](https://user-images.githubusercontent.com/3950155/229363121-514d7856-07c5-4800-9347-e0ef0937ca3e.png)
 
-
-  
-  
   
 # Deferred rendering:
 
