@@ -116,6 +116,8 @@ $(document).ready( function () {
 ````
 
 ## Get ID
+[☝ Get Data](https://datatables.net/reference/type/row-selector)
+
 ```js
 var table = $('#example').DataTable();
 var row = table.row('#row-42');
