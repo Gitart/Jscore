@@ -187,7 +187,7 @@ $("#btn_search").click( function (){
      });
 ```
 
-## Get Data few records in array
+## Get Data few records in array By Index
 ```js
 $("#btn_search").click( function (){
 var allData = table.rows([2,4]).data();
@@ -199,7 +199,18 @@ console.log(allData.selector.rows)
 });
 ```
 
+## Get Data few records in array By ID
+```js
 
+$("#btn_search").click( function (){
+        var row = table.row('#190').data();
+        console.log(row)
+
+
+        var rows = table.rows(['#190','#200']).data();
+        console.log(rows)
+});
+```
 
 
 
