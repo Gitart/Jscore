@@ -209,6 +209,11 @@ $("#btn_search").click( function (){
 
         var rows = table.rows(['#190','#200']).data();
         console.log(rows)
+        
+        console.log(allData)
+        console.log(rows[0].id)
+        console.log(rows[0].num)
+        console.log(rows.selector.rows)
 });
 ```
 
