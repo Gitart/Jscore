@@ -169,6 +169,43 @@ $('#example tbody').on( 'click', 'tr', function () {
 } );
 ```
 
+
+## Get All Data in array
+```js
+$("#btn_search").click( function (){
+  var allData = table.rows().data();
+  console.log(allData)
+});
+```
+
+## Get Data by ID
+```js
+
+    $("#btn_search").click( function (){
+        var row = table.row('#190').data();
+        console.log(row)
+     });
+```
+
+## Get Data few records in array
+```js
+$("#btn_search").click( function (){
+var allData = table.rows([2,4]).data();
+       
+console.log(allData)
+console.log(allData[0].id)
+console.log(allData[0].num)
+console.log(allData.selector.rows)
+});
+```
+
+
+
+
+
+
+
+
 ## JS function
 ```js
 var table = $('#example').DataTable();
