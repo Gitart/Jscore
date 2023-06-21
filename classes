@@ -1,0 +1,45 @@
+ <script type="text/javascript">
+
+	class Calculator {
+		  constructor() {
+		    this.result = 0;
+		  }
+
+		  add(number) {
+		    this.result += number;
+		  }
+
+		  subtract(number) {
+		    this.result -= number;
+		  }
+
+		  multiply(number) {
+		    this.result *= number;
+		  }
+
+		  divide(number) {
+		    if (number !== 0) {
+		      this.result /= number;
+		    } else {
+		      console.log("Error: Division by zero is not allowed.");
+		    }
+		  }
+
+		  clear() {
+		    this.result = 0;
+		  }
+
+		  getResult() {
+		    return this.result;
+		  }
+		}
+
+		// Example usage:
+		const calculator = new Calculator();
+		calculator.add(5);
+		calculator.subtract(2);
+		calculator.multiply(3);
+		calculator.divide(4);
+		console.log("Result:", calculator.getResult());
+
+  </script>
