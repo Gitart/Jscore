@@ -1,7 +1,7 @@
 # Import JSON to Google Sheets (Easiest Way in 2023)
 
-[📒](https://www.lido.app/tutorials/json-to-google-sheets)
-[📒](https://gist.github.com/paulgambill/cacd19da95a1421d3164)
+[📒 Article ](https://www.lido.app/tutorials/json-to-google-sheets)  
+[📒 Code](https://gist.github.com/paulgambill/cacd19da95a1421d3164)   
 
 
 In this article we will show you how to import JSON to Google Sheets in just a few clicks. Simply follow the steps below.
