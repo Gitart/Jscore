@@ -54,7 +54,6 @@ $(document).ready( function () {
         console.log( 'Row reorder started: ', node, index );
     } );
 
-
     //
     // // Setup - add a text input to each footer cell
     // $('#logstab tfoot th').each(function () {
@@ -75,12 +74,13 @@ $(document).ready( function () {
     });
 });
 ```
+
 ## Replace current url
 ```
 table_doc_items.ajax.url( '/items/order/222' ).load();
 ```
 
-## Set Csv AJAX
+## Set CSV AJAX
 ```
 ajax: {
     url: "data.csv",
