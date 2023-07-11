@@ -1,4 +1,4 @@
-# Databale 
+# DATATABLE
 
 ![image](https://user-images.githubusercontent.com/3950155/225936221-bdfd4430-1218-402f-92ac-70fc187efee2.png)
 
@@ -46,7 +46,7 @@ $(document).ready( function () {
     } );
 
     // После перегенерации таблицы
-    $('#logstab').on( 'draw.dt', function () {
+    $('#logstab').on('draw.dt', function () {
         console.log( 'Table redrawn' );
     } );
 
@@ -76,6 +76,7 @@ $(document).ready( function () {
 ```
 
 ## Replace current url
+[load](https://datatables.net/reference/api/ajax.url().load())
 ```
 table_doc_items.ajax.url( '/items/order/222' ).load();
 ```
