@@ -127,12 +127,6 @@ $(document).ready( function () {
 </head>
 ```
 
-
-
-
-
-
-
 ## Example Data for Ajax
 ```json
 {
