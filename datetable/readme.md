@@ -377,12 +377,6 @@ $("#btn_search").click( function (){
         console.log(rows.selector.rows)
 });
 ```
-
-
-
-
-
-
 ## JS function
 ```js
 var table = $('#example').DataTable();
