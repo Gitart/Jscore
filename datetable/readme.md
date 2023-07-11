@@ -212,12 +212,13 @@ https://datatables.net/reference/option/dom
 |**r**| processing display element
 
 The following extensions can be initialised through the dom option:
-
-**B** - Buttons
-**R** - ColReorder
-**S** - Scroller
-**P** - SearchPanes
-**Q** - SearchBuilder
+|code|description|
+|---|------------------|
+|**B**| Buttons|
+|**R**| ColReorder|
+|**S**| Scroller |
+|**P**|SearchPanes|
+|**Q**| SearchBuilder|
 
 ## Example
 ```
