@@ -183,6 +183,15 @@ $(document).ready( function () {
 });
 ```
 
+## AJAX
+```
+var table = $('#example').DataTable( {
+    ajax: "data.json"
+} );
+ 
+table.ajax.url( 'newData.json' ).load();
+```
+
 ## Replace current url
 [load](https://datatables.net/reference/api/ajax.url().load())
 ```
