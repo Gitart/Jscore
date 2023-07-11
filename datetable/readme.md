@@ -4,6 +4,16 @@
 
 ### Based Setting with AJAX
 ```js
+ $(document).ready(function() {
+
+    var idorder     = localStorage.getItem('Idorder');
+    var idcontract  = localStorage.getItem('contract_id');
+    var contractnum = localStorage.getItem('contract_num');
+    var numcontract = `Договiр № ${idcontract} # ${contractnum} ORDERID ${idorder}`
+
+    $("#head_title_prodcuts").html(numcontract)
+    $("#head_title_prodcuts2").html(idcontract)
+
     iddoc = location.href.split('/items/')[1];
 
     // Products in order
@@ -84,17 +94,21 @@
             },
 
             {
-                data: null,
-                defaultContent: '<div class="action-buttons">' +
-                    '<span class="edit"><i class="fa fa-pencil"></i></span> ' +
-                    '<span class="remove"><i class="fa fa-trash"></i></span> ' +
-                    '<span class="cancel"></span>' +
-                    '</div>',
+                "title"  : "упр",
+                "data"   : "id",
+                "render" : function(data, type, row){
+                    return `<div class="action-buttons">
+                                      <span class="edit"   id="$ed_${data}">   <i class="fa fa-pencil"></i></span> 
+                                      <span class="remove" id="$rem_${data}">  <i class="fa fa-trash"></i></span> 
+                                      <span class="cancel"> </span>
+                                 </div>`
+                },
                 className: 'row-edit dt-center',
                 orderable: false
             },
         ]
     });
+
 ```
 
 ## Without AJAX
