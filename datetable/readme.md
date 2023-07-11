@@ -95,22 +95,22 @@ https://datatables.net/reference/option/dom
 
 |code|description|
 |---|------------------|
-|l | length changing input control|
-|f | filtering input
-|t | The table!
-|i | Table information summary
-|p | pagination control
-|r |  processing display element
+|**l**| length changing input control|
+|**f**| filtering input
+|**t**| The table!
+|**i**| Table information summary
+|**p**| pagination control
+|**r**| processing display element
 
 The following extensions can be initialised through the dom option:
 
-B - Buttons
-R - ColReorder
-S - Scroller
-P - SearchPanes
-Q - SearchBuilder
+**B** - Buttons
+**R** - ColReorder
+**S** - Scroller
+**P** - SearchPanes
+**Q** - SearchBuilder
 
-Example
+## Example
 ```
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="datatables.min.css"/>
