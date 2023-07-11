@@ -75,6 +75,11 @@ $(document).ready( function () {
     });
 });
 ```
+## Change url
+```
+table_doc_items.ajax.url( '/items/order/222' ).load();
+```
+
 
 ## Dom settings 
 https://datatables.net/reference/option/dom
