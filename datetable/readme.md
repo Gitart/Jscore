@@ -3,6 +3,101 @@
 ![image](https://user-images.githubusercontent.com/3950155/225936221-bdfd4430-1218-402f-92ac-70fc187efee2.png)
 
 ### Based Setting
+```js
+    iddoc = location.href.split('/items/')[1];
+
+    // Products in order
+    var table_doc_items = $('#listdocuments').DataTable({
+            ajax           : `/items/order/${iddoc}`,
+            rowId          : 'id',
+            dataSrc        : 'data',
+            type           : 'GET',
+            scrollCollapse : true,
+            paging         : true,
+            deferRender    : true,
+            info           : false,
+            dom            : 'rti',
+
+        "columns": [
+            {
+                "title" : "Товар / послуги",
+                "data"  : "product",
+                "width" : "auto",
+                "render": function (data, type, row) {
+                    return `<b id = "nam_${row.id}" 
+                               data-num-product = "${row.product_id}" 
+                               onclick="ShowModal(${row.id})"
+                               title = "ID:${row.id}">${data}</b>`
+                }
+            },
+
+
+            { data: "price", render: $.fn.dataTable.render.number( ',', '.', 0, '' ) },
+
+
+            {
+                "title" : "Ціна без ПДВ",
+                "data"  : "price",
+                "width" : "100px",
+                "render": function (data, type, row) {
+                    return `<b id = "pr_${row.id}" 
+                               data-num-product = "${row.product_id}" 
+                               title = "ID:${row.id}">${data}</b>`
+                }
+            },
+            {
+                "title" : "К-ть",
+                "data"  : "qty",
+                "width" : "100px",
+                "render": function (data, type, row) {
+                    return `<b id = "qty_${row.id}" 
+                               data-num-product = "${row.product_id}" 
+                               title = "ID:${row.id}">${data}</b>`
+                }
+            },
+
+            { "title" : "Од.вим",
+              "data"  : "ei",
+              "width" : "80px"
+            },
+
+            { "title" : "Вартicть",
+              "data"  : "summ",
+              "width" : "100px",
+              "render": function (data, type, row) {
+                    return `<b id = "sm_${row.id}" 
+                               data-num-product = "${row.product_id}" 
+                               title = "ID:${row.id}">${data}</b>`
+                }
+            },
+
+            { "title" : "❌",
+              "data"  : "id",
+              "width" : "50px",
+              "render": function (data, type, row) {
+                    return `<b id      = "del_${row.id}" 
+                               onclick = "DelProduct(${row.id}, ${row.id})"
+                               title   = "ID:${row.id}">
+                               <button type="button" class="btn btn-outline-danger btn-sm">❌</button>
+                            </b>`
+                }
+            },
+
+            {
+                data: null,
+                defaultContent: '<div class="action-buttons">' +
+                    '<span class="edit"><i class="fa fa-pencil"></i></span> ' +
+                    '<span class="remove"><i class="fa fa-trash"></i></span> ' +
+                    '<span class="cancel"></span>' +
+                    '</div>',
+                className: 'row-edit dt-center',
+                orderable: false
+            },
+        ]
+    });
+```
+
+
 
 ```js
 $(document).ready( function () {
