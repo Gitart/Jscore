@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/3950155/225936221-bdfd4430-1218-402f-92ac-70fc187efee2.png)
 
-### Based Setting
+### Based Setting with AJAX
 ```js
     iddoc = location.href.split('/items/')[1];
 
@@ -97,8 +97,7 @@
     });
 ```
 
-
-
+## Without AJAX
 ```js
 $(document).ready( function () {
 
