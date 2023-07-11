@@ -4,12 +4,12 @@
 
 ### Based Setting with AJAX
 ```js
- $(document).ready(function() {
+$(document).ready(function() {
 
-    var idorder     = localStorage.getItem('Idorder');
-    var idcontract  = localStorage.getItem('contract_id');
-    var contractnum = localStorage.getItem('contract_num');
-    var numcontract = `Договiр № ${idcontract} # ${contractnum} ORDERID ${idorder}`
+    var idorder     = localStorage.getItem('Iddoc');
+    var idcontract  = localStorage.getItem('co_id');
+    var contractnum = localStorage.getItem('con_num');
+    var numcontract = `Doc № ${idcontract} # ${contractnum} ORDERID ${idorder}`
 
     $("#head_title_prodcuts").html(numcontract)
     $("#head_title_prodcuts2").html(idcontract)
@@ -30,7 +30,7 @@
 
         "columns": [
             {
-                "title" : "Товар / послуги",
+                "title" : "Products",
                 "data"  : "product",
                 "width" : "auto",
                 "render": function (data, type, row) {
@@ -46,7 +46,7 @@
 
 
             {
-                "title" : "Ціна без ПДВ",
+                "title" : "Price",
                 "data"  : "price",
                 "width" : "100px",
                 "render": function (data, type, row) {
@@ -56,7 +56,7 @@
                 }
             },
             {
-                "title" : "К-ть",
+                "title" : "Qty",
                 "data"  : "qty",
                 "width" : "100px",
                 "render": function (data, type, row) {
@@ -66,7 +66,7 @@
                 }
             },
 
-            { "title" : "Од.вим",
+            { "title" : "Unit",
               "data"  : "ei",
               "width" : "80px"
             },
@@ -94,7 +94,7 @@
             },
 
             {
-                "title"  : "упр",
+                "title"  : "Act",
                 "data"   : "id",
                 "render" : function(data, type, row){
                     return `<div class="action-buttons">
