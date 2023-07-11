@@ -75,11 +75,20 @@ $(document).ready( function () {
     });
 });
 ```
-## Change url
+## Replace current url
 ```
 table_doc_items.ajax.url( '/items/order/222' ).load();
 ```
 
+## Set Csv AJAX
+```
+ajax: {
+    url: "data.csv",
+    dataType: "text",
+    dataSrc: function (csvdata) {
+    return $.csv.toObjects(csvdata);
+}
+```
 
 ## Dom settings 
 https://datatables.net/reference/option/dom
