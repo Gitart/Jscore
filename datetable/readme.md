@@ -110,7 +110,6 @@ $(document).ready(function() {
     });
 
 ```
-
 ## Without AJAX
 ```js
 $(document).ready( function () {
@@ -781,9 +780,12 @@ var dt = $('#example').DataTable();
 //hide the second and third columns
 dt.columns([1,2]).visible(false);
 ```
-
-
-
+## Events
+```js
+ table.on( 'xhr', function ( e, settings, json ) {
+        console.log( 'Ajax event occurred. Returned data: ', e );
+    } );
+```
 
 
 ## Row Selector
