@@ -2,6 +2,81 @@
 
 ![image](https://user-images.githubusercontent.com/3950155/225936221-bdfd4430-1218-402f-92ac-70fc187efee2.png)
 
+
+### Based Setting array
+
+load first page.html
+```js
+    $(document).ready(function() {
+       var dat = {{.Data}};
+    })
+```
+
+used in JS
+```
+ var table = $('#liststock').DataTable({
+        "data"     : dat,
+        rowId      : "id",
+        pageLength : 10,
+        deferRender: true,
+        info       : false,
+        select     : true,
+        stateSave  : true,
+        rowReorder : true,
+        scrollCollapse : true,
+        paging     : true,
+        processing : false,
+        serverSide : false,
+
+        "columns": [
+            {"data"      : "id",
+                "title"     :  "#",
+                "width"     : "50px",
+                "className" : "tabcentered",
+                "render"    : function (data, type, row) {
+                    return `<a style="text-decoration:none; 
+                                font-weight: bold;color: #27293d;" 
+                                href="contract/detail/${row.id}">${data}
+                            </a>`
+                }
+            },
+
+            {"data"      : "title",
+                "title"     :  "Name car",
+                "width"     : "auto",
+                "className" : "tabcentered",
+                "render"    : function (data, type, row) {
+                    return `<a style="text-decoration:none; 
+                                font-weight: bold;color: #27293d;" 
+                                href="contract/detail/${row.id}">${data}
+                            </a>`
+                }
+            },
+
+            {
+             "data"      : "city",
+             "title"     : "Город",
+             "width"     : "auto"
+            },
+
+            {
+             "data"      : "location",
+             "title"     : "Location",
+             "width"     : "auto"
+            },
+
+            {
+                "data"      : "status",
+                "title"     : "status",
+                "width"     : "50px",
+                "render"    : function (data, type, row) {
+                               return StatusCange(data)
+                      }
+          }
+        ]
+    });
+```
+
 ### Based Setting with AJAX
 ```js
 $(document).ready(function() {
