@@ -258,7 +258,7 @@ $(document).ready( function () {
 ```
 
 ## AJAX
-```
+```js
 var table = $('#example').DataTable( {
     ajax: "data.json"
 } );
@@ -266,14 +266,14 @@ var table = $('#example').DataTable( {
 table.ajax.url( 'newData.json' ).load();
 ```
 
-## Replace current url
+## Replace current url in AJAX
 [load](https://datatables.net/reference/api/ajax.url().load())
-```
+```js
 table_doc_items.ajax.url( '/items/order/222' ).load();
 ```
 
 ## Set CSV AJAX
-```
+```js
 ajax: {
     url: "data.csv",
     dataType: "text",
