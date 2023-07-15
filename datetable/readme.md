@@ -13,7 +13,7 @@ load first page.html
 ```
 
 used in JS
-```
+```js
  var table = $('#liststock').DataTable({
         "data"     : dat,
         rowId      : "id",
