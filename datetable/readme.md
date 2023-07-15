@@ -318,6 +318,32 @@ $(document).ready( function () {
 </script>
 </head>
 ```
+## Get data 
+```js
+var uu = table.data()
+console.log(uu)
+```
+
+## Data current record to from localstorage 
+```js
+// Save id order to cash
+    $('#listproducts').on('click','tr', function () {
+        var id  = table.row(this).id();
+        var dat = table.row(this).data();
+
+        var ds =JSON.stringify(dat)
+
+        localStorage.setItem('nomenclature_dat',     ds);
+        localStorage.setItem('nomenclature_id',     id);
+        localStorage.setItem('nomenclature_title',  dat.title);
+        localStorage.setItem('nomenclature_cat',    dat.model);
+
+        var dd = localStorage.getItem('nomenclature_dat');
+        var ss = JSON.parse(dd)
+        console.log(ss)
+    });
+```
+
 
 ## Example Data for Ajax
 ```json
