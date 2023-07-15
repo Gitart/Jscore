@@ -58,3 +58,7 @@ function Filltheselect(data, idselect){
               console.log(arrSelected)
           });
 ```
+
+**Source**   
+https://stackoverflow.com/questions/20516166/bootstrap-multiselect-get-selected-values
+
