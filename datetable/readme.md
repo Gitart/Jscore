@@ -266,6 +266,7 @@ var table = $('#example').DataTable( {
 table.ajax.url( 'newData.json' ).load();
 ```
 
+
 ## Replace current url in AJAX
 [load](https://datatables.net/reference/api/ajax.url().load())
 ```js
@@ -363,7 +364,6 @@ function getDataById(id) {
     });
 ```
 
-
 ## Example Data for Ajax
 ```json
 {
@@ -401,6 +401,52 @@ function getDataById(id) {
   ]
 }
 ````
+
+
+## Format cell 
+```
+DataTable.render.number()                                                // Locale aware number display (since 1.12)
+DataTable.render.number(null, null, precision, prefix, postfix)          // Locale aware display with decimal places, prefix and postfix (since 1.12)
+DataTable.render.number(thousands, decimal, precision, prefix, postfix) // Thousands and decimal specified
+```
+
+### Example format 
+```
+
+    var table = $('#liststock').DataTable({
+        ajax: {
+            url: `/liststock/list`,
+            dataSrc    : "",
+            type       : "GET",
+            rowId      : "id",
+            pageLength : 10,
+            deferRender: true,
+            info       : false,
+            select     : true,
+            stateSave  : true,
+            rowReorder : true,
+            scrollCollapse : true,
+            paging     : true,
+            processing : false,
+            serverSide : false,
+        },
+        "columns": [
+            {data: "id",         title: "Num",                  width: "50px"},
+            {data: "title",      title: "Name stock",           width: "auto",
+                render    : function (data, type, row) {
+                    return `<b id= "itm_${row.id}">${data}</b>`
+                }},
+            {data: "city",       title: "City Name",              width: "auto"},
+            {data: "year_need",  title: "Need (M3)",              width: "auto", render: $.fn.dataTable.render.number( ' ', '.', 3, '', '' )},
+            {data: "vol",        title: "Volume (M3)",            width: "auto", render: $.fn.dataTable.render.number( ' ', '.', 3, '' )},
+            {data: "total",      title: "Total get (M3)",         width: "auto", render: $.fn.dataTable.render.number( ' ', '.', 3, '' )},
+            {data: "remain",     title: "Current Remain  (M3)",   width: "auto", render: $.fn.dataTable.render.number( ' ', '.', 3, '' )},
+            {data: "user_name",  title: "ВEД",                    width: "auto", render: $.fn.dataTable.render.number( ' ', '.', 3, '' )}
+        ]
+    });
+```
+
+
 
 ## Get ID
 [☝ Get Data](https://datatables.net/reference/type/row-selector)
@@ -505,6 +551,7 @@ $("#btn_search").click( function (){
         console.log(rows.selector.rows)
 });
 ```
+
 ## JS function
 ```js
 var table = $('#example').DataTable();
