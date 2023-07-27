@@ -403,12 +403,56 @@ function getDataById(id) {
 ````
 
 
-## Format cell 
+# Format cell 
+
+### Number format
 ```
 DataTable.render.number()                                                // Locale aware number display (since 1.12)
 DataTable.render.number(null, null, precision, prefix, postfix)          // Locale aware display with decimal places, prefix and postfix (since 1.12)
 DataTable.render.number(thousands, decimal, precision, prefix, postfix) // Thousands and decimal specified
 ```
+
+Other way
+```
+{
+    data: 'price',
+    render: DataTable.render.number( null, null, 2, '$' )
+}
+```
+
+### Text Format  
+```
+{
+    data: 'product',
+    render: DataTable.render.text()
+}
+````
+
+**Example**
+```
+DataTable.render.ellipsis = function ( cutoff ) {
+    return function ( data, type, row ) {
+        if ( type === 'display' ) {
+            var str = data.toString(); // cast numbers
+ 
+            return str.length < cutoff ?
+                str :
+                str.substr(0, cutoff-1) +'&#8230;';
+        }
+ 
+        // Search, order and type can use the original data
+        return data;
+    };
+};
+
+
+{
+    data: 'description',
+    render: DataTable.render.ellipsis( 10 )
+}
+```
+
+
 
 ### Example format 
 ```
