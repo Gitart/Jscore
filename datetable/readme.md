@@ -324,6 +324,25 @@ var uu = table.data()
 console.log(uu)
 ```
 
+## Get Data by Id record in table
+```js
+function getDataById(id) {
+    var table = $('#list_stock').DataTable();
+    var rowData = table.row(function (idx, data, node) {
+        // Assuming 'id' is the property name for the ID field in your data
+        return data.id === id;
+    }).data();
+    return rowData;
+}
+```
+
+### Use
+```js
+ var info=getDataById(id)
+    console.log(info)
+    console.log(info.title)
+```
+
 ## Data current record to from localstorage 
 ```js
 // Save id order to cash
