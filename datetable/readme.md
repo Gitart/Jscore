@@ -520,6 +520,15 @@ var appListTable = $(".app-list__table").DataTable({
 });
 ```
 
+## Manipulate column
+After insert rows or reform row need refresh column head
+
+```js
+function redrawcolumns(){
+			setTimeout(function(){table.columns.adjust().draw();}, 250);
+		}
+```
+
 ## Select multiple rows by id:
 ```js
 var table = $('#example').DataTable();
