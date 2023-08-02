@@ -1008,6 +1008,18 @@ dt.columns([1,2]).visible(false);
 ```
 
 
+# ROWS
+```js
+ "createdRow": function( row, data, dataIndex ) {
+           $(row).css("background-color", data.color);
+
+            // if (data.approve=="R") {
+            //     $(row).css("background-color", "#FFDFD2");
+            // }
+           },
+```
+
+
 ## Row Selector
 https://datatables.net/reference/type/row-selector  
 
