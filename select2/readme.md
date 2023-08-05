@@ -210,6 +210,23 @@ $('#mySelect2').select2({
 $('#mySelect2').find(':selected').data('custom-attribute');
 ```
 
+### Array to str and back
+```js
+------------------------
+$(document).ready(function() {
+    var string = '1,2';
+    var array = string.split(',').map(Number);
+    console.log(array); // Output: [1, 2]
+});
+
+
+------------------
+ array = ['290', '298'];
+var commaSeparatedString = array.join(','); // Join with a comma
+console.log(commaSeparatedString); // Output: "290,298"        
+
+```
+
 
 
 
