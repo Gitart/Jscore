@@ -98,6 +98,38 @@ $(document).ready(function () {
 </script>
 ```
 
+## 🔶 Server Side 
+```go
+// Update order
+function AddProduct(){
+   var id   = $('#id').val();
+   var murl = `/product/${id}`;
+
+    var selcts = $('#mySelect').val();
+    var sellct = selcts.join(',');
+
+    if (sellct==""){
+        sellct=" "
+    }
+
+    $('#selected').val(sellct);
+
+    $('#documentform').attr('method','PUT');
+    $('#documentform').attr('action', murl);
+    var dat=$("#documentform").serialize();
+
+    $.ajax({ method: "PUT",
+               data:  dat, 
+               url:   murl,
+         success: function() {
+                  RefreshTab();
+                  $('#prodwindows').modal('hide');
+               }
+     }); 
+}
+```
+
+
 ## SQL
 #### From array
 ```sql
