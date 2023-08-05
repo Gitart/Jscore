@@ -161,7 +161,33 @@ $(".js-programmatic-multi-clear").on("click", function () {
 ```
 
 
+# Retrieving selections
+## Using the data method
+Calling select2('data') will return a JavaScript array of objects representing the current selection. Each object will contain all of the properties/values that were in the source data objects passed through processResults and templateResult callbacks.
+```
+$('#mySelect2').select2('data');
+```
 
+## Using a jQuery selector
+Selected items can also be accessed via the :selected jQuery selector:
+```js
+$('#mySelect2').find(':selected');
+```
+It is possible to extend the <option> elements representing the current selection(s) with HTML data-* attributes to contain arbitrary data from the source data objects:
+
+```js
+$('#mySelect2').select2({
+  // ...
+  templateSelection: function (data, container) {
+    // Add custom attributes to the <option> tag for the selected option
+    $(data.element).attr('data-custom-attribute', data.customValue);
+    return data.text;
+  }
+});
+
+// Retrieve custom attribute value of the first selected element
+$('#mySelect2').find(':selected').data('custom-attribute');
+```
 
 
 
