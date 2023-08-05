@@ -10,8 +10,6 @@
 ## JS
 ```js
 $(document).ready(function () {
-			  
-				
 				$('#mySelect').select2({
 				    dropdownParent: $('#prodwindows')
 			    });
@@ -54,9 +52,7 @@ $(document).ready(function () {
 			
 		    });
 
-
 		    function Getselect(){
-			    
 			    var cc= $('#mySelect').val()
 			    console.log(cc)
 			
@@ -66,7 +62,7 @@ $(document).ready(function () {
 			     $('#mySelect').val(ars);
 			     $('#mySelect').trigger('change');
 		    }
-	    </script>
+</script>
 ```
 
 ## SQL
