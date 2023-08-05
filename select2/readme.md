@@ -40,7 +40,7 @@ $(document).ready(function () {
 })
 ```
 
-## JS
+## 🟥 JS
 ```js
 $(document).ready(function () {
 				$('#mySelect').select2({
@@ -130,7 +130,7 @@ function AddProduct(){
 ```
 
 
-## SQL
+## 🟣 SQL
 #### From array
 ```sql
   SELECT * FROM products WHERE FIND_IN_SET(id,'23,44,444' );
