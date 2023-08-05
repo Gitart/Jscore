@@ -1,6 +1,10 @@
 ## SELECT2
 https://select2.org/getting-started/installation 
 
+## Idea 
+1. Selet2 - val - table by ID in field choice -> 1,3,4,...
+2. Get all records from other table by filter IN (1,3,4,...)
+
 ### Using Select2 from a CDN
 ```js
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
