@@ -20,7 +20,7 @@ $(document).ready(function () {
 			
 			    var ap=[]
 			
-			    // Get selected choice element
+			    // Get selected elements
 			    $('#mySelect').on('change', function () {
 				    var selectedData = $('#mySelect').select2('data');
 				    console.log(selectedData[0].text);
