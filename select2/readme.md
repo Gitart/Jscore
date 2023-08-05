@@ -1,5 +1,5 @@
 ## SELECT2
-
+https://select2.org/getting-started/installation 
 
 ### Using Select2 from a CDN
 ```js
