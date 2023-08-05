@@ -2,6 +2,14 @@
 https://select2.org/getting-started/installation 
 
 ## Idea 
+<code>
+DB -> [...]->slect2 -> '...' ->DB
+</code>
+
+<code>
+**DB** -> '...' -> [...] -> **select2**
+</code>
+
 1. Selet2 - val - table by ID in field choice -> 1,3,4,...
 2. Get all records from other table by filter IN (1,3,4,...)
 
