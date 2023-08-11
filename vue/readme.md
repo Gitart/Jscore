@@ -1,3 +1,77 @@
+# GO+VUE
+![image](https://github.com/Gitart/Jscore/assets/3950155/12642386-37f8-4415-9065-fe61229e1664)
+
+```js
+
+			// Create a Vue instance
+			new Vue({
+				el: '#app3',
+				delimiters: ['[[', ']]'], // Change Vue.js delimiters
+				data: {items:[]},
+				mounted: function () {
+					var self = this;
+					$.getJSON("/liststock/list", function (data) {
+						self.items = data;
+					});
+				},
+				
+				methods: {
+					deleteRecord: function (id) {
+						console.log(`DELETE:${id}`)
+						// Find and remove the item with the given ID
+						this.items = this.items.filter(item => item.id !== id);
+					},
+					
+					getRecordDetails: function (data) {
+						console.log("Clicked on record with ID:", data);
+						console.log("Clicked on record with ID:", data.id);
+						// You can perform additional actions here based on the clicked ID
+					}
+				}
+			});
+```
+
+## Html
+```html
+
+	<div class="col">
+		<h2>Div VUe App3</h2>
+		<div id="app3">
+			<table class="table">
+				<thead>
+				<tr>
+					<th>ID</th>
+					<th>Title</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>delete</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr v-for="item in items" :key="item.id" @click="getRecordDetails(item)">
+					<td>[[ item.id ]]</td>
+					<td>[[ item.title ]]</td>
+					<td>[[ item.location ]]</td>
+					<td>[[ item.user_name ]]</td>
+					<td><button @click="deleteRecord(item.id)">❌</button></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+```
+
+
+
+
+
+
+
+
+
+
+
 ## Base Sample
 
 ```json
