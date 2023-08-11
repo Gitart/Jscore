@@ -1,6 +1,39 @@
 # GO+VUE
 ![image](https://github.com/Gitart/Jscore/assets/3950155/12642386-37f8-4415-9065-fe61229e1664)
 
+## With fetch
+```js
+<script>
+		$(document).ready(function() {
+			// Make a GET request to fetch data from the server
+			fetch('/contacts/data/11')
+					.then(response => response.json())
+					.then(data => {
+						console.log(data.data);
+						
+						// Create a Vue instance
+						new Vue({
+							el: '#app',
+							delimiters: ['[[', ']]'], // Change Vue.js delimiters
+							data: {
+								items: data.data
+							},
+						});
+						
+						// Create a Vue instance
+						new Vue({
+							el: '#app31',
+							delimiters: ['[[', ']]'], // Change Vue.js delimiters
+							data: {
+								items: data.data,
+							},
+						});
+						
+					})
+					.catch(error => {
+						console.error('Error fetching data:', error);
+					});
+```
 ```js
 
 			// Create a Vue instance
