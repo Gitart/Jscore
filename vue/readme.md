@@ -34,6 +34,8 @@
 						console.error('Error fetching data:', error);
 					});
 ```
+
+## Vue getJSON
 ```js
 
 			// Create a Vue instance
