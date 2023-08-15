@@ -11,7 +11,7 @@
         )
 ```
 
-```
+```js
 function loadScript(src, callback) {
     let script = document.createElement('script');
     script.src = src;
@@ -21,7 +21,7 @@ function loadScript(src, callback) {
 
 
 ## alert.js
-```
+```js
 alert("Alert")
 
 
