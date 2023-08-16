@@ -53,6 +53,24 @@ fetchPromise.then(response => {
 });
 ```
 
+## UL
+Первое, что мы собираемся сделать, это переместить наш список имен в вызываемую функцию listOfNames, которая примет peopleобъект. Мы также будем интерполировать некоторую разметку, чтобы показать, что каждый человек принадлежит элементу списка. Наш listOfNamesвернет неупорядоченный список всех наших имен. Наконец, мы назначим это listOfNamesнашему main.innerHTMLэлементу.
+
+```js
+const fetchPromise = fetch(" https://ghibliapi.herokuapp.com/people "); 
+const main = document.getElementById("main");
+fetchPromise.then(response => { 
+  return response.json(); 
+}).then(people => { 
+  main.innerHTML = listOfNames(people); 
+});
+function listOfNames(people) { 
+  const name = people.map(person => `<li>${person.name}</li>`).join("\n"); 
+  вернуть `<ul>${names}</ul>` 
+}
+```
+
+![image](https://github.com/Gitart/Jscore/assets/3950155/c0d189ab-747b-42eb-a030-601b06be20be)
 
 ## TARGET LEMENT
 ```js
