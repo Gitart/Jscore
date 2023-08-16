@@ -39,6 +39,20 @@ fetchPromise.then(response => {
 
 ![image](https://github.com/Gitart/Jscore/assets/3950155/4625bca9-ee44-44b7-a7a1-833ac55e4b9a)
 
+## MAP
+```js
+const fetchPromise = fetch(" https://ghibliapi.herokuapp.com/people ");
+// Целевой основной элемент 
+const main = document.getElementById("main");
+fetchPromise.then(response => { 
+  return response.json(); 
+}).then(people => { 
+  const name = people.map(person => person.name).join("\n");
+  // Добавляем имена к основному элементу 
+  main.innerHTML = names; 
+});
+```
+
 
 ## TARGET LEMENT
 ```js
