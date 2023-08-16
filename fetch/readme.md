@@ -34,5 +34,30 @@ function GetLocation() {
 
     console.log(parsedData);
 ```
+## Fetch to map
+```js
+
+    var dd2 = fetch('/liststock/list')
+        .then(response => response.json())
+        .then(data => {
+
+                // Here, 'data' contains the JSON result
+                //console.log(JSON.stringify(data))
+                // console.log(data.find(v=>v.location_id===19))
+                var tt=data.map(v =>`${v.title}, ${v.location_id}`).join("<hr>")
+                $("#inres").html(tt)
+
+                console.log( tt )
+            return data
+
+            }
+
+        )
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+    console.log(dd2.PromiseResult);
+```
 
 
