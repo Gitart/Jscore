@@ -1,5 +1,35 @@
 # Fetch
 
+
+
+const fetchPromise = fetch("https://ghibliapi.herokuapp.com/people");
+const main = document.getElementById("main");
+fetchPromise.then(response => {
+  return response.json();
+}).then(people => {
+  main.innerHTML = listOfNames(people);
+});
+function listOfNames(people) {
+  const names = people.map(person => `<li>${person.name}</li>`).join("\n");
+  return `<ul>${names}</ul>`
+  }
+  
+![image](https://github.com/Gitart/Jscore/assets/3950155/0ed6795d-42f3-405c-b6cb-6ad52681aa65)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```js
 function fetchData(url) {
     return fetch(url)
