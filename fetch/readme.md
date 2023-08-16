@@ -72,6 +72,22 @@ function listOfNames(people) {
 
 ![image](https://github.com/Gitart/Jscore/assets/3950155/c0d189ab-747b-42eb-a030-601b06be20be)
 
+## ANOTHER
+```js
+const URL = "https://ghibliapi.herokuapp.com/people";
+const main = document.getElementById("main");
+main.innerHTML = "<p>Loading...";
+fetch(URL)
+  .then((response) => response.json())
+  .then((people) => main.innerHTML = getListOfNames(people));
+const getListOfNames = (people) => {
+  const names = people
+    .map((person) => `<li>${person.name}</li>`)
+    .join("\n");
+return `<ul>${names}</ul>`;
+};
+```
+
 ## TARGET LEMENT
 ```js
 const fetchPromise = fetch("https://ghibliapi.herokuapp.com/people");
