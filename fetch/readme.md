@@ -1,4 +1,43 @@
-# Fetch
+# Fetch - HTTP requests using Fetch API and Promises
+
+## SAMPLE
+```js
+const fetchPromise = fetch («https://ghibliapi.herokuapp.com/people»);
+console.log(fetchPromise);
+```
+## SAMPLE
+```js
+const fetchPromise = fetch(" https://ghibliapi.herokuapp.com/people "); 
+fetchPromise.then(ответ => { 
+  console.log(ответ); 
+});
+```
+![image](https://github.com/Gitart/Jscore/assets/3950155/9d75d144-5c65-492f-a4eb-d929780af09c)
+
+
+## JSON
+```js
+const fetchPromise = fetch(" https://ghibliapi.herokuapp.com/people "); 
+fetchPromise.then(response => { 
+  return response.json(); 
+}).then(people => { 
+  console.log(people); 
+});
+```
+![image](https://github.com/Gitart/Jscore/assets/3950155/320a713a-dbc8-4202-81b3-f91188d689c2)
+
+## MAP
+```js
+const fetchPromise = fetch(" https://ghibliapi.herokuapp.com/people ");
+fetchPromise.then(response => { 
+  return response.json(); 
+}).then(people => { 
+  const name = people.map(person => person.name).join("\n"); 
+  console.log (имена); 
+});
+```
+
+![image](https://github.com/Gitart/Jscore/assets/3950155/4625bca9-ee44-44b7-a7a1-833ac55e4b9a)
 
 
 ## TARGET LEMENT
