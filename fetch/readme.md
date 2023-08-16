@@ -1,5 +1,7 @@
 # Fetch - HTTP requests using Fetch API and Promises
 
+[📚](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
+
 ## SAMPLE
 ```js
 const fetchPromise = fetch («https://ghibliapi.herokuapp.com/people»);
