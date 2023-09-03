@@ -1018,6 +1018,28 @@ dt.columns([1,2]).visible(false);
             // }
            },
 ```
+
+## Autamatically reload
+Reload the table data every 30 seconds (paging reset):
+```js
+setInterval( function () {
+    table.ajax.reload();
+}, 30000 );
+```
+
+```js
+setInterval( function () {
+    table.ajax.reload( null, false ); // user paging is not reset on reload
+}, 30000 );
+```
+### Use the callback to update an external elements:
+```js
+table.ajax.reload( function ( json ) {
+    $('#myInput').val( json.lastInput );
+} );
+```
+
+
 ## Localization
 [lang](https://cdn.datatables.net/plug-ins/1.10.22/i18n/)
 
