@@ -1018,6 +1018,15 @@ dt.columns([1,2]).visible(false);
             // }
            },
 ```
+## Localization
+[lang](https://cdn.datatables.net/plug-ins/1.10.22/i18n/)
+
+```js
+language: {
+            url:"https://cdn.datatables.net/plug-ins/1.10.22/i18n/Ukrainian.json",
+        },
+```
+
 
 
 ## Row Selector
