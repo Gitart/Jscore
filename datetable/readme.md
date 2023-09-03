@@ -814,6 +814,9 @@ function  RefreshTable(){
 
 # RowID
 Присвоение каждой записи ID в атрибутах TR
+```
+ rowId: function(a) {return 'id_empl_'+a.id;},
+```
 
 ![image](https://user-images.githubusercontent.com/3950155/225939018-bf37fcab-6330-4158-a645-796d32a6946c.png)
 
