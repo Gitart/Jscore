@@ -1027,6 +1027,8 @@ language: {
         },
 ```
 
+## Plugins
+https://cdn.datatables.net/plug-ins/1.10.22/ 
 
 
 ## Row Selector
