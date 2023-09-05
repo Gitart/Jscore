@@ -26,7 +26,7 @@ Filter by name inside in div
 
                       <div id="woodform">
                            <div class="header_wind">
-	                           <h5 style="font-weight: bold; color: #ff7f4a">Товари, сировина </h5>
+	                           <h5 style="font-weight: bold; color: #ff7f4a">Products</h5>
 	                           <input id="myInput"  class= "form-control" type="text" placeholder="🔎 ...">
                            </div>
 	                       <br>
@@ -81,4 +81,31 @@ Filter by name inside in div
                               </button>
                           </div>
                       </div>
+```
+
+##  Filtering in table
+```js
+    $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+
+        $("#tab_products_order tbody tr").each(function() {
+            var row = $(this);
+            var textFound = false;
+
+            row.find("td b").each(function() {
+                var text = $(this).text().toLowerCase();
+
+                if (text.indexOf(value) > -1) {
+                    textFound = true;
+                    return false; // Break out of the loop
+                }
+            });
+
+            if (textFound) {
+                row.show();
+            } else {
+                row.hide();
+            }
+        });
+    });
 ```
