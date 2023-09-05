@@ -1,4 +1,4 @@
-## filtered in div
+## Filtered in div by Name product
 Filter by name inside in div
 
 ```js
