@@ -149,8 +149,87 @@ Friends: Joseph Francis Tribbiani Jr, Chandler Muriel Bing, Ross Eustace Geller,
 
 ## Суммирование всех значений в массиве:
 ```js
+function learnJavaScript() {
+  const initialValue = 0
 
+  const sum = [1, 2, 3].reduce((accumulator, currentValue) => {
+    return accumulator + currentValue
+  }, initialValue)
+
+  return sum
+}
 ```
+
+## И тоже самое в одну строчку кода:
+
+```js
+function learnJavaScript() {
+  const sum = [1, 2, 3].reduce((x, y) => x + y)
+
+  return sum
+}
+```
+
+# chaining
+
+Программирование на JavaScript поддерживает удобный паттерн чейнинг (chaining) – объединение нескольких функций⚙️ в одну цепочку с последовательной передачей результата.
+
+Все три разобранных метода вызываются в контексте массива, а два 2️⃣ из них еще и возвращают массив. Таким образом, их очень легко объединить.
+
+Например, посчитаем общий возраст всех мальчиков :
+```js
+function learnJavaScript() {
+  const friends = [
+    { passport: '03005988', name: 'Joseph Francis Tribbiani Jr', age: 32, sex: 'm' },
+    { passport: '03005989', name: 'Chandler Muriel Bing', age: 33, sex: 'm' },
+    { passport: '03005990', name: 'Ross Eustace Geller', age: 33, sex: 'm' },
+    { passport: '03005991', name: 'Rachel Karen Green', age: 31, sex: 'f' },
+    { passport: '03005992', name: 'Monica Geller', age: 31, sex: 'f' },
+    { passport: '03005993', name: 'Phoebe Buffay', age: 34, sex: 'f' }
+  ]
+  let totalBoysYears = friends
+    .filter(friend => friend.sex === 'm')
+    .reduce((accumulator, friend) => accumulator + friend.age, 0)
+  return totalBoysYears
+}
+```
+
+## Или соберем номера паспортов девочек, чтобы купить им билеты на самолет до Лас-Вегаса :
+```js
+function learnJavaScript() {
+  const friends = [
+    { passport: '03005988', name: 'Joseph Francis Tribbiani Jr', age: 32, sex: 'm' },
+    { passport: '03005989', name: 'Chandler Muriel Bing', age: 33, sex: 'm' },
+    { passport: '03005990', name: 'Ross Eustace Geller', age: 33, sex: 'm' },
+    { passport: '03005991', name: 'Rachel Karen Green', age: 31, sex: 'f' },
+    { passport: '03005992', name: 'Monica Geller', age: 31, sex: 'f' },
+    { passport: '03005993', name: 'Phoebe Buffay', age: 34, sex: 'f' }
+  ]
+  let girlsPassports = friends.filter(friend => friend.sex === 'f').map(friend => friend.passport) + ' '
+  return girlsPassports
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
