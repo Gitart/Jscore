@@ -1060,6 +1060,17 @@ table.ajax.reload( function ( json ) {
     },
 ```
 
+### ROW CSS
+```js
+
+    "createdRow": function( row, data, dataIndex ) {
+         if (data.status_id==100) {
+             $(row).css("background-color", "#FFDFD2");
+         }
+    },
+```
+
+
 
 ## Localization
 [lang](https://cdn.datatables.net/plug-ins/1.10.22/i18n/)
