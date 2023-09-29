@@ -1042,6 +1042,24 @@ table.ajax.reload( function ( json ) {
 } );
 ```
 
+### ROW COLOR
+```js
+
+        "rowCallback": function (row, data) {
+
+            console.log(data.status_id)
+
+            // Your condition to make the row green
+            if (data.status_id==100) { // Example condition: Salary > 50000
+
+                //$('td', row).eq(3).css('background-color','red');
+                //$('td', row).css('background-color','red');
+                $('td', row).addClass('deldocument');
+            }
+
+    },
+```
+
 
 ## Localization
 [lang](https://cdn.datatables.net/plug-ins/1.10.22/i18n/)
