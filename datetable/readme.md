@@ -1010,6 +1010,31 @@ dt.columns([1,2]).visible(false);
     } );
 ```
 
+# ADD ROW
+```js
+
+function addNewRow() {
+    
+    var selectedText = $('#product_id option:selected').text();
+    var selectedId   = $('#product_id option:selected').val();
+    var price        = $('#price').val();
+    var qty          = $('#qty').val();
+    var summ         = $('#account').val();
+
+    // const table = new DataTable('#example');
+    var table = $('#products_table').DataTable()
+    
+    table.row.add([selectedText,qty,price,summ,'❌']).node().id=counter;
+    table.draw(false);
+
+    // RefreshTab()
+    
+ 
+    counter++;
+    console.log(table.data())
+
+}
+```
 
 # ROWS
 ```js
