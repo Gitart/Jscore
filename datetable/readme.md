@@ -266,6 +266,11 @@ var table = $('#example').DataTable( {
 table.ajax.url( 'newData.json' ).load();
 ```
 
+## Get Count Recs in the table
+```js
+var rowCount = $('#products_table').DataTable().rows().count();
+console.log(rowCount);
+```
 
 ## Replace current url in AJAX
 [load](https://datatables.net/reference/api/ajax.url().load())
