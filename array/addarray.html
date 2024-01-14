@@ -13,7 +13,6 @@
 
   <script type="text/javascript">
     $( function() {
-
          var data = [
                       {id:1,  title:"Contacts",   url:"http://page.html",    ico:"⚠" },
                       {id:2,  title:"contracts",  url:"http://page.html",    ico:"🎁"},
@@ -33,14 +32,10 @@
                    title:"from",
                    dat: data,
          }
-
-
              console.log(dt.title)
              console.log(dt.dat[0])
 
             var myList = $("#myList");
-
-            
 
             if (data.length) {
                 $.each(data, function(index, item) {
@@ -52,7 +47,6 @@
                     console.error("UL element not found.");
             }
         })
-
 
         function Thm(o) {
           var r = `<li val="${o.id}"> <a href="${o.url}">${o.ico} ${o.title} [${o.id}]</a> </li>`
@@ -67,6 +61,5 @@
           <hr> 
           <ul id="myList"></ul>
     </div>      
-
 </body>
 </hrml>
