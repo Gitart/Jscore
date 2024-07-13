@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .container-dx div {  
+          border: 2px solid #cfc9c9;
+          padding: 10px;
+          border-radius: 7px;
+          background-color: rgb(215, 223, 221);
+        }
+
+        .container-dx {  
+            display: grid;
+            margin: 10px;
+            grid-template-columns: 0.3fr 1.7fr 0.7fr;
+            grid-template-rows: 0.3fr 2.4fr 0.3fr;
+            gap: 5px 5px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "TitPic Title Title"
+                "Lmenu Body Rmenu"
+                "Footer Footer Footer";
+        }
+
+    .Footer { 
+        grid-area: Footer;
+        text-align: center;
+        font-size: 12px; 
+    }
+
+    .Title { 
+        grid-area: Title;
+        font-weight: bold;
+        font-size: 25px; 
+        color: #7e3a19;
+    }
+
+    .Body { 
+        grid-area: Body;
+
+    }
+
+    .Rmenu { 
+        grid-area: Rmenu;
+
+    }
+
+    .TitPic { 
+        grid-area: TitPic;
+        text-align: center;
+        vertical-align: middle; 
+    }
+
+    .Lmenu { 
+        grid-area: Lmenu;
+        font-weight: bold; 
+    }
+
+    .Lmenu li:hover { 
+       background-color: aqua;
+       cursor: pointer;
+    }
+    
+    </style>  
+</head>
+  <body>
+
+    <div class="container2">
+
+        <div class="container-dx">
+            
+            <div class="Title">
+                🎶 DIXTER
+            </div>
+            
+            <div class="Body">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore vero molestiae voluptatem quasi id fugiat soluta! Doloribus, delectus eveniet. Aperiam molestiae incidunt animi, at aut reprehenderit eaque nihil amet ex!
+            </div>
+            
+            <div class="Rmenu">
+                <b>Супер город</b>
+                <img src="https://images.unsplash.com/photo-1561816544-21ecbffa09a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZyZWUlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" width="100%">         
+                <small>News with City</small>
+ 
+                <img src="https://images.unsplash.com/photo-1561816544-21ecbffa09a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZyZWUlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" width="100%">         
+                <small>News with City</small>
+ 
+            </div>
+
+            <div class="TitPic">💖</div>
+            <div class="Lmenu">
+                <ul>
+                    <li>User</li>
+                    <li>Sample</li>
+                    <li>Menu`</li>
+                    <li>Setting</li>
+                    <li>Notification</li>
+                    <li>Other</li>
+                    <li>Quit</li>
+                </ul>
+            </div>
+
+            <div class="Footer">
+                ss Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit inventore doloremque enim quia id saepe magni soluta expedita omnis aspernatur accusantium, ea tempore architecto quasi mollitia odio, quos blanditiis.
+            </div>  
+        </div>
+
+      
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>    
