@@ -580,6 +580,34 @@ $("#btn_search").click( function (){
      });
 ```
 
+## Get Data Row
+```js
+$('#tableboilerrooms tbody').on('click', 'td', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Get the table cell and row information
+    var cell = table.cell(this);           // Cell
+    var cellIndex = cell.index();          // Get the index of the clicked cell
+    var columnIndex = cellIndex.column;    // Get the column number
+    var row = table.row(this);             // Get the row object
+    var rowId = row.id();                  // Get the row ID
+
+    // Retrieve data from local storage
+    var dat = localStorage.getItem("dateburn");
+    var vedrep = localStorage.getItem("vedrep");
+
+    // Retrieve data from the row (assuming the data contains a 'ved_id' property)
+    var rowData = row.data();              // Retrieve the entire row data object
+    var vedid = rowData ? rowData.ved_id : null;  // Access 'ved_id' from the row data
+
+    console.log(vedid);
+
+    // Redirect to the report page with the necessary parameters
+    window.location = `/daily/report/card?id=${rowId}&ved=${vedrep}&dat=${dat}`;
+});
+```
+
+
 ## Get Data few records in array By Index
 ```js
 $("#btn_search").click( function (){
