@@ -1139,7 +1139,71 @@ table.ajax.reload( function ( json ) {
                         return data; 
                     }
             },
+
+
+// Convert to date
+function ConvertDate(dateStr) {
+    const  date    = new Date(dateStr);
+    const  options = {day:'2-digit',month:'2-digit',year:'numeric'};
+    const  frmDate = date.toLocaleDateString('ru-RU', options);
+    return frmDate
+}
+
 ```
+
+
+## Full code set by date Sorted
+```js
+// Transaction
+    var table = $('#list_transactions').DataTable({
+        ajax:  {url:`/list/${idcontarct}`, dataSrc:'', type:'GET'},
+        dom:   'Bfrtip', 
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                text:   'Экспорт в Excel',        
+                title:  'transactions_id_'+idcontarct, // Название файла
+                exportOptions: {columns: ':visible'} // Экспорт только видимых колонок
+            }
+        ],
+
+        rowId:         "id", 
+        pageLength:     50,
+        deferRender:    true,
+        info:           true, 
+        select:         true, 
+        stateSave:      true, 
+        rowReorder:     true, 
+        scrollCollapse: true, 
+        paging:         true,
+        processing:     false, 
+        serverSide:     false,
+        language:       {lengthMenu:"_MENU_", zeroRecords:"Оплати вiдсутнi",info:"Сторінок _PAGE_ із _PAGES_",infoEmpty:"Данні відсутні", infoFiltered: "Знайдено _MAX_ записів",search:"🔎 "},
+        columns: [
+            {data: "id",         title: "#",          width: "50px"},
+            // {data: "date_pay",   title: "Дата",       width: "80px",   className: "tabcentered",render: function(data, type, row) {return ConvertDate(data)}},
+            {   data: "date_pay",title: "Дата",width: "80px",className: "tabcentered",
+                render: function (data, type, row) {
+                    if (type === 'display' || type === 'filter') {
+                        return '<span data-order="' + data + '">' + ConvertDate(data) + '</span>';
+                    }
+                        return data; 
+                    }
+            },
+            {data: "code",       title: "Документ",   width: "100px",  className: "rigthcol" },
+            {data: "description",title: "Примiтка",   width: "auto"},
+            {data: "amount",     title: "Сума з ПДВ", width: "150px",  className: "rigthcol", render: $.fn.dataTable.render.number( ' ', '.', 2, '', '' )},
+            {data: "type",       title: "Тип",        width: "50px",   render: function(data, type, row) {return IcoShow(data)}},
+            {data: "id",         title: "❌",         width: "50px",   className: "tabcentered deletetransact", render: function(data, type, row) {return `❌`}},
+            // {data: "id",           title: "Дел",        width: "50px",  className: "tabcentered deletetransact",
+            //     render: function(data, type, row) {
+            //         return `<button id="btn_${row.id}" type="button" class="btn btn-secondary btn-sm " onclick="deletetrans(${row.id})">❌</button>`
+            //     }
+            // },
+        ]
+    });
+```
+
 
 
 ## Localization
