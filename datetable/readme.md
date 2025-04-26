@@ -1204,6 +1204,106 @@ function ConvertDate(dateStr) {
     });
 ```
 
+### Format row
+```js
+ var table = $('#list_contracts').DataTable({
+        ajax: {url:'list?close=a',dataSrc: 'data',type:'POST'},        
+        rowId:"id", pageLength:10, deferRender:true, info:false, select:true, stateSave:true, rowReorder:true,
+        scrollCollapse:true, paging:true, processing:false, serverSide: false,scrollX: true,
+        language: {lengthMenu: "Записів : _MENU_",zeroRecords: "Записів немає",
+                   info: "Сторінок _PAGE_ із _PAGES_",infoEmpty: "Данні відсутні",
+                   infoFiltered: "Знайдено _MAX_ записів",search: "Пошук : "},
+        
+        createdRow : function(row, data, dataIndex) {
+            if (data.status=='c') {
+                $('td', row).eq(2).css("color", "#dc0b0b");
+                $('td', row).eq(1).html("🚫");
+            }else{
+                $('td', row).eq(1).html("✅");
+            }
+
+            if (data.monitor=='critical') {
+                $('td', row).eq(2).css("color", "#dc0b0b");
+                $('td', row).eq(1).html("🚩");
+                $('td', row).eq(1).addClass("expired");
+                $(row).addClass("expired"); 
+                $(row).attr('title', 'Date control'); 
+
+            }else if(data.monitor=='warning'){
+                $('td', row).eq(2).css("color", "#dc0b0b");
+                $('td', row).eq(1).html("⚠️");
+                $(row).addClass("expired"); 
+                $(row).attr('title', 'Remain stock!'); 
+            }
+        },
+        
+        columns: [
+            {data: "id",           title: "#",      width:"50px", className: "tabcentered"},
+            {data: "status",       title: "Статус", width:"50px", className: "tabcentered"},
+            {data: "num_contract", title: "Номер",  width:"auto", className: "tableft",
+                render: function(data, type, row) {return `<b onclick="ShowModal(${row.id})">${data}</b>`}
+            },
+            // {data: "date_contract",title: "Початок",width: "80px",className: "tabcentered",render: function(data, type, row) {return ConvertDate(data)}},
+            {   data: "date_contract",title: "Початок",width: "80px",className: "classDateDoc",
+                render: function (data, type, row) {
+                  if (type === 'display' || type === 'filter') {
+                    return '<span data-order="' + data + '">' + ConvertDate(data) + '</span>';
+                  }
+                    return data; 
+                }
+              },
+
+              { data: "date_end", title: "Кiнець",width: "80px",className: "classDateDoc",
+                render: function (data, type, row) {
+                  if (type === 'display' || type === 'filter') {
+                    return '<span data-order="' + data + '">' + ConvertDate(data) + '</span>';
+                  }
+                    return data; 
+                }
+              },
+
+            // {data: "date_end",title: "Кiнець",width: "80px",className: "tabcentered",render: function(data, type, row) {return ConvertDate(data)}},
+            // {data: "date_control",title: "Контрол",width: "80px", className: "tabcentered",
+            //     render: function(data, type, row) {
+            //         return ConvertDate(data)
+            //     }
+            // },
+
+            {data: "company_name",title: "Контрагент",   width: "auto"},
+            {data: "prepaid",     title: "Баланс, грн.", width: "auto",className: "tabright", render: rdn}, //"render": function (data, type, row) {return data.toFixed(2)
+            {data: "summ",        title: "Сума, грн.",   width: "auto",className: "tabright", cellType: "th",render: rdn},
+            {data: "valume",      title: "Oб`ем",        width: "auto",className: "tabright", render: rdn},
+            {data: "weight",      title: "Отримано",     width: "auto",className: "tabright", ariaTitle: 'Screenreader title',render: rdn},
+            {data: "remain",      title: "Залишок",      width: "auto",className: "tabright", render: rdn},
+
+            /*{data: 'status',title : 'Статус',width : "100px",class : "tabcentered",render: function (data, type, row) {return StatusCange(data)}            },
+            // {data: 'buy_sales',title  : 'Тiп', width  : "100px", class  : "tabcentered",
+            //  visible: false,
+            //  render : function (data, type, row) {
+            //           return function (){
+            //             return (data==1)?'Продаж':'Купiвля'
+            //         }
+            //     }
+            // },
+            */
+
+            {data: "id",title: "Забов`язання",width: "50px",className: "tabcentered",
+                render: function(data, type, row) {
+                     return `<a style="text-decoration:none; font-weight: bold;color: #27293d;" 
+                            target="_blank" href="contract/detail/${row.id}"  >📂</a>`
+                }
+            },
+        ]
+
+        // drawCallback: function(settings) {
+        // Обновление счётчика контрактов
+        //     var count = table.data().count();
+        //     $('#cnt_contracts').text(`Кiлькiсть контрактiв: ${count}`);
+        // }
+
+    });
+
+```
 
 
 ## Localization
