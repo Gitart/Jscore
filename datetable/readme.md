@@ -1128,6 +1128,18 @@ table.ajax.reload( function ( json ) {
     },
 ```
 
+### Sorted by date
+
+```js
+{   data: "date_pay",title: "Дата",width: "80px",className: "tabcentered",
+                render: function (data, type, row) {
+                    if (type === 'display' || type === 'filter') {
+                        return '<span data-order="' + data + '">' + ConvertDate(data) + '</span>';
+                    }
+                        return data; 
+                    }
+            },
+```
 
 
 ## Localization
