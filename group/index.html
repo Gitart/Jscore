@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+    <h2>Group by</h2>
+    <select id="inventorySelect"></select>
+</body>
+
+<script>
+    const inventory = [
+        { name: "asparagus", type: "vegetables", quantity: 5 },
+        { name: "bananas",   type: "вед",      quantity: 0 },
+        { name: "goat",      type: "meat",       quantity: 23 },
+        { name: "cherries",  type: "fruit",      quantity: 5 },
+        { name: "fish",      type: "вед",       quantity: 22 },
+        { name: "potatoes",  type: "vegetables", quantity: 0 },
+        { name: "carrots",   type: "vegetables", quantity: 3 },
+        { name: "chicken",   type: "meat",       quantity: 0 },
+        { name: "apples",    type: "котельня",      quantity: 10 },
+        { name: "pork",      type: "котельня",       quantity: 0 },
+        { name: "pears",     type: "fruit",      quantity: 0 },
+        { name: "beef",      type: "meat",       quantity: 0 }, ];
+ 
+ const grouped = Object.groupBy(inventory, ({ type }) => type);
+ const select = document.getElementById("inventorySelect");
+ 
+ // Пробегаем по группам
+ for (const type in grouped) {
+   const optgroup = document.createElement("optgroup");
+   optgroup.label = type;
+ 
+   grouped[type].forEach(item => {
+     const option = document.createElement("option");
+     option.value = item.name;
+     option.textContent = `${item.name} (${item.quantity})`;
+     optgroup.appendChild(option);
+   });
+ 
+   select.appendChild(optgroup);
+ }
+ 
+   </script>
+</html>
