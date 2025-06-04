@@ -21,7 +21,7 @@ console.log(add(2, 3));
 
 A JavaScript transpiler, such as Babel, would convert this code into equivalent code that can run in environments that only support ES5 or earlier versions of JavaScript:
 
-```
+```js
 var add = function(a, b) {
   return a + b;
 };
@@ -48,7 +48,7 @@ One of the key features of Babel is the support of the latest ECMAScript version
 
 Now, let's imagine that you're working on a single-page app that needs to display a list of items. You want to use the latest version of JavaScript to make your code as concise and efficient as possible. Here's the code you might write using destructuring and arrow functions:
 
-```
+```js
 const items = [{name: 'item1', price: 10}, {name: 'item2', price: 20}];
 const displayItems = items.map(({ name, price }) => `${name}: $${price}`);
 console.log(displayItems); // ['item1: $10', 'item2: $20']
@@ -58,7 +58,7 @@ As we can see, the code is clean, concise, and easy to read. However, it might n
 
 The code equivalent transpiled with Babel would look like this:
 
-```
+```js
 "use strict";
 
 var items = [{ name: 'item1', price: 10 }, { name: 'item2', price: 20 }];
