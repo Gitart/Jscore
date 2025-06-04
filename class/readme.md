@@ -1,7 +1,7 @@
 
 
 
-# class
+# Classes
 
 ## Understanding Classes in ES6 JavaScript
 
