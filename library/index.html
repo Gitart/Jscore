@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="colorutils.js"></script>
+
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .inform {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+
+        .inf {
+            /* плавное появление  при загрузке */
+
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+           
+            /* плавное появление при загрузке */
+            transition: opacity 0.5s ease-in-out;   
+
+            background-color: #e0f7fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+         @keyframes fadeIn {
+                from { opacity: 0; }
+                to   { opacity: 1; }
+            }
+     </style>
+</head>
+<body>
+   
+    <script>
+        // Пример использования colorUtils
+        console.log(colorUtils.hexToRgb("#ff8800"));  // { r: 255, g: 136, b: 0 }
+        console.log(colorUtils.rgbToHex(64, 128, 255)); // "#4080ff"
+        console.log(colorUtils.randomColor());  // случайный цвет, например "#9acd32"
+        console.log(colorUtils.strr("Hello"));  // "olleH"
+        console.log(systems.strr("Hello"));  // "Hello"
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.inf').innerHTML = `
+            <p>Пример использования утилит:</p>
+            <ul>
+                <li>Hex to RGB: ${JSON.stringify(colorUtils.hexToRgb("#ff8800"))}</li>
+                <li>RGB to Hex: ${colorUtils.rgbToHex(64, 128, 255)}</li>
+                <li>Random Color: ${colorUtils.randomColor()}</li>
+                <li>Reversed String: ${colorUtils.strr("Hello")}</li>
+            </ul>
+            `;
+        });
+   </script>
+
+
+<div class="inform">
+    <h1>Color Utils</h1>
+    <p>Этот файл демонстрирует использование утилит для работы с цветами.</p>
+    <ul>
+        <li><strong>hexToRgb</strong>: Преобразует шестнадцатеричный цвет в RGB.</li>
+        <li><strong>rgbToHex</strong>: Преобразует RGB цвет в шестнадцатеричный формат.</li>
+        <li><strong>randomColor</strong>: Генерирует случайный цвет в шестнадцатеричном формате.</li>
+        <li><strong>strr</strong>: Переворачивает строку.</li>
+    </ul>
+</div>
+
+<h1>Response</h1>
+<div class="inf">
+
+</div>
+</body>
+</html>
