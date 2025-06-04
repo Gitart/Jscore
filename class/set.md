@@ -26,7 +26,7 @@ Initially, we can create a Set object with the `new Set()` constructor. Then, we
 
 To demonstrate, let's create a new Set and pass an array of values to it. We can play around with the methods and use them on the same array to thoroughly understand how they function.
 
-```
+```js
 let set = new Set([1, 2, 3, 4, 5]);
 
 set.add(6); // adds the value 6 to the set
@@ -51,7 +51,7 @@ Iteration over Sets is similar to Maps, and the same in terms of the insertion o
 
 We can loop over a Set with the traditional `for...of` loop or use the built-in `set.forEach()` method to gain access to the values we need.
 
-```
+```js
 let set = new Set(["red", "green", "blue"]);
 
 for (let value of set) {
@@ -80,7 +80,7 @@ The foremost quality of Sets is their ability to store only unique values. If we
 
 Let's illustrate the example:
 
-```
+```js
 let voters = new Set();
 
 // Adding voters to the set
